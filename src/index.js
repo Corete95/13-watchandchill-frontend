@@ -4,4 +4,11 @@ import "./Styles/reset.scss";
 import "./Styles/common.scss";
 import Route from "./Route";
 
-ReactDOM.render(<Route />, document.getElementById("root"));
+ReactDOM.render(
+  <>
+    <Nav />
+    <Route />
+    <Footer />
+  </>,
+  document.getElementById("root")
+);
