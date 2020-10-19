@@ -4,9 +4,9 @@ import "./Rating.scss";
 class Rating extends Component {
   render() {
     return (
-      <>
-        <div>sdf</div>
-      </>
+      <div className="Rating">
+        <div>dd</div>
+      </div>
     );
   }
 }

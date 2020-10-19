@@ -5,7 +5,7 @@ class Main extends Component {
   render() {
     return (
       <>
-        <div>sdf</div>
+        <div>Main</div>
       </>
     );
   }
