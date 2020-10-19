@@ -1,1 +1,16 @@
 @import "../../Styles/common.scss";
+
+nav {
+  display: flex;
+  border-bottom: 1px solid;
+}
+
+.navbar_log {
+  width: 151px;
+  height: 37px;
+}
+
+input {
+  width: 300px;
+  height: 38px;
+}
