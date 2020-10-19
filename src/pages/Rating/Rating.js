@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./Review.scss";
+import "./Rating.scss";
 
-class Review extends Component {
+class Rating extends Component {
   render() {
     return (
       <>
@@ -11,4 +11,4 @@ class Review extends Component {
   }
 }
 
-export default Review;
+export default Rating;
