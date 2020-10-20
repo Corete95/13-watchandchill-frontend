@@ -12,3 +12,5 @@ class Rating extends Component {
 }
 
 export default Rating;
+
+

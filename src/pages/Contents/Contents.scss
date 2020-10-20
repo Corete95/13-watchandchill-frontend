@@ -1,1 +1,26 @@
 @import "../../Styles/common.scss";
+
+section {
+  position: absolute;
+  .인생은_아름다워_poster {
+    position: relative;
+  }
+}
+
+.movie_title_section {
+  h1 {
+    font-size: 33px;
+  }
+  span {
+    font-size: 17px;
+  }
+  button {
+    font-size: 17px;
+    color: #f6f6f6;
+    background-color: $themeColor;
+    border: none;
+  }
+  .rating {
+    font-size: 12px;
+  }
+}
