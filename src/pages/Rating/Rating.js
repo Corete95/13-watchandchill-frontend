@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import "./Rating.scss";
 import RatingBox from "./RatingBox";
 import Items from "./Items";
@@ -21,13 +21,26 @@ class Rating extends Component {
     })
   }
 
+  modalEl = createRef();
+
+  handleClickOutside = ({target}) =>  {
+    if(!this.modalEl.current.contains((target)) && target.className==="Category") {
+      this.handleModal()
+    }
+  }
+
   render() {
-    const { handleModal } = this;
+    const { handleModal, handleClickOutside } = this;
     const { isModalOn } = this.state;
     return (
       <section className="Rating">
         <div className="rating_wrap">
-          {isModalOn && <Category />}
+          {isModalOn && <Category 
+          modalEl={this.modalEl} 
+          isModalOn={isModalOn} 
+          handleModal={handleModal} 
+          handleClickOutside={handleClickOutside}
+          />}
           <RatingBox handleModal={handleModal} />
           <Items />
         </div>

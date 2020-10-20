@@ -14,6 +14,7 @@
 .Category {
   display: flex;
   justify-content: center;
+  padding: 20px 0;
     position: fixed;
     top: 0px;
     right: 0px;
@@ -24,6 +25,7 @@
     overflow-y: scroll;
     background: rgba(0, 0, 0, 0.56);
     div {
+      background: white;
       display: inline-block;
     position: relative;
     vertical-align: middle;
@@ -34,10 +36,56 @@
     border-radius: 6px;
     overflow: auto;
     header {
-
+    z-index: 50;
+    font-size: 17px;
+    font-weight: 700;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    background: rgb(255, 255, 255);
+    padding: 0px 16px;
+    border-bottom: 1px solid rgb(227, 227, 227);
+    .CloseBtn {
+      z-index: 51;
+      cursor: pointer;
+      outline: none;
+      color: #ff2f6e;
     }
-    div {
-
+    h3 {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      left: 0px;
+      z-index: 1;
+      text-align: center;
+    }
+  }
+  div {
+    ul {
+      margin: 0 20px;
+        margin-top: 44px;
+        p {
+          margin-top: 35px;
+          font-size: 13px;
+          color: #76767d;
+        }
+        li {
+          cursor:pointer;
+          overflow-x: hidden;
+          padding: 14px 0;
+          width: 100%;
+          border-bottom: 1px solid;
+          border-color: rgba(234, 233, 232, 0.8);
+          display: flex;
+          align-items: center;
+          font-size: 15px
+        }
+      }
     }
     }
 }
