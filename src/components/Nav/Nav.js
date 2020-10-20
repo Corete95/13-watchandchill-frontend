@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { UserOutlined } from "antd";
 import "./Nav.scss";
 
 class Nav extends Component {
@@ -19,7 +20,14 @@ class Nav extends Component {
           <Link to="/rating" className="navbar_rating">
             평가하기
           </Link>
-          <img className="navbar_profile" src="profile.png" alt="profile_img" />
+          <Link to="">
+            <UserOutlined />
+            {/* <img
+              className="navbar_profile"
+              src="profile.png"
+              alt="profile_img"
+            /> */}
+          </Link>
         </nav>
       </>
     );

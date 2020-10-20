@@ -6,7 +6,7 @@ import Rating from "./pages/Rating/Rating";
 import Users from "./pages/Users/Users";
 import Contents from "./pages/Contents/Contents";
 import Nav from "./components/Nav/Nav";
-// import Footer from "./components/";
+import Footer from "./components/Footer";
 
 class Routes extends Component {
   render() {
@@ -19,7 +19,7 @@ class Routes extends Component {
           <Route exact path="/users" component={Users} />
           <Route exact path="/contents" component={Contents} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     );
   }

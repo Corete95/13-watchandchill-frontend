@@ -4,40 +4,46 @@
   text-decoration: none;
 }
 
+.navbar_container {
+  border-bottom: 1px solid #ebebeb;
+}
+
 nav {
   display: flex;
-  margin: 0 auto;
   justify-content: space-between;
-  border-bottom: 1px solid rgb(235, 235, 235);
-  padding: 0 38px;
+  border-bottom: 1px solid #ebebeb;
+  padding: 5px 38px;
 }
 
 .navbar_movie {
-  padding-top: 20px;
-  margin-right: 550px;
-  color: #7e7e7e;
-}
-
-.navbar_rating {
-  padding-top: 20px;
-  color: rgb(7, 7, 7);
+  margin: auto 0;
+  color: #070707;
 }
 
 .navbar_log {
+  margin: auto 0;
   width: 151px;
 }
 
 input {
   width: 254px;
-  height: 30px;
-  margin: auto 10px;
-  text-align: center;
+  height: 23px;
+  padding: 7px 10px 8px 36px;
+  margin: auto 0;
+  font-size: 14px;
   border: none;
-  background-color: rgb(245, 245, 247);
+  background-color: #f5f5f7;
+}
+
+.navbar_rating {
+  font-size: 14px;
+  margin: auto 0;
+  color: #74747b;
 }
 
 .navbar_profile {
   width: 28px;
   height: 28px;
-  padding: 10px;
+  margin: auto 0;
+  padding-top: 10px;
 }
