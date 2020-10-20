@@ -6,11 +6,7 @@ import Category from "./Category";
 
 class Rating extends Component {
   render() {
-    return (
-      <section className="Rating">
-       
-      </section>
-    );
+    return <section className="Rating"></section>;
   }
 }
 

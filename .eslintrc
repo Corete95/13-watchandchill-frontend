@@ -12,15 +12,9 @@
     "node": true,
     "es6": true
   },
-  "ignorePatterns": [
-    "node_modules/"
-  ],
-  "extends": [
-    "plugin:prettier/recommended"
-  ],
-  "plugins": [
-    "prettier"
-  ],
+  "ignorePatterns": ["node_modules/"],
+  "extends": ["plugin:prettier/recommended"],
+  "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error"
   }
