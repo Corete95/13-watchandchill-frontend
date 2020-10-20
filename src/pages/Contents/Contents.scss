@@ -1,26 +1,60 @@
 @import "../../Styles/common.scss";
 
 section {
-  position: absolute;
-  .인생은_아름다워_poster {
-    position: relative;
-  }
-}
+  width: 100%;
 
-.movie_title_section {
-  h1 {
-    font-size: 33px;
+  .main_image {
+    height: 266px;
+    background-image: url("https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_720,q_80,w_1280/v1463551411/mqsgvr-14521.jpg");
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
   }
-  span {
-    font-size: 17px;
-  }
-  button {
-    font-size: 17px;
-    color: #f6f6f6;
-    background-color: $themeColor;
-    border: none;
-  }
-  .rating {
-    font-size: 12px;
+
+  .movie_title_section {
+    display: flex;
+    border-bottom: 1px solid rgba($color: gray, $alpha: 0.2);
+
+    img {
+      width: 162px;
+      height: 234px;
+      border: 1px solid rgba($color: gray, $alpha: 0.2);
+      border-radius: 4px;
+      margin-left: 160px;
+    }
+    .movie_title_section-desc {
+      height: 236px;
+      padding: 17px 0 20px 20px;
+      h1 {
+        font-size: 33px;
+        padding-bottom: 17px;
+      }
+      span {
+        color: black;
+      }
+      span {
+        font-size: 17px;
+        &:nth-child(2) {
+          opacity: 0.5;
+          padding-bottom: 17px;
+        }
+      }
+
+      hr {
+        background-color: #eee;
+        border: 0 none;
+        color: #eee;
+        height: 1px;
+      }
+      button {
+        width: 254px;
+        height: 40px;
+        font-size: 17px;
+        color: white;
+        background-color: $themeColor;
+        border: none;
+        border-radius: 6px;
+      }
+    }
   }
 }
