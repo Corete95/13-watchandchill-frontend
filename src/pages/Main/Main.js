@@ -1,29 +1,42 @@
 import React, { Component } from "react";
 import "./Main.scss";
 import Login from "../../components/Nav/Login";
-
+import Signup from "../../components/Nav/Signup";
 class Main extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      isModalOpen: false
+      loginModalOpen: false,
+      signupModalOpen: false
     };
   }
 
-  openModal = () => {
-    this.setState({ isModalOpen: true });
+  loginOpen = () => {
+    this.setState({ loginModalOpen: true });
   };
 
-  closeModal = () => {
-    this.setState({ isModalOpen: false });
+  loginClose = () => {
+    this.setState({ loginModalOpen: false });
   };
+
+  signupOpen = () => {
+    this.setState({ signupModalOpen: true });
+  };
+
+  signupClose = () => {
+    this.setState({ signupModalOpen: false });
+  };
+
   render() {
+    const { loginModalOpen, signupModalOpen } = this.state;
+    const { loginOpen, loginClose, signupOpen, signupClose } = this;
     return (
       <>
-        <button onClick={this.openModal}>Check</button>
-        <button onClick={this.openModal}>signup</button>
+        <button onClick={loginOpen}>Check</button>
+        <button onClick={signupOpen}>signup</button>
 
-        <Login open={this.state.isModalOpen} close={this.closeModal} />
+        <Login open={loginModalOpen} close={loginClose} />
+        <Signup open={signupModalOpen} close={signupClose} />
       </>
     );
   }
