@@ -14,23 +14,23 @@ class Signup extends Component {
         {this.props.open ? (
           <div className="signup_modal">
             <div onClick={this.props.close}>
-              <div className="login_modal">
-                <div className="modalContents" onClick={this.props.open}>
-                  <img className="login_logo" src="watcha.png" />
+              <div className="signup_modal">
+                <div className="modal_contents" onClick={this.props.open}>
+                  <img src="watcha.png" />
                   <h2>회원가입</h2>
-                  <div className="login_input">
+                  <div className="signup_input">
                     <input
-                      className="login_name"
+                      className="signup_name"
                       type="text"
                       placeholder="이름"
                     />
                     <input
-                      className="login_id"
-                      type="text"
+                      className="signup_id"
+                      type="email"
                       placeholder="이메일"
                     />
                     <input
-                      className="login_pw"
+                      className="signup_pw"
                       type="password"
                       placeholder="비밀번호"
                     />
@@ -39,7 +39,7 @@ class Signup extends Component {
                     <span className="icon_earth"></span>한국어(대한민국)
                     <span className="icon_arrow"></span>
                   </button>
-                  <div className="login_button">
+                  <div className="signup_button">
                     <button>회원가입</button>
                   </div>
                   <div className="signup">
