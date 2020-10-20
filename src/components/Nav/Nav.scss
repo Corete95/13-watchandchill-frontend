@@ -1,17 +1,43 @@
 @import "../../Styles/common.scss";
 
+* {
+  text-decoration: none;
+}
+
 nav {
   display: flex;
-  border-bottom: 1px solid;
+  margin: 0 auto;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(235, 235, 235);
+  padding: 0 38px;
+}
+
+.navbar_movie {
+  padding-top: 20px;
+  margin-right: 550px;
+  color: #7e7e7e;
+}
+
+.navbar_rating {
+  padding-top: 20px;
+  color: rgb(7, 7, 7);
 }
 
 .navbar_log {
   width: 151px;
-  height: 37px;
 }
 
 input {
-  width: 300px;
-  height: 38px;
+  width: 254px;
+  height: 30px;
+  margin: auto 10px;
+  text-align: center;
+  border: none;
+  background-color: rgb(245, 245, 247);
 }
-@
+
+.navbar_profile {
+  width: 28px;
+  height: 28px;
+  padding: 10px;
+}

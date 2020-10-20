@@ -6,9 +6,9 @@ import Route from "./Route";
 
 ReactDOM.render(
   <>
-    <Nav />
+    {/* <Nav /> */}
     <Route />
-    <Footer />
+    {/* <Footer /> */}
   </>,
   document.getElementById("root")
 );
