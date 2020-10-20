@@ -3,6 +3,8 @@ import "./Rating.scss";
 import RatingBox from "./RatingBox";
 import Items from "./Items";
 import Category from "./Category";
+import MovieInfo from "./MovieInfo";
+import { connect } from 'react-redux';
 
 class Rating extends Component {
   constructor() {
@@ -20,18 +22,26 @@ class Rating extends Component {
       }
     })
   }
-
+  handleMovieInfo = () => {
+    this.setState((prevState) => {
+      return {
+        isMovieInfo: !prevState.isMovieInfo
+      }
+    })
+  }
   modalEl = createRef();
 
   handleClickOutside = ({target}) =>  {
+    console.log(target.innerText)
     if(!this.modalEl.current.contains((target)) && target.className==="Category") {
       this.handleModal()
     }
   }
 
   render() {
-    const { handleModal, handleClickOutside } = this;
+    const { handleModal, handleClickOutside, handleMovieInfo } = this;
     const { isModalOn } = this.state;
+    const { isMovieInfo } = this.props;
     return (
       <section className="Rating">
         <div className="rating_wrap">
@@ -41,12 +51,19 @@ class Rating extends Component {
           handleModal={handleModal} 
           handleClickOutside={handleClickOutside}
           />}
+          {isMovieInfo && 
+          <MovieInfo 
+          />}
           <RatingBox handleModal={handleModal} />
-          <Items />
+          <Items handleMovieInfo={handleMovieInfo} />
         </div>
       </section>
     );
   }
 }
 
-export default Rating;
+function mapStateToProps(state) {
+  return {isMovieInfo: state.isMovieInfo}
+}
+
+export default connect(mapStateToProps)(Rating);

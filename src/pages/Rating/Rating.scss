@@ -11,10 +11,10 @@
 .rating_wrap {
   width: 100%;
 
-.Category {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
+  .Category {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
     position: fixed;
     top: 0px;
     right: 0px;
@@ -24,210 +24,350 @@
     overflow-x: hidden;
     overflow-y: scroll;
     background: rgba(0, 0, 0, 0.56);
+
     div {
       background: white;
       display: inline-block;
-    position: relative;
-    vertical-align: middle;
-    text-align: left;
-    width: 375px;
-    height: auto;
-    min-height: 540px;
-    border-radius: 6px;
-    overflow: auto;
-    header {
-    z-index: 50;
-    font-size: 17px;
-    font-weight: 700;
-    width: 100%;
-    height: 44px;
-    line-height: 44px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 0px;
-    background: rgb(255, 255, 255);
-    padding: 0px 16px;
-    border-bottom: 1px solid rgb(227, 227, 227);
-    .CloseBtn {
-      z-index: 51;
-      cursor: pointer;
-      outline: none;
-      color: #ff2f6e;
-    }
-    h3 {
-      display: inline-block;
-      position: absolute;
-      right: 0px;
-      left: 0px;
-      z-index: 1;
-      text-align: center;
+      position: relative;
+      vertical-align: middle;
+      text-align: left;
+      width: 375px;
+      height: auto;
+      min-height: 540px;
+      border-radius: 6px;
+      overflow: auto;
+
+      header {
+        z-index: 50;
+        font-size: 17px;
+        font-weight: 700;
+        width: 100%;
+        height: 44px;
+        line-height: 44px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 0px;
+        background: rgb(255, 255, 255);
+        padding: 0px 16px;
+        border-bottom: 1px solid rgb(227, 227, 227);
+
+        .CloseBtn {
+          z-index: 51;
+          cursor: pointer;
+          outline: none;
+          color: #ff2f6e;
+        }
+
+        h3 {
+          display: inline-block;
+          position: absolute;
+          right: 0px;
+          left: 0px;
+          z-index: 1;
+          text-align: center;
+        }
+      }
+
+      div {
+        ul {
+          margin: 0 20px;
+          margin-top: 44px;
+
+          p {
+            margin-top: 35px;
+            font-size: 13px;
+            color: #76767d;
+          }
+
+          li {
+            cursor: pointer;
+            overflow-x: hidden;
+            padding: 14px 0;
+            width: 100%;
+            border-bottom: 1px solid;
+            border-color: rgba(234, 233, 232, 0.8);
+            display: flex;
+            align-items: center;
+            font-size: 15px
+          }
+        }
+      }
     }
   }
-  div {
-    ul {
-      margin: 0 20px;
-        margin-top: 44px;
-        p {
-          margin-top: 35px;
-          font-size: 13px;
-          color: #76767d;
-        }
-        li {
-          cursor:pointer;
-          overflow-x: hidden;
-          padding: 14px 0;
-          width: 100%;
-          border-bottom: 1px solid;
-          border-color: rgba(234, 233, 232, 0.8);
-          display: flex;
-          align-items: center;
-          font-size: 15px
-        }
-      }
-    }
-    }
-}
 
-.RatingBox {
-  width: 100%;
-  z-index: 1;
-  padding-top: 42px;
-  position: fixed;
-  background: $grayColor;
-  overflow-y: hidden;
-
-  div {
+  .MovieInfo {
+    display: block;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: rgba(0, 0, 0, 0.56);
     display: flex;
-    max-width: 640px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(227, 227, 227);
-    border-image: initial;
-    margin: 0px auto;
-    overflow: hidden;
-    flex-direction: column;
     justify-content: center;
-    background: white;
+    align-items: center;
 
-    .pick_count {
-      display: flex;
-      justify-content: center;
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: -0.9px;
-      line-height: 30px;
-      padding-top: 13px;
-      margin: 0px;
-    }
+    .movie_info_wrap {
+      width: 375px;
+      background: white;
+      border-radius: 5px;
+      padding: 0 20px;
 
-    p {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: rgb(120, 120, 120);
-      text-align: center;
-      font-size: 15px;
-      font-weight: 400;
-      letter-spacing: -0.5px;
-      line-height: 20px;
-      height: 40px;
-    }
+      .movie_info_header {
+        display: flex;
+        border-bottom: 1px solid rgb(240, 240, 240);
 
-    ul {
-      display: flex;
-      flex-direction: row;
+        .info_image {
+          position: relative;
+          width: 48px;
+          height: 68px;
+          box-sizing: border-box;
+          overflow: hidden;
+          background: rgb(248, 248, 248);
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgba(0, 0, 0, 0.08);
+          border-image: initial;
+          border-radius: 3px;
+          margin: 20px 14px 20px 0px;
 
-      .focus_list {
-        display: inline-flex;
-        -webkit-box-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        align-items: center;
-        color: rgb(255, 47, 110);
-        font-size: 15px;
-        font-weight: 500;
-        letter-spacing: -0.5px;
-        line-height: 20px;
-        box-sizing: border-box;
-        min-width: 48px;
-        height: 44px;
-        cursor: pointer;
-        border-bottom: 3px solid rgb(255, 47, 110);
-        flex: 1 1 0%;
-        background: rgb(255, 255, 255);
+          span {
+            display: inline-block;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            background-size: cover;
+            opacity: 1;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: all 300ms ease 0s;
+          }
+        }
+
+        .info_desc {
+          display: flex;
+          flex-direction: column;
+          //  align-items: center;
+          justify-content: center;
+
+          div {
+            font-size: 18px;
+            font-weight: 600;
+            padding: 5px 0;
+          }
+
+          span {
+            color: gray;
+            font-size: 15px;
+          }
+        }
       }
 
-      .normal_list {
-        display: inline-flex;
+      .movie_info_icon {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #f0f0f0;
+
+        div {
+          width: 50%;
+          line-height: 20px;
+          padding: 10px 0;
+          vertical-align: middle;
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+
+          &:first-of-type {
+            border-right: 1px solid #f0f0f0;
+          }
+
+          span {
+            font-size: 15px;
+            text-align: center;
+          }
+        }
+      }
+
+      .movie_info_btn {
+        div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          letter-spacing: -0.5px;
+          height: 60px;
+          vertical-align: middle;
+          width: 100%;
+          cursor: pointer;
+          border-bottom: 1px solid rgb(240, 240, 240);
+
+          span {
+            font-size: 15px;
+          }
+
+          img {
+            width: 32px;
+            height: 32px;
+            margin: 12px 0px;
+          }
+        }
+      }
+      .close_btn {
+        cursor:pointer;
+        text-align: center;
+        padding: 17px 0;
+        font-size: 14px;
+        font-weight: 500;
+        color:#ff2f62
+      }
+    }
+  }
+
+  .RatingBox {
+    width: 100%;
+    z-index: 1;
+    padding-top: 42px;
+    position: fixed;
+    background: $grayColor;
+    overflow-y: hidden;
+
+    div {
+      display: flex;
+      max-width: 640px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(227, 227, 227);
+      border-image: initial;
+      margin: 0px auto;
+      overflow: hidden;
+      flex-direction: column;
+      justify-content: center;
+      background: white;
+
+      .pick_count {
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: -0.9px;
+        line-height: 30px;
+        padding-top: 13px;
+        margin: 0px;
+      }
+
+      p {
+        display: flex;
         justify-content: center;
         align-items: center;
         color: rgb(120, 120, 120);
+        text-align: center;
         font-size: 15px;
         font-weight: 400;
         letter-spacing: -0.5px;
         line-height: 20px;
-        box-sizing: border-box;
-        min-width: 48px;
-        height: 44px;
-        cursor: pointer;
-        padding: 0px 0px 3px;
-        flex: 1 1 0%;
-        background: rgb(255, 255, 255);
+        height: 40px;
       }
-    }
 
-    div {
-      width: 100%;
-      height: 48px;
-      background: #fbfbfb;
-      border: none;
-      border-top: 1px solid #e3e3e3;
-
-      .categoray_selecter {
+      ul {
         display: flex;
-        align-items: flex-start;
-        height: 48px;
-        margin-left: 1rem;
-        background: rgb(251, 251, 251);
-        border-top: 1px solid rgb(227, 227, 227);
+        flex-direction: row;
 
-        button {
+        .focus_list {
+          display: inline-flex;
+          -webkit-box-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          align-items: center;
+          color: rgb(255, 47, 110);
+          font-size: 15px;
+          font-weight: 500;
+          letter-spacing: -0.5px;
+          line-height: 20px;
+          box-sizing: border-box;
+          min-width: 48px;
+          height: 44px;
           cursor: pointer;
-          background: none;
-          outline: none;
-          border: none;
-          padding: 0px;
-          margin: 0px;
+          border-bottom: 3px solid rgb(255, 47, 110);
+          flex: 1 1 0%;
+          background: rgb(255, 255, 255);
         }
 
-        .down_bar {
-          color: gray;
-        }
-
-        span {
-          color: rgb(0, 0, 0);
-          font-size: 14px;
+        .normal_list {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          color: rgb(120, 120, 120);
+          font-size: 15px;
           font-weight: 400;
           letter-spacing: -0.5px;
           line-height: 20px;
-          margin: 3px 0px 0px 2px;
+          box-sizing: border-box;
+          min-width: 48px;
+          height: 44px;
+          cursor: pointer;
+          padding: 0px 0px 3px;
+          flex: 1 1 0%;
+          background: rgb(255, 255, 255);
+        }
+      }
+
+      div {
+        width: 100%;
+        height: 48px;
+        background: #fbfbfb;
+        border: none;
+        border-top: 1px solid #e3e3e3;
+
+        .categoray_selecter {
+          display: flex;
+          align-items: flex-start;
+          height: 48px;
+          margin-left: 1rem;
+          background: rgb(251, 251, 251);
+          border-top: 1px solid rgb(227, 227, 227);
+
+          button {
+            cursor: pointer;
+            background: none;
+            outline: none;
+            border: none;
+            padding: 0px;
+            margin: 0px;
+          }
+
+          .down_bar {
+            color: gray;
+            padding: 0 5px;
+          }
+
+          span {
+            color: rgb(0, 0, 0);
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            line-height: 20px;
+            margin: 3px 0px 0px 2px;
+          }
         }
       }
     }
   }
-}
 
-.Items {
-  background: white;
-  max-width: 640px;
-  margin: 213px auto 40px;
-  border: 1px solid #e3e3e3;
+  .Items {
+    background: white;
+    max-width: 640px;
+    margin: 213px auto 40px;
+    border: 1px solid #e3e3e3;
 
-  .items_wrap {
+    .items_wrap {
 
-    margin: 0 20px;
+      margin: 0 20px;
+    }
   }
-}
 }

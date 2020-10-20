@@ -1,35 +1,56 @@
 @import "../../Styles/common.scss";
 
-
 .Item {
   display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    padding: 12px 0px;
-    border-bottom: 1px solid #ededed;
-    .poster {
-      img {
-        width: 76px;
-        height: 110px;
-        margin: 0px 16px 0px 0px;
+  align-items: center;
+  padding: 12px 0px;
+  border-bottom: 1px solid #ededed;
+  .poster {
+    img {
+      width: 76px;
+      height: 110px;
+      margin: 0px 16px 0px 0px;
+    }
+  }
+  .description {
+    flex: 1 1 0%;
+    h3 {
+      display: flex;
+      justify-content: space-between;
+      color: rgb(0, 0, 0);
+      font-size: 17px;
+      letter-spacing: -0.5px;
+      line-height: 22px;
+      font-weight: 400;
+      margin: 0px 0px 2px;
+      .threedot {
+        cursor: pointer;
       }
     }
-    .description {
-      flex: 1 1 0%;
-      h3 {
-        color: rgb(0, 0, 0);
-    font-size: 17px;
-    letter-spacing: -0.5px;
-    line-height: 22px;
-    font-weight: 400;
-    margin: 0px 0px 2px;
+    .dateleng {
+      margin: 0px 0px 14px;
+      color: #787878;
+      font-size: 14px;
+      letter-spacing: -0.3px;
+      line-height: 19px;
+      span {
+        display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0px 3px 0px 0px;
       }
-      .dateleng {
-        margin: 0px 0px 21px;
-        color: #787878;
-        font-size: 14px;
-        letter-spacing: -0.3px;
-        line-height: 19px;
+      .wished,.watching {
+        display: flex;
+        align-items: center;
+      }
+      .wished {
+        color: #ff2f6e
+      }
+      .watching {
+        color: #00a0ff
       }
     }
+  }
 }

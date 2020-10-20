@@ -1,79 +1,17 @@
 import React, { Component } from "react";
 import Item from "./Item";
+import { connect } from 'react-redux';
+import { actionCreators } from '../../store';
 
 class Items extends Component {
-  constructor() {
-    super();
-    this.state = {
-      MovieList: [
-        {
-          id: 0,
-          img:
-            "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_700,q_80,w_490/v1602653039/kjdvdyucvpq6mb9kpxbj.jpg",
-          name: "삼진그룹 영어 토익반",
-          date: 2020,
-          leng: "한국"
-        },
-        {
-          id: 0,
-          img:
-            "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_700,q_80,w_490/v1602653039/kjdvdyucvpq6mb9kpxbj.jpg",
-          name: "삼진그룹 영어 토익반",
-          date: 2020,
-          leng: "한국"
-        },
-        {
-          id: 0,
-          img:
-            "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_700,q_80,w_490/v1602653039/kjdvdyucvpq6mb9kpxbj.jpg",
-          name: "삼진그룹 영어 토익반",
-          date: 2020,
-          leng: "한국"
-        },
-        {
-          id: 0,
-          img:
-            "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_700,q_80,w_490/v1602653039/kjdvdyucvpq6mb9kpxbj.jpg",
-          name: "삼진그룹 영어 토익반",
-          date: 2020,
-          leng: "한국"
-        },
-        {
-          id: 0,
-          img:
-            "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_700,q_80,w_490/v1602653039/kjdvdyucvpq6mb9kpxbj.jpg",
-          name: "삼진그룹 영어 토익반",
-          date: 2020,
-          leng: "한국"
-        },
-        {
-          id: 0,
-          img:
-            "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_700,q_80,w_490/v1602653039/kjdvdyucvpq6mb9kpxbj.jpg",
-          name: "삼진그룹 영어 토익반",
-          date: 2020,
-          leng: "한국"
-        },
-        {
-          id: 0,
-          img:
-            "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_700,q_80,w_490/v1602653039/kjdvdyucvpq6mb9kpxbj.jpg",
-          name: "삼진그룹 영어 토익반",
-          date: 2020,
-          leng: "한국"
-        }
-      ]
-    };
-  }
-
-  render() {
+    render() {
     return (
       <section className="Items">
         <div>
           <div className="items_wrap">
             <ul>
-              {this.state.MovieList.map(movie => (
-                <Item {...movie} />
+              {this.props.movieList.map(movie => (
+                <Item key={movie.id} handleMovieInfo={this.props.handleMovieInfo} {...movie} />
               ))}
             </ul>
           </div>
@@ -83,4 +21,14 @@ class Items extends Component {
   }
 }
 
-export default Items;
+function mapStateToProps(state) {
+  return {movieList: state.movieList}  
+}
+
+// function mapDispatchToProps(dispatch) {
+//   return {
+    
+//   }
+// }
+
+export default connect(mapStateToProps)(Items);

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { CloseOutlined } from "@ant-design/icons";
-
+import {connect} from 'react-redux';
+import { actionCreators } from '../../store';
 
 class Category extends Component {
   constructor() {
@@ -116,12 +117,10 @@ class Category extends Component {
     window.removeEventListener('click', this.props.handleClickOutside)
   }
 
-  handleChangeSelected = (id) => {
-    this.state.categories.genre.map((category) => {
-      if(category.id === id) {
-        console.log(category.title)
-      }
-    })
+  
+  categoryClick = (category) => {
+    this.props.ChangeCategory(category);
+    this.props.handleModal();
   }
 
   render() {
@@ -136,13 +135,13 @@ class Category extends Component {
             <h3>영화</h3>
           </header>
           <div>
-            <ul>
+            <ul className="category_list">
               {/* {this.state.categories.event.map(category => (
                 <li>{category}</li>
               ))} */}
               <p>장르</p>
               {this.state.categories.genre.map(category => (
-                <li onClick={() => this.handleChangeSelected(category.id)}>{category.title}</li>
+                <li key={category.id} onClick={() => this.categoryClick(category)}>{category.title}</li>
               ))}
             </ul>
           </div>
@@ -152,4 +151,14 @@ class Category extends Component {
   }
 }
 
-export default Category;
+function mapStateToProps(state) {
+  return { CurrentCategory: state.category}  
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    ChangeCategory: (category) => dispatch(actionCreators.ChangeCategory(category))
+  }
+}
+
+export default connect(null,mapDispatchToProps)(Category);

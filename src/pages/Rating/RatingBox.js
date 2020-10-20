@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { CaretDownOutlined } from "@ant-design/icons";
+import { connect } from 'react-redux';
+import { actionCreators } from '../../store';
 
 class RatingBox extends Component {
+  
   render() {
     const { handleModal } = this.props;
     return (
@@ -18,7 +21,7 @@ class RatingBox extends Component {
             <div className="categoray_selecter" >
               <button onClick={handleModal}>
                 <CaretDownOutlined className="down_bar" />
-                <span>랜덤 영화</span>
+                 <span>{ this.props.currentCategory }</span>
               </button>
             </div>
           </div>
@@ -28,4 +31,9 @@ class RatingBox extends Component {
   }
 }
 
-export default RatingBox;
+function mapStateToProps(state) {
+  return {currentCategory: state.category.title}
+  
+}
+
+export default connect(mapStateToProps)(RatingBox);
