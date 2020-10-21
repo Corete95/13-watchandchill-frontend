@@ -37,92 +37,74 @@ const initialState = {
       {
         id:0,
         title:"모든 장르",
-        selected: true,
       },
       {
         id:1,
         title:"느와르",
-        selected: true,
       },
       {
         id:2,
         title: "슈퍼 히어로",
-        selected: false,
       },
       {
         id:3,
         title: "범죄",
-        selected: false,
       },
       {
         id:4,
         title: "드라마",
-        selected: false,
       },
       {
         id:5,
         title: "코미디",
-        selected: false,
       },
       {
         id:6,
         title: "로맨스/멜로",
-        selected: false,
       },
       {
         id:7,
         title: "스릴러",
-        selected: false,
       },
       {
         id:8,
         title: "로맨틱코미디",
-        selected: false,
       },
       {
         id:9,
         title: "전쟁",
-        selected: false,
       },
       {
         id:10,
         title: "가족",
-        selected: false,
       },
       {
         id:11,
         title: "판타지",
-        selected: false,
       },
       {
         id:12,
         title: "액션",
-        selected: false,
       },
       {
         id:13,
         title: "SF",
-        selected: false,
       },
       {
         id:14,
         title: "애니메이션",
-        selected: false,
       },
       {
         id:15,
         title: "다큐멘터리",
-        selected: false,
       },
       {
         id:16,
         title: "공포",
-        selected: false,
       },
       {
         id:17,
         title: "클래식",
-        selected: false,
       }
     ]
   },
@@ -223,7 +205,6 @@ const reducer = createReducer(initialState, {
     state.currentMovie = action.payload
   },
   [CommentValueChange] : (state, action) => {
-    console.log(state.commentValue)
     state.commentValue = action.payload
   },
   [RatingLength] : (state, action) => {

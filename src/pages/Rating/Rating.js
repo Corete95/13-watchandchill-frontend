@@ -19,7 +19,14 @@ class Rating extends Component {
       return {
       isModalOn: !prevState.isModalOn
       }
+    }, () =>  {
+      if(this.state.isModalOn) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'unset';
+      }
     })
+
   }
   handleMovieInfo = () => {
     this.setState((prevState) => {
@@ -28,10 +35,8 @@ class Rating extends Component {
       }
     })
   }
-  modalEl = createRef();
-
   handleClickOutside = ({target}) =>  {
-    if(!this.modalEl.current.contains((target)) && target.className==="Category") {
+    if(target.className==="Category") {
       this.handleModal()
     }
   }
@@ -44,7 +49,6 @@ class Rating extends Component {
       <section className="Rating">
         <div className="rating_wrap">
           {isModalOn && <Category 
-          modalEl={this.modalEl} 
           isModalOn={isModalOn} 
           handleModal={handleModal} 
           handleClickOutside={handleClickOutside}

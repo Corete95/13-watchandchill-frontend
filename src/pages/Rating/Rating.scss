@@ -10,7 +10,7 @@
 
 .rating_wrap {
   width: 100%;
-
+}
   .Category {
     display: flex;
     justify-content: center;
@@ -350,7 +350,7 @@
       ul {
         display: flex;
         flex-direction: row;
-
+        padding: 0 20px;
         .focus_list {
           display: inline-flex;
           -webkit-box-pack: center;
@@ -396,7 +396,6 @@
         background: #fbfbfb;
         border: none;
         border-top: 1px solid #e3e3e3;
-
         .categoray_selecter {
           display: flex;
           align-items: flex-start;
@@ -404,7 +403,6 @@
           margin-left: 1rem;
           background: rgb(251, 251, 251);
           border-top: 1px solid rgb(227, 227, 227);
-
           button {
             cursor: pointer;
             background: none;
@@ -443,4 +441,58 @@
       margin: 0 20px;
     }
   }
-}
+
+  .Item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0px;
+    border-bottom: 1px solid #ededed;
+    .poster {
+      img {
+        width: 76px;
+        height: 110px;
+        margin: 0px 16px 0px 0px;
+      }
+    }
+    .description {
+      flex: 1 1 0%;
+      h3 {
+        display: flex;
+        justify-content: space-between;
+        color: rgb(0, 0, 0);
+        font-size: 17px;
+        letter-spacing: -0.5px;
+        line-height: 22px;
+        font-weight: 400;
+        margin: 0px 0px 2px;
+        .threedot {
+          cursor: pointer;
+        }
+      }
+      .dateleng {
+        margin: 0px 0px 14px;
+        color: #787878;
+        font-size: 14px;
+        letter-spacing: -0.3px;
+        line-height: 19px;
+        span {
+          display: inline-block;
+      width: 13px;
+      height: 13px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: 0px 3px 0px 0px;
+        }
+        .wished,.watching {
+          display: flex;
+          align-items: center;
+        }
+        .wished {
+          color: #ff2f6e
+        }
+        .watching {
+          color: #00a0ff
+        }
+      }
+    }
+  }

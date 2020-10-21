@@ -18,10 +18,10 @@ class Category extends Component {
   }
 
   render() {
-    const { modalEl, handleModal, categories } = this.props;
+    const { handleModal, categories } = this.props;
     return (
       <div className="Category">
-        <div ref={modalEl}>
+        <div>
           <header>
             <CloseOutlined
               onClick={handleModal}

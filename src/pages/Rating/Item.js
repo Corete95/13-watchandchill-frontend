@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { MoreOutlined } from "@ant-design/icons";
-import "./Item.scss";
+import "./Rating.scss";
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import { actionCreators } from '../../store';
 import RatingStar from './Components/RatingStar';
