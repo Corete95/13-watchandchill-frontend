@@ -8,10 +8,16 @@ nav {
   position: fiexd;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin: auto 0;
   border-bottom: 1px solid #ebebeb;
-  padding: 5px 0px;
+}
+
+.navbar_box {
+  width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
 }
 
 .navbar_left {
@@ -21,7 +27,6 @@ nav {
 .navbar_logo {
   width: 151px;
   margin-right: 20px;
-  margin-left: 38px;
 }
 
 .navbar_movie {
@@ -32,7 +37,6 @@ nav {
 
 .navbar_right {
   display: flex;
-  margin-right: 38px;
 }
 
 input {
@@ -60,10 +64,6 @@ input {
   margin: auto 0;
   margin-right: 30px;
   color: #74747a;
-}
-
-.navbar_profile {
-  width: 30px;
 }
 
 .user_profile {
