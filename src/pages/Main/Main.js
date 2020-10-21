@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import "./Main.scss";
 import Login from "../../components/Nav/Login";
 import Signup from "../../components/Nav/Signup";
+
 class Main extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       loginModalOpen: false,
       signupModalOpen: false
@@ -32,7 +33,7 @@ class Main extends Component {
     const { loginOpen, loginClose, signupOpen, signupClose } = this;
     return (
       <>
-        <button onClick={loginOpen}>Check</button>
+        <button onClick={loginOpen}>login</button>
         <button onClick={signupOpen}>signup</button>
 
         <Login open={loginModalOpen} close={loginClose} />
