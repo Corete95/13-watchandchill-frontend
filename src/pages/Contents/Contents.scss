@@ -2,18 +2,39 @@
 
 section {
   width: 100%;
+  height: 500px;
+  border-bottom: 1px solid rgba($color: gray, $alpha: 0.2);
 
-  .main_image {
+  .header_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
     height: 266px;
-    background-image: url("https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_720,q_80,w_1280/v1463551411/mqsgvr-14521.jpg");
+    width: 100%;
+  }
+  @mixin darkBox {
+    background-color: black;
+    width: 100%;
+    height: 266px;
+  }
+  .dark_box {
+    
+  }
+  .main_image {
+    position: absolute;
+    top: 0px;
+    height: 266px;
+    width: 100%;
+    background-image: linear-gradient(90deg, transparent 40%, black 100%),
+      url("https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_720,q_80,w_1280/v1463551411/mqsgvr-14521.jpg");
     background-position: center;
-    background-size: 60%;
     background-repeat: no-repeat;
+    background-size: 60%;
   }
 
   .movie_title_section {
-    display: flex;
-    border-bottom: 1px solid rgba($color: gray, $alpha: 0.2);
+    position: relative;
 
     img {
       width: 162px;
@@ -21,44 +42,134 @@ section {
       border: 1px solid rgba($color: gray, $alpha: 0.2);
       border-radius: 4px;
       margin-left: 160px;
+      position: absolute;
+      top: -25px;
     }
     .movie_title_section-desc {
+      position: absolute;
+      left: 350px;
+      right: 160px;
       height: 236px;
-      padding: 17px 0 20px 20px;
+      padding: 17px 0 0 0;
       h1 {
         font-size: 33px;
-        padding-bottom: 17px;
       }
-      span {
-        color: black;
-      }
-      //   span {
-      //     font-size: 17px;
-      //     &:nth-child(1) {
-      //       color: red;
-      //       opacity: 0.5;
-      //       padding-bottom: 17px;
-      //     }
-      //   }
-      span:nth-child(2) {
-        color: red;
-      }
-
-      hr {
-        background-color: #eee;
-        border: 0 none;
-        color: #eee;
-        height: 1px;
-      }
-      button {
-        width: 254px;
-        height: 40px;
+      div:nth-child(2) {
         font-size: 17px;
-        color: white;
-        background-color: $themeColor;
-        border: none;
-        border-radius: 6px;
+        color: rgba($color: gray, $alpha: 0.8);
+        margin-top: 10px;
+      }
+      div:nth-child(3) {
+        font-size: 17px;
+        margin: 17px 0;
+        padding: 10px 0;
+        border-top: 1px solid rgba($color: gray, $alpha: 0.2);
+        border-bottom: 1px solid rgba($color: gray, $alpha: 0.2);
+        span:nth-child(1) {
+          color: $themeColor;
+        }
+      }
+      .rating {
+        font-size: 12px;
+        opacity: 0.5;
       }
     }
+    @mixin buttonStyle {
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      color: white;
+      background-color: $themeColor;
+      margin: 20px 0 10px 0;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .btn_add {
+      @include buttonStyle;
+      border-bottom-left-radius: 6px;
+      border-top-left-radius: 6px;
+      width: 203px;
+      height: 40px;
+      &:hover {
+        .plus_icon {
+          -webkit-transform: rotateZ(90deg);
+          -moz-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+        }
+      }
+    }
+    .plus_icon {
+      -webkit-transition: 0.2s ease-in-out;
+      -moz-transition: 0.2s ease-in-out;
+      transition: 0.2s ease-in-out;
+    }
+
+    .btn_dropdown {
+      @include buttonStyle;
+      width: 51px;
+      height: 40px;
+      border-bottom-right-radius: 6px;
+      border-top-right-radius: 6px;
+      border-left: 1px solid rgb(231, 18, 82);
+    }
+  }
+}
+article {
+  background-color: $grayColor;
+  display: flex;
+  flex-direction: row;
+  main {
+    background-color: #ffffff;
+    width: 640px;
+    height: 100vw;
+    border: 1px solid rgba($color: gray, $alpha: 0.2);
+    border-radius: 5px;
+    margin: 30px 20px 50px auto;
+    div:not(:last-child) {
+      padding: 20px 0 0;
+      border-bottom: 1px solid rgba($color: gray, $alpha: 0.2);
+    }
+    &:nth-child(1) {
+      height: 134px;
+    }
+    &:nth-child(2) {
+      height: 237px;
+    }
+    &:nth-child(3) {
+      height: 301px;
+    }
+    &:nth-child(4) {
+      height: 255px;
+    }
+    &:nth-child(5) {
+      height: 396px;
+    }
+    &:nth-child(6) {
+      height: 347px;
+    }
+    &:nth-child(7) {
+      height: 964px;
+    }
+    .similar_movies {
+      button {
+        border: 1px solid rgba($color: gray, $alpha: 0.2);
+        background-color: #ffffff;
+        width: 600px;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+  aside {
+    background-color: #ffffff;
+    width: 320px;
+    height: 456px;
+    border: 1px solid rgba($color: gray, $alpha: 0.2);
+    border-radius: 5px;
+    margin: 30px auto 0 0;
   }
 }
