@@ -218,20 +218,93 @@
           }
         }
       }
+
       .close_btn {
-        cursor:pointer;
+        cursor: pointer;
         text-align: center;
         padding: 17px 0;
         font-size: 14px;
         font-weight: 500;
-        color:#ff2f62
+        color: #ff2f62
+      }
+    }
+  }
+
+  .CommentWrite {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 10;
+    width: 640px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: white;
+    .comment_write_header {
+      border-bottom: 1px solid rgb(227, 227, 227);
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding: 14px 20px;
+
+      .close_btn {
+        cursor: pointer;
+        z-index: 2;
+        border: none;
+        outline: none;
+        color: rgb(255, 47, 110);
+      }
+
+      .movie_title {
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        font-weight: 800;
+      }
+      .comment_btn {
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: 17px;
+        font-weight: 400;
+        color: rgb(255, 47, 110);
+        &[disabled] {
+          cursor: default;
+          color: #d3d3d3;
+          
+        }
+      }
+    }
+
+    .comment_write_desc {
+      padding: 0 20px;
+      padding-top: 30px;
+      width: 100%;
+      
+      textarea {
+        height: auto;
+        min-height: 460px;
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: -0.7px;
+        line-height: 26px;
+        width: 100%;
+        resize: none;
+        border: none;
+        outline: none;
+        overflow: auto;
+        &::placeholder {
+          color: #a0a0a0;
+        }
       }
     }
   }
 
   .RatingBox {
     width: 100%;
-    z-index: 1;
+    z-index: 5;
     padding-top: 42px;
     position: fixed;
     background: $grayColor;

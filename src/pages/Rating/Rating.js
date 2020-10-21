@@ -2,8 +2,8 @@ import React, { Component, createRef } from "react";
 import "./Rating.scss";
 import RatingBox from "./RatingBox";
 import Items from "./Items";
-import Category from "./Category";
-import MovieInfo from "./MovieInfo";
+import Category from "./Components/Category";
+import MovieInfo from "./Components/MovieInfo";
 import { connect } from 'react-redux';
 
 class Rating extends Component {
@@ -15,7 +15,6 @@ class Rating extends Component {
   }
 
   handleModal = () => {
-    console.log('Modal',this.state.isModalOn)
     this.setState((prevState) => {
       return {
       isModalOn: !prevState.isModalOn
@@ -32,7 +31,6 @@ class Rating extends Component {
   modalEl = createRef();
 
   handleClickOutside = ({target}) =>  {
-    console.log(target.innerText)
     if(!this.modalEl.current.contains((target)) && target.className==="Category") {
       this.handleModal()
     }
@@ -63,7 +61,9 @@ class Rating extends Component {
 }
 
 function mapStateToProps(state) {
-  return {isMovieInfo: state.isMovieInfo}
+  return {
+    isMovieInfo: state.isMovieInfo
+  }
 }
 
 export default connect(mapStateToProps)(Rating);

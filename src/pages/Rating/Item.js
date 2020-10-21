@@ -3,28 +3,48 @@ import { MoreOutlined } from "@ant-design/icons";
 import "./Item.scss";
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
 import { actionCreators } from '../../store';
-import ReactStars from 'react-stars';
+import RatingStar from './Components/RatingStar';
 import { connect } from 'react-redux';
+import { pinkFlag, blueEye } from './Components/Datas';
 
 class Item extends Component {
 
   movieInfoInq = () => {
+    const { CurrentMovie, ChangeMovieInfo, handleMovieInfo } = this.props;
     const { id, name, img, date, leng, genre, rating, status } = this.props;
-    this.props.CurrentMovie({ id, name, img, date, genre, rating, status, leng })
-    this.props.ChangeMovieInfo(true)
-    this.props.handleMovieInfo()
+    CurrentMovie({ id, name, img, date, genre, rating, status, leng })
+    ChangeMovieInfo(true)
+    handleMovieInfo()
   }
 
-  ratingChanged = (newRating) => {
-    console.log(newRating)
-  }
+  isStatus = (status) => {
+    const { date, leng } = this.props;
+    switch(status) {
+      case 'wished' : {
+        return (<div className="/">
+        <span style={{backgroundImage: `url(${pinkFlag})`}}></span>
+        보고싶어요
+      </div>)
+      }
+      case 'watching' : {
+        return (<div className="watching">
+        <span style={{backgroundImage: `url(${blueEye}) `}}></span>
+        보는중
+      </div>)
+      }
+      case null : {
+        return `${date} ・ ${leng}`
+      }
+    }
+     }
 
   render() {
-    const { name, img, date, rating, status, leng } = this.props;
+    const { name, img, rating, status } = this.props;
     return (
       <li className="Item">
         <div className="poster">
           <img src={img} alt="" />
+          {/* link태그로 해당 영화 상세페이로 이동시키기 */}
         </div>
         <div className="description">
           <h3>{name}
@@ -33,32 +53,12 @@ class Item extends Component {
           </div>
           </h3>
           <div className="dateleng">
-            {status === 'wished' && 
-            <div className="wished">
-              <span style={{backgroundImage: `url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iI0ZGMkY2RSI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik01LjgzNCAyNi4xOTFjMCAuNzg4LjY0NiAxLjMzNiAxLjMzOCAxLjMzNi4yNiAwIC41MjctLjA3OC43NjgtLjI1TDE2IDIxLjUzOGw4LjA2IDUuNzRjLjI0Mi4xNzEuNTA4LjI1Ljc2OS4yNS42OTIgMCAxLjMzOC0uNTQ5IDEuMzM4LTEuMzM3VjguNjNhLjUuNSAwIDAgMC0uNS0uNUg2LjMzNGEuNS41IDAgMCAwLS41LjV2MTcuNTYyek0yNi4xNjcgNC4yOTRjMC0uNzM2LS41OTctMS4zMzMtMS4zMzMtMS4zMzNINy4xNjdjLS43MzYgMC0xLjMzMy41OTYtMS4zMzMgMS4zMzNWNi4xM2EuNS41IDAgMCAwIC41LjVoMTkuMzMzYS41LjUgMCAwIDAgLjUtLjVWNC4yOTR6Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K')`}}></span>
-              보고싶어요
-            </div>
-              }
-            {status === 'watching' && 
-            <div className="watching">
-              <span style={{backgroundImage: `url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDMyIDMyIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iIzAwQTBGRiI+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNiAxMi43NUEzLjI1NCAzLjI1NCAwIDAgMCAxMi43NSAxNmEuNzUuNzUgMCAwIDEtMS41IDBBNC43NTYgNC43NTYgMCAwIDEgMTYgMTEuMjVhLjc1Ljc1IDAgMCAxIDAgMS41bTAtMi42NjdBNS45MjQgNS45MjQgMCAwIDAgMTAuMDgzIDE2IDUuOTI0IDUuOTI0IDAgMCAwIDE2IDIxLjkxNyA1LjkyNCA1LjkyNCAwIDAgMCAyMS45MTYgMTYgNS45MjQgNS45MjQgMCAwIDAgMTYgMTAuMDgzIi8+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik0xNiAyMy40MTZjLTQuMDkgMC03LjQxNy0zLjMyNy03LjQxNy03LjQxNyAwLTQuMDg5IDMuMzI3LTcuNDE2IDcuNDE3LTcuNDE2UzIzLjQxNiAxMS45MSAyMy40MTYgMTZjMCA0LjA5LTMuMzI3IDcuNDE3LTcuNDE2IDcuNDE3bTE1LjA2LTguNjU0QzI4LjM0IDguOTg0IDIyLjYyMSA1IDE2IDUgOS4zNzggNSAzLjY2MSA4Ljk4NC45NCAxNC43NjJhMi45MzQgMi45MzQgMCAwIDAgMCAyLjQ3NUMzLjY2MSAyMy4wMTUgOS4zNzggMjcgMTYgMjdjNi42MjEgMCAxMi4zNC0zLjk4NCAxNS4wNi05Ljc2MmEyLjkzNCAyLjkzNCAwIDAgMCAwLTIuNDc1Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K') `}}></span>
-              보는중
-            </div>
-            }
-            {status === null && `${date} ・ ${leng}`}
+           {this.isStatus(status)}
           </div>
           <div className="star">
-          <ReactStars
-            count={5}
-            value={rating}
-            onChange={this.ratingChanged}
-            size={45}
-            color1={'#eeeeee'}
-            color2={'#ffdd63'}
-          />
+            <RatingStar rating={rating} />
           </div>
         </div>
-        {/* link */}
       </li>
     );
   }

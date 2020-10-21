@@ -5,16 +5,126 @@ import { createAction, configureStore, createReducer } from '@reduxjs/toolkit';
 const ChangeCategory = createAction('CHANGE_CATEGORY')
 const CurrentMovie = createAction('CURRENT_MOVIE')
 const ChangeMovieInfo = createAction('CHANGE_MOVIE_INFO')
+const RatingLength = createAction('RATING_LENGTH')
+const ChangeCommentWrite = createAction('CHANGE_COMMENT_WRITE')
+const CommentValueChange = createAction('COMMENT_VALUE_CHANGE')
 
 const initialState = {
   category: {
     id:0,
-    title:"느와르",
+    title:"모든 장르",
     selected: true,
   },
   isMovieInfo : false,
+  isCommentWrite : false,
+  commentValue : '',
+  ratingLength: 0,
   currentMovie: {
 
+  },
+  categories: {
+    event: [
+      "랜덤 영화",
+      "역대 100만 관객 돌파 영화",
+      "왓챠 평균별점 TOP 영화",
+      "전세계 흥행 TOP 영화",
+      "국내 누적관객수 TOP 영화",
+      "전문가 고평점 영화",
+      "저예산 독립 영화",
+      "스포츠 영화"
+    ],
+    genre: [
+      {
+        id:0,
+        title:"모든 장르",
+        selected: true,
+      },
+      {
+        id:1,
+        title:"느와르",
+        selected: true,
+      },
+      {
+        id:2,
+        title: "슈퍼 히어로",
+        selected: false,
+      },
+      {
+        id:3,
+        title: "범죄",
+        selected: false,
+      },
+      {
+        id:4,
+        title: "드라마",
+        selected: false,
+      },
+      {
+        id:5,
+        title: "코미디",
+        selected: false,
+      },
+      {
+        id:6,
+        title: "로맨스/멜로",
+        selected: false,
+      },
+      {
+        id:7,
+        title: "스릴러",
+        selected: false,
+      },
+      {
+        id:8,
+        title: "로맨틱코미디",
+        selected: false,
+      },
+      {
+        id:9,
+        title: "전쟁",
+        selected: false,
+      },
+      {
+        id:10,
+        title: "가족",
+        selected: false,
+      },
+      {
+        id:11,
+        title: "판타지",
+        selected: false,
+      },
+      {
+        id:12,
+        title: "액션",
+        selected: false,
+      },
+      {
+        id:13,
+        title: "SF",
+        selected: false,
+      },
+      {
+        id:14,
+        title: "애니메이션",
+        selected: false,
+      },
+      {
+        id:15,
+        title: "다큐멘터리",
+        selected: false,
+      },
+      {
+        id:16,
+        title: "공포",
+        selected: false,
+      },
+      {
+        id:17,
+        title: "클래식",
+        selected: false,
+      }
+    ]
   },
   movieList: [
     {
@@ -24,7 +134,7 @@ const initialState = {
       name: "삼진그룹 영어 토익반",
       date: 2020,
       genre: "드라마",
-      rating: 0,
+      rating: 3,
       status: 'wished',
       leng: "한국"
     },
@@ -35,7 +145,7 @@ const initialState = {
       name: "미스터트롯: 더 무비",
       date: 2020,
       genre: "다큐멘터리",
-      rating: 0,
+      rating: 3,
       status: 'watching',
       leng: "한국"
     },
@@ -90,12 +200,14 @@ const initialState = {
       name: "에브리타임 아이 다이",
       date: 2019,
       genre: "스릴러",
-      rating: 0,
+      rating: 3,
       status: null,
       leng: "미국"
     }
   ]
 }
+
+
 
 const reducer = createReducer(initialState, {
   [ChangeCategory] : (state, action) => {
@@ -104,8 +216,18 @@ const reducer = createReducer(initialState, {
   [ChangeMovieInfo] : (state, action) => {
     state.isMovieInfo = action.payload
   },
+  [ChangeCommentWrite] : (state, action) => {
+    state.isCommentWrite = action.payload
+  },
   [CurrentMovie] : (state, action) => {
     state.currentMovie = action.payload
+  },
+  [CommentValueChange] : (state, action) => {
+    console.log(state.commentValue)
+    state.commentValue = action.payload
+  },
+  [RatingLength] : (state, action) => {
+    state.ratingLength = action.payload
   }
 })
 
@@ -113,7 +235,10 @@ const reducer = createReducer(initialState, {
 export const actionCreators = {
   ChangeCategory,
   ChangeMovieInfo,
-  CurrentMovie
+  ChangeCommentWrite,
+  CurrentMovie,
+  RatingLength,
+  CommentValueChange
 }
 
 const store = configureStore({
