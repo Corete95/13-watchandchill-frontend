@@ -1,1 +1,53 @@
 @import "../Styles/common.scss";
+
+* {
+  list-style: none;
+}
+
+.user_data {
+  width: 100%;
+  height: 62px;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+}
+
+.footer {
+  width: 100%;
+  height: 163px;
+  padding-top: 20px;
+  background-color: #1c1e20;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.footer_box {
+  font-size: 13px;
+  width: 1203px;
+  height: 163px;
+  margin: 0 auto;
+}
+
+.policy_list {
+  display: flex;
+}
+
+.cs_list {
+  display: flex;
+}
+
+.company_number {
+  display: flex;
+}
+
+.company_info {
+  display: flex;
+}
+
+.company_info_list {
+  display: flex;
+}
+
+.company_logo {
+  display: flex;
+}
