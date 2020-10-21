@@ -3,15 +3,21 @@ import "./Contents.scss";
 import { CaretDownOutlined, PlusOutlined } from "@ant-design/icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { pinkFlag } from "./ActorProfile/data";
 
 class Contents extends Component {
+  constructor() {
+    super();
+    this.state = {
+      clicked: false
+    };
+  }
   render() {
     return (
       <>
         <section>
           <div className="header_box">
-            <div className="dark_box-left"></div>
-            <div className="dark_box-right"></div>
+            <div className="dark_box"></div>
             <div className="main_image"></div>
           </div>
 
@@ -28,32 +34,47 @@ class Contents extends Component {
                 <span>예상 ★3.6 </span>
                 <span>· 평균 ★4.4(43만명)</span>
               </div>
-              <div className="buttons">
-                <button className="btn_add">
-                  <FontAwesomeIcon icon={faPlus} className="plus_icon" />
-                  &nbsp;&nbsp;보고싶어요
-                </button>
-                <button className="btn_dropdown">
-                  <CaretDownOutlined />
-                </button>
-              </div>
+              <button
+                onClick={() => {
+                  this.setState({ clicked: true });
+                }}
+                className={
+                  this.state.clicked ? "addBtn-clicked" : "addBtn-not_clicked"
+                }
+              >
+                <FontAwesomeIcon icon={faPlus} className="plus_icon" />
+                &nbsp;&nbsp;보고싶어요
+                {/* <img src={pinkFlag}></img> */}
+              </button>
+              <button
+                className={
+                  this.state.clicked
+                    ? "dropdownBtn-clicked"
+                    : "dropdownBtn-not_clicked"
+                }
+              >
+                <CaretDownOutlined />
+              </button>
+
               {/* <span className="rating">평가하기</span> */}
             </div>
           </div>
         </section>
         <article>
-          <main>
-            <div className="my_rating">ddf</div>
-            <div className="information"></div>
-            <div className="actors"></div>
-            <div className="graph"></div>
-            <div className="comments"></div>
-            <div className="collection"></div>
-            <div className="similar_movies">
-              <button>더보기</button>
-            </div>
-          </main>
-          <aside></aside>
+          <div>
+            {this.state.clicked && (
+              <div className="comment_box">
+                <span>김지안 님의 생각을 글로 적어보세요.</span>
+                <button
+                  onClick={() => {
+                    this.setState({ clicked: true });
+                  }}
+                >
+                  {this.state.added && "코멘트 남기기"}
+                </button>
+              </div>
+            )}
+          </div>
         </article>
       </>
     );
