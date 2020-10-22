@@ -8,9 +8,7 @@ import Route from "./Route";
 
 ReactDOM.render(
   <>
-    <Nav />
     <Route />
-    <Footer />
   </>,
   document.getElementById("root")
 );
