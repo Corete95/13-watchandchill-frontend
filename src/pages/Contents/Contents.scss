@@ -33,7 +33,7 @@ section {
   .movie_title_section {
     position: relative;
 
-    img {
+    .movie_title_section-poster {
       width: 170px;
       height: 240px;
       border: 1px solid rgba($color: gray, $alpha: 0.2);
@@ -62,9 +62,6 @@ section {
         padding: 10px 0;
         border-top: 1px solid rgba($color: gray, $alpha: 0.2);
         border-bottom: 1px solid rgba($color: gray, $alpha: 0.2);
-        span:nth-child(1) {
-          color: $themeColor;
-        }
       }
       .rating {
         font-size: 12px;
@@ -79,7 +76,6 @@ section {
       border-bottom-left-radius: 6px;
       font-size: 17px;
       font-weight: 600;
-      margin-top: 10px;
       &:focus {
         outline: none;
       }
@@ -103,6 +99,9 @@ section {
     -moz-transition: 0.2s ease-in-out;
     transition: 0.2s ease-in-out;
   }
+  .pinkFlag {
+    width: 15px;
+  }
   .addBtn-clicked {
     width: 205px;
     height: 40px;
@@ -118,7 +117,6 @@ section {
 
   .dropdownBtn-not_clicked {
     margin-top: 22px;
-
     width: 50px;
     height: 40px;
     color: white;
@@ -133,7 +131,6 @@ section {
   }
   .dropdownBtn-clicked {
     margin-top: 22px;
-
     width: 50px;
     height: 40px;
     border: none;
@@ -189,7 +186,12 @@ main {
       background-color: #ffffff;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
+      div {
+        display: flex;
+        border: 1px solid rgba($color: gray, $alpha: 0.2);
+      }
       button {
         width: 600px;
         height: 33px;
