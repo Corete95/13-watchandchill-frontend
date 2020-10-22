@@ -15,6 +15,16 @@ class Login extends Component {
     };
   }
 
+  handeEmail = event => {
+    this.setState({ email: event.target.value });
+    console.log(event.target.value);
+  };
+
+  handePw = event => {
+    this.setState({ passWord: event.target.value });
+    console.log(event.target.value);
+  };
+
   signupOpen = () => {
     this.setState({ signupModalOpen: true });
   };
@@ -31,26 +41,37 @@ class Login extends Component {
     this.setState({ passWordModal: false });
   };
 
-  asdasddsa = () => {};
+  loginClose = ({ target }) => {
+    if (target.className === "login_outline") {
+      this.props.close();
+    }
+  };
+
+  signupMove = () => {
+    this.props.close();
+    this.signupOpen();
+  };
 
   render() {
     const responseFacebook = response => {};
     return (
       <>
         {this.props.open ? (
-          <div className="login_modal">
-            <div>
+          <div className="login_modal" onClick={this.loginClose}>
+            <div className="login_outline">
               <div className="login_box">
                 <div className="modal_contents">
                   <img className="login_logo" src="watcha.png" />
                   <h2>로그인</h2>
                   <div className="login_input">
                     <input
+                      onChange={this.handeEmail}
                       className="login_id"
                       type="email"
                       placeholder="이메일"
                     />
                     <input
+                      onChange={this.handePw}
                       className="login_pw"
                       type="password"
                       placeholder="비밀번호"
@@ -66,7 +87,7 @@ class Login extends Component {
                   </div>
                   <div className="signup">
                     계정이 없으신가요?
-                    <button onClick={this.signupOpen}>회원가입</button>
+                    <button onClick={this.signupMove}>회원가입</button>
                   </div>
                   <hr className="or"></hr>
                   <FacebookLogin
