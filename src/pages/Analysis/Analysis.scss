@@ -4,10 +4,21 @@ section {
   background-color: #f8f8f8;
 
   .full_container {
+
+    @mixin infoTitle {
+      margin: 8px 0;
+      color: #000;
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+
     .analysis_wrap {
       padding: 20px 0;
       max-width: 640px;
       margin: 0 auto;
+
       .Header {
         border: 1px solid #e3e3e3;
         border-radius: 6px;
@@ -79,11 +90,15 @@ section {
           }
         }
       }
+
       .RatingStar {
         border: 1px solid #e3e3e3;
         border-radius: 6px;
-        background-color:white;
+        background-color: white;
         margin: 12px 0 0;
+
+
+
         .rating_star_inner {
           margin: 0 20px;
           padding: 10px 0;
@@ -91,37 +106,208 @@ section {
           align-items: center;
           justify-content: center;
           flex-direction: column;
+
           .rating_length {
             padding-bottom: 10px;
             border-bottom: 1px solid #e3e3e3;
             width: 100%;
             text-align: center;
-          > h2 {
-            margin: 8px 0;
-            color: #000;
-            font-size: 19px;
-            font-weight: 600;
-            margin-bottom: 15px;
-          }
-          > div {
-              > h2 {
+
+            >h2 {
+              text-align:left;
+              @include infoTitle;
+            }
+
+            >div {
+              >h2 {
                 font-size: 60px;
                 margin-bottom: 6px;
               }
-              > p {             
+
+              >p {
                 font-size: 13px;
                 color: #787878;
               }
+            }
           }
-        }
-        .rating_distribution {
-          width: 100%;
-          padding: 10px 0;
-          h2 {
 
+          .rating_distribution {
+            width: 100%;
+            padding: 10px 0;
+
+            h2 {
+              @include infoTitle
+            }
           }
         }
       }
+
+      .MovieInfo {
+        border: 1px solid #e3e3e3;
+        border-radius: 6px;
+        background-color: white;
+        margin: 12px 0 0;
+
+        .movie_info_inner {
+          margin: 0 20px;
+          padding: 10px 0;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+
+
+          .movie_like_tag,
+          .like_supervisor,
+          .like_country,
+          .like_genre {
+            border-bottom: 1px solid #e3e3e3;
+            border-radius: 6px;
+            background-color: white;
+            margin: 8px 0;
+            span {
+              display: flex;
+              justify-content: center;
+              font-size: 12.5px;
+              color: #ff2f6e;
+            }
+          }
+
+          .movie_like_tag,
+          .like_supervisor,
+          .like_country,
+          .like_genre,
+          .movie_watching_time {
+            h2 {
+              margin: 8px 0;
+              color: #000;
+              font-size: 19px;
+              font-weight: 600;
+              margin-bottom: 15px;
+            }
+          }
+
+          .movie_like_tag {}
+
+          .like_supervisor {
+            overflow:hidden;
+            .evev {
+              position: relative;
+            }
+            ul {
+              display: flex;
+              position: relative;
+              left: -598px;
+              flex-flow: column wrap;
+              height: 230px;
+              transition: left .5s;
+              li {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                padding-bottom: 15px;
+                &:nth-of-type(3n) {
+                  .supervisor_info  {
+                    border: none;
+                  }
+                }
+                img {
+                  width: 55px;
+                  border-radius: 50%;
+                }
+                .supervisor_info {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  width: 100%;
+                  height: 100%;
+                  padding: 10px;
+                  border-bottom: 1px solid #e3e3e3;
+                
+                  div {        
+                    display: flex;
+                    justify-content: space-between;           
+                    span {
+                      font-size: 17px;
+                      &:last-of-type {
+                        color: gray;
+                        font-size: 14px;
+                      }
+                    }
+                  }
+                  p {
+                    font-size: 14px;
+                    color: gray;
+                    padding: 5px 0;
+                  }
+                }
+              }
+            }
+            .right_bar {
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              top: 0;
+              right: 0;
+              height: 100%;
+              div {
+                cursor: pointer;
+              }
+            }
+          }
+         
+          .like_country,
+          .like_genre {
+            padding-bottom: 20px;
+            div:first-of-type {
+              display: flex;
+              justify-content: center;
+              div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin: 15px;
+                h3 {
+                  padding: 8px;
+                }
+                p {
+                  font-size: 12px;
+                  color: gray;
+                }
+              }
+            }
+            div {
+              display: flex;
+              justify-content: space-between;
+              padding: 8px 0;
+              span {
+                color: gray;
+                font-size: 13px;
+              }
+              p {
+                color: gray;
+                font-size: 12px;
+              }
+            }
+          }
+         
+          .movie_watching_time {
+            div {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              color: #ff2f6e;
+              span {
+                font-weight: 600;
+              }
+              p {
+                font-size: 13px;
+                padding: 10px;
+              }
+            }
+          }
+        }
       }
     }
   }

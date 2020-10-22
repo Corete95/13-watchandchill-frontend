@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export class Header extends Component {
   render() {
+    const { nickname } = this.props;
     return (
       <div className="Header">
               <div className="analysis_header_inner">
@@ -13,7 +14,7 @@ export class Header extends Component {
                   <div className="user_wrap">
                     <div className="user_profile"></div>
                   </div>
-                  <div className="nickname">닉네임</div>
+                  <div className="nickname">{nickname}</div>
                 </h1>
               </div>
             </div>
