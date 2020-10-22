@@ -37,7 +37,7 @@ class Contents extends Component {
               <div className="buttons">
                 <button
                   onClick={() => {
-                    this.setState({ clicked: true });
+                    this.setState({ clicked: !this.state.clicked });
                   }}
                   className={
                     this.state.clicked ? "addBtn-clicked" : "addBtn-not_clicked"
@@ -57,7 +57,7 @@ class Contents extends Component {
                       : "dropdownBtn-not_clicked"
                   }
                 >
-                  <CaretDownOutlined  className="dropdown_icon"/>
+                  <CaretDownOutlined className="dropdown_icon" />
                 </button>
               </div>
               {/* <span className="rating">평가하기</span> */}
@@ -71,11 +71,10 @@ class Contents extends Component {
                 <span>김지안 님의 생각을 글로 적어보세요.</span>
                 <button
                   onClick={() => {
-                    this.setState({ clicked: true });
+                    this.setState({ clicked: !this.state.clicked });
                   }}
                 >
                   코멘트 남기기
-                  {this.state.added && "코멘트 남기기"}
                 </button>
               </div>
             )}
