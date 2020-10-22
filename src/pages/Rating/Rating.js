@@ -23,7 +23,7 @@ class Rating extends Component {
       if(this.state.isModalOn) {
         document.body.style.overflow = 'hidden';
       } else {
-        document.body.style.overflow = 'unset';
+        document.body.style.overflow = '';
       }
     })
 
