@@ -32,7 +32,7 @@ class Main extends Component {
     const { loginOpen, loginClose, signupOpen, signupClose } = this;
     return (
       <>
-        <button onClick={loginOpen}>Check</button>
+        <button onClick={loginOpen}>login</button>
         <button onClick={signupOpen}>signup</button>
 
         <Login open={loginModalOpen} close={loginClose} />

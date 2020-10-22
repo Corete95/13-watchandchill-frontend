@@ -1,12 +1,13 @@
-//@import "../../Styles/common.scss"
-.modal {
+@import "../../Styles/common.scss";
+
+.login_modal {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.6);
-  .login_modal {
+  .login_box {
     width: 375px;
     height: 590px;
     background-color: white;
@@ -16,7 +17,7 @@
     background: #fff;
     border: 1px solid red;
     border-radius: 6px;
-    .modalContents {
+    .modal_contents {
       margin: 0 auto;
       width: 100%;
       height: 100%;
@@ -135,17 +136,19 @@
         color: rgb(255, 255, 255);
         text-align: center;
         width: 100%;
-        height: 50px;
+        height: 40px;
         border-radius: 6px;
         position: relative;
         background: rgb(60, 90, 160);
         outline: none;
+        font-size: 15px;
+        font-weight: 400;
       }
       .facebook_btn::before {
         content: "";
         display: inline-block;
         position: absolute;
-        top: 6px;
+        top: 9px;
         left: 15px;
         background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTE5LjMzMiA4LjJoLTIuMDE2cy0xLjI4NC4wNzctMS4yODQgMS42NDR2Mi4wMDhoMy4zbC0uNTUgMy4xMDdoLTIuNzV2OC4wNGgtMy4xMTR2LTguMDRoLTIuNzV2LTMuMTA3aDIuNzVWOS4xMTNzLS4xMDQtMy44MzQgMy44NDgtMy44MzRjMS44NDggMCAyLjU2Ni4xODQgMi41NjYuMTg0VjguMnptMC03LjJINC42NjhBMy42NjggMy42NjggMCAwIDAgMSA0LjY2NnYxNC42NjZBMy42NyAzLjY3IDAgMCAwIDQuNjY4IDIzaDE0LjY2NEEzLjY2OCAzLjY2OCAwIDAgMCAyMyAxOS4zMzJWNC42NjZBMy42NjYgMy42NjYgMCAwIDAgMTkuMzMyIDF6Ii8+Cjwvc3ZnPgo=")
           center center no-repeat;
