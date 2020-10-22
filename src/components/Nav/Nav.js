@@ -2,10 +2,35 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
 import { SearchOutlined } from "@ant-design/icons";
+import Login from "../../components/Nav/Login";
+import Signup from "../../components/Nav/Signup";
 import "./Nav.scss";
 
 class Nav extends Component {
+  state = {
+    isLogin: false,
+    loginModalOpen: false,
+    signupModalOpen: false
+  };
+
+  loginOpen = () => {
+    this.setState({ loginModalOpen: true });
+  };
+
+  loginClose = () => {
+    this.setState({ loginModalOpen: false });
+  };
+
+  signupOpen = () => {
+    this.setState({ signupModalOpen: true });
+  };
+
+  signupClose = () => {
+    this.setState({ signupModalOpen: false });
+  };
   render() {
+    const { loginModalOpen, signupModalOpen } = this.state;
+    const { loginOpen, loginClose, signupOpen, signupClose } = this;
     return (
       <>
         <nav>
@@ -29,13 +54,27 @@ class Nav extends Component {
                 type="search"
                 placeholder="작품 제목,배우,감독을 검색해보세요."
               />
-
-              <Link to="/rating" className="navbar_rating">
-                평가하기
-              </Link>
-              <Link to="">
-                <UserOutlined className="user_profile" alt="profile_icon" />
-              </Link>
+              {this.state.isLogin ? (
+                <>
+                  <Link to="/rating" className="navbar_rating">
+                    평가하기
+                  </Link>
+                  <Link to="">
+                    <UserOutlined className="user_profile" alt="profile_icon" />
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <div className="login_frame">
+                    <button onClick={loginOpen}>로그인</button>
+                  </div>
+                  <div className="singup_freame">
+                    <button onClick={signupOpen}>회원가입</button>
+                  </div>
+                  <Login open={loginModalOpen} close={loginClose} />
+                  <Signup open={signupModalOpen} close={signupClose} />
+                </>
+              )}
             </div>
           </div>
         </nav>
