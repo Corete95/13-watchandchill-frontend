@@ -5,8 +5,11 @@
 }
 
 nav {
-  position: fiexd;
+  position: fixed;
+  top:0;
   width: 100%;
+  z-index: 9;
+  background-color: white;
   display: flex;
   justify-content: center;
   margin: auto 0;
@@ -37,6 +40,9 @@ nav {
 
 .navbar_right {
   display: flex;
+  input {
+    outline: none;
+  }
 }
 
 input {
