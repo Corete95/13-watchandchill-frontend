@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import { CloseOutlined } from "@ant-design/icons";
-import { connect } from 'react-redux';
-import { actionCreators } from '../../../store';
+import { connect } from "react-redux";
+import { actionCreators } from "../../../store";
 
 class Category extends Component {
-
   componentDidMount() {
-    window.addEventListener('click', this.props.handleClickOutside)
+    window.addEventListener("click", this.props.handleClickOutside);
   }
   componentWillUnmount() {
-    window.removeEventListener('click', this.props.handleClickOutside)
+    window.removeEventListener("click", this.props.handleClickOutside);
   }
-  
-  categoryClick = (category) => {
+
+  categoryClick = category => {
     this.props.ChangeCategory(category);
     this.props.handleModal();
-  }
+  };
 
   render() {
     const { handleModal, categories } = this.props;
@@ -23,10 +22,7 @@ class Category extends Component {
       <div className="Category">
         <div>
           <header>
-            <CloseOutlined
-              onClick={handleModal}
-              className="CloseBtn"
-            />
+            <CloseOutlined onClick={handleModal} className="CloseBtn" />
             <h3>영화</h3>
           </header>
           <div>
@@ -35,8 +31,13 @@ class Category extends Component {
                 <li>{category}</li>
               ))} */}
               <p>장르</p>
-              {categories.genre.map(category => (
-                <li key={category.id} onClick={() => this.categoryClick(category)}>{category.title}</li>
+              {categories.genres.map(category => (
+                <li
+                  key={category.id}
+                  onClick={() => this.categoryClick(category)}
+                >
+                  {category.genre}
+                </li>
               ))}
             </ul>
           </div>
@@ -47,13 +48,14 @@ class Category extends Component {
 }
 
 function mapStateToProps(state) {
-  return { categories: state.categories}  
+  return { categories: state.categories };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    ChangeCategory: (category) => dispatch(actionCreators.ChangeCategory(category))
-  }
+    ChangeCategory: category =>
+      dispatch(actionCreators.ChangeCategory(category))
+  };
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(Category);
+export default connect(mapStateToProps, mapDispatchToProps)(Category);

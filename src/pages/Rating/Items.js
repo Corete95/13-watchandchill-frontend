@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Item from "./Item";
 import { connect } from 'react-redux';
+import Item from "./Item";
 
 class Items extends Component {
   constructor() {
@@ -16,8 +16,8 @@ class Items extends Component {
   }
   componentDidUpdate(prevProps) {
     const { category, movieList } = this.props;
-    if(prevProps.category.title !== category.title) {
-      if(category.title === '모든 장르') {
+    if(prevProps.category.genre !== category.genre) {
+      if(category.genre === '모든 장르') {
         this.setState({
           movieList,
         })
@@ -25,7 +25,7 @@ class Items extends Component {
       } 
 
       const newList = movieList.filter((movie) => {
-        return movie.genre === category.title
+        return movie.genre === category.genre
       })
       this.setState({
         movieList : newList

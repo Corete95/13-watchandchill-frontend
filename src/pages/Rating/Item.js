@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 import { MoreOutlined } from "@ant-design/icons";
+import { connect } from 'react-redux';
+import RatingStar from './Components/RatingStar';
+import { pinkFlag, blueEye } from './Components/Datas';
+import { actionCreators } from '../../store';
 import "./Rating.scss";
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
-import { actionCreators } from '../../store';
-import RatingStar from './Components/RatingStar';
-import { connect } from 'react-redux';
-import { pinkFlag, blueEye } from './Components/Datas';
 
 class Item extends Component {
 
   movieInfoInq = () => {
     const { CurrentMovie, ChangeMovieInfo, handleMovieInfo } = this.props;
-    const { id, name, img, date, leng, genre, rating, status } = this.props;
-    CurrentMovie({ id, name, img, date, genre, rating, status, leng })
+    const { id, title, poster_url, date, country, genre, rating, status } = this.props;
+    CurrentMovie({ id, title, poster_url, date, genre, rating, status, country })
     ChangeMovieInfo(true)
     handleMovieInfo()
   }
 
   isStatus = (status) => {
-    const { date, leng } = this.props;
+    const { date, country } = this.props;
     switch(status) {
       case 'wished' : {
         return (<div className="/">
@@ -33,21 +33,21 @@ class Item extends Component {
       </div>)
       }
       case null : {
-        return `${date} ・ ${leng}`
+        return `${date} ・ ${country}`
       }
     }
      }
 
   render() {
-    const { name, img, rating, status } = this.props;
+    const { title, poster_url, rating, status } = this.props;
     return (
       <li className="Item">
         <div className="poster">
-          <img src={img} alt="" />
+          <img src={poster_url} alt={title} />
           {/* link태그로 해당 영화 상세페이로 이동시키기 */}
         </div>
         <div className="description">
-          <h3>{name}
+          <h3>{title}
           <div className="threedot" onClick={() => this.movieInfoInq()}>
           <MoreOutlined />
           </div>
