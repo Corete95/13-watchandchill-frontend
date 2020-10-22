@@ -1,1 +1,25 @@
 @import "../../Styles/common.scss";
+
+.movie_list {
+  padding-top: 80px;
+  margin: auto 60px;
+  width: 1304px;
+}
+
+.box_office_box {
+  width: 100%;
+  height: 514px;
+  background-color: gray;
+}
+
+.box_office {
+  height: 30px;
+  padding: 12px 0 14px 0;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.movie_poster {
+  display: block;
+}

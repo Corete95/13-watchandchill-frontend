@@ -1,15 +1,22 @@
 import React, { Component } from "react";
+import { FacebookOutlined } from "@ant-design/icons";
+import { TwitterOutlined } from "@ant-design/icons";
+import { SmileOutlined } from "@ant-design/icons";
 import "./Footer.scss";
 
 class Footer extends Component {
   render() {
     return (
-      <>
+      <footer>
         <div className="user_data">
-          <span>지금까지 ★ 123,456,789 개의 평가가 쌓였어요. </span>
+          <div>
+            지금까지
+            <span className="rating_count"> ★ 581,563,067 개의 평가가 </span>
+            쌓였어요.
+          </div>
         </div>
         <div className="footer">
-          <footer className="footer_box">
+          <div className="footer_box">
             <div className="footer_left">
               <div className="policy_list">
                 <li>서비스 이용약관 ⎮</li>
@@ -39,15 +46,19 @@ class Footer extends Component {
             </div>
             <div className="footer_right">
               <div className="sns_box">
-                <button>한국어</button>
-                <div>페이스북</div>
-                <div>트위터</div>
-                <div>notion</div>
+                <button>
+                  한국어<span className="in_button">▾</span>
+                </button>
+                <div className="icons">
+                  <FacebookOutlined />
+                  <TwitterOutlined />
+                  <SmileOutlined />
+                </div>
               </div>
             </div>
-          </footer>
+          </div>
         </div>
-      </>
+      </footer>
     );
   }
 }

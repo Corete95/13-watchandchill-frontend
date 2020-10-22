@@ -4,6 +4,16 @@
   list-style: none;
 }
 
+*:focus {
+  outline: none;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
 .user_data {
   width: 100%;
   height: 62px;
@@ -13,6 +23,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.rating_count {
+  color: #ff0558;
+  font-weight: bold;
 }
 
 .footer {
@@ -25,16 +40,25 @@
   color: #9b9b9d;
 }
 
-.footer_box {
-  //   background-color: red;
-  font-size: 13px;
-  width: 1203px;
+.footer li {
   display: flex;
+  margin-right: 5px;
+}
+
+.footer_box {
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer_left {
+  width: 1203px;
 }
 
 .footer_box li {
   margint-left: 5px;
 }
+
 .policy_list {
   display: flex;
 }
@@ -65,7 +89,32 @@
 }
 
 .sns_box {
-  //   background-color: blue;
   width: 117px;
   height: 163px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  height: 30px;
+  padding: 2px 5px 4px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+  background-color: #1c1e20;
+  color: #9b9b9d;
+  border: 1px solid #9b9b9d;
+  border-radius: 2px;
+  span {
+    width: 100%;
+    padding-left: 45px;
+  }
+}
+
+.icons {
+  margin-top: 100px;
+  font-size: 2em;
+  span {
+    margin-left: 10px;
+  }
 }

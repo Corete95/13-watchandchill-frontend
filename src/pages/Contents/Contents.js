@@ -5,7 +5,7 @@ class Contents extends Component {
   render() {
     return (
       <>
-        <div>sdf</div>
+        <div></div>
       </>
     );
   }
