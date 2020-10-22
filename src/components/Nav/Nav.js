@@ -13,6 +13,9 @@ class Nav extends Component {
     signupModalOpen: false
   };
 
+  isLoginTure = () => {
+    this.setState({ isLogin: true });
+  };
   loginOpen = () => {
     this.setState({ loginModalOpen: true });
   };
@@ -28,9 +31,16 @@ class Nav extends Component {
   signupClose = () => {
     this.setState({ signupModalOpen: false });
   };
+
   render() {
     const { loginModalOpen, signupModalOpen } = this.state;
-    const { loginOpen, loginClose, signupOpen, signupClose } = this;
+    const {
+      loginOpen,
+      loginClose,
+      signupOpen,
+      signupClose,
+      isLoginTure
+    } = this;
     return (
       <>
         <nav>
@@ -71,7 +81,11 @@ class Nav extends Component {
                   <div className="singup_freame">
                     <button onClick={signupOpen}>회원가입</button>
                   </div>
-                  <Login open={loginModalOpen} close={loginClose} />
+                  <Login
+                    isLogin={isLoginTure}
+                    open={loginModalOpen}
+                    close={loginClose}
+                  />
                   <Signup open={signupModalOpen} close={signupClose} />
                 </>
               )}

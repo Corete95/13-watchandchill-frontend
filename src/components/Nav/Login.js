@@ -17,12 +17,10 @@ class Login extends Component {
 
   handeEmail = event => {
     this.setState({ email: event.target.value });
-    console.log(event.target.value);
   };
 
   handePw = event => {
     this.setState({ passWord: event.target.value });
-    console.log(event.target.value);
   };
 
   signupOpen = () => {
@@ -52,6 +50,32 @@ class Login extends Component {
     this.signupOpen();
   };
 
+  mainMove = () => {
+    this.props.isLogin(true);
+  };
+
+  goToMain = () => {
+    const API = "http://localhost:3000/";
+    const { email, password } = this.state;
+    fetch(API, {
+      method: "POST",
+      body: JSON.stringify({
+        email,
+        password
+      })
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message == "SUCCESS") {
+          alert("회원가입을 축하드립니다!");
+          this.mainMove();
+          console.log("백엔드에서 오는 응답 메세지:", result);
+        } else if (result.message == "NOOO") {
+          alert("이미 가입된 계정입니다.");
+        }
+      });
+  };
+
   render() {
     const responseFacebook = response => {};
     return (
@@ -65,6 +89,7 @@ class Login extends Component {
                   <h2>로그인</h2>
                   <div className="login_input">
                     <input
+                      value
                       onChange={this.handeEmail}
                       className="login_id"
                       type="email"
@@ -78,7 +103,7 @@ class Login extends Component {
                     />
                   </div>
                   <div className="login_button">
-                    <button>로그인</button>
+                    <button onClick={this.mainMove}>로그인</button>
                   </div>
                   <div className="pw_button">
                     <button onClick={this.passWordOpen}>
