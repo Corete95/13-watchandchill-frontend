@@ -11,14 +11,14 @@ class Item extends Component {
 
   movieInfoInq = () => {
     const { CurrentMovie, ChangeMovieInfo, handleMovieInfo } = this.props;
-    const { id, title, poster_url, date, country, genre, rating, status } = this.props;
-    CurrentMovie({ id, title, poster_url, date, genre, rating, status, country })
+    const { id, title, poster_url, premier_date, country, genre, rating, status } = this.props;
+    CurrentMovie({ id, title, poster_url, premier_date, genre, rating, status, country })
     ChangeMovieInfo(true)
     handleMovieInfo()
   }
 
   isStatus = (status) => {
-    const { date, country } = this.props;
+    const { premier_date, country } = this.props;
     switch(status) {
       case 'wished' : {
         return (<div className="/">
@@ -33,7 +33,7 @@ class Item extends Component {
       </div>)
       }
       case null : {
-        return `${date} ・ ${country}`
+        return `${premier_date} ・ ${country}`
       }
     }
      }

@@ -32,7 +32,7 @@ class MovieInfo extends Component {
   }
 
   render() {
-    const { title, poster_url, date, status } = this.props.currentMovie;
+    const { title, poster_url, premier_date, status } = this.props.currentMovie;
     const { isCommentWrite, ChangeCommentWrite } = this.props;
     return (
       <div className="MovieInfo">
@@ -43,7 +43,7 @@ class MovieInfo extends Component {
             </div>
             <div className="info_desc">
               <div>{title}</div>
-              <span>영화・{date}</span>
+              <span>영화・{premier_date}</span>
             </div>
           </div>
           <div className="movie_info_icon">
