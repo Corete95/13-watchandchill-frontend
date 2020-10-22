@@ -60,8 +60,8 @@ class Contents extends Component {
             </div>
           </div>
         </section>
-        <article>
-          <div>
+        <main>
+          <article>
             {this.state.clicked && (
               <div className="comment_box">
                 <span>김지안 님의 생각을 글로 적어보세요.</span>
@@ -70,12 +70,25 @@ class Contents extends Component {
                     this.setState({ clicked: true });
                   }}
                 >
+                  코멘트 남기기
                   {this.state.added && "코멘트 남기기"}
                 </button>
               </div>
             )}
-          </div>
-        </article>
+            <div className="main_content">
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>6</div>
+              <div>7</div>
+              <button>더보기</button>
+            </div>
+          </article>
+
+          <aside>aside</aside>
+        </main>
       </>
     );
   }
