@@ -32,18 +32,18 @@ class MovieInfo extends Component {
   }
 
   render() {
-    const { title, poster_url, premier_date, status } = this.props.currentMovie;
+    const { title, poster, date, status } = this.props.currentMovie;
     const { isCommentWrite, ChangeCommentWrite } = this.props;
     return (
       <div className="MovieInfo">
         <div className="movie_info_wrap">
           <div className="movie_info_header">
             <div className="info_image">
-              <span style={{ backgroundImage: `url(${poster_url})` }}></span>
+              <span style={{ backgroundImage: `url(${poster})` }}></span>
             </div>
             <div className="info_desc">
               <div>{title}</div>
-              <span>영화・{premier_date}</span>
+              <span>영화・{date}</span>
             </div>
           </div>
           <div className="movie_info_icon">

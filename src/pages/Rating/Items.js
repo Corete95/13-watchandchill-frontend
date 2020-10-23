@@ -6,31 +6,66 @@ class Items extends Component {
   constructor() {
     super();
     this.state ={
-      movieList : []
+      allMovieList : [],
+      movieList : [],
+      listLength : 20,
+      
     }
   }
+
+  handleScroll = () => {
+    const { movieList, allMovieList, listLength } = this.state
+    const { innerHeight } = window;
+    const { scrollHeight } = document.body;
+    const scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    if (scrollHeight - innerHeight - scrollTop < 50 && movieList.length !== allMovieList.length) {
+      // document.documentElement.scrollTop -= 1000;
+        this.setState(prevState => {
+           return { 
+             movieList: allMovieList.slice(0,listLength),
+             listLength: prevState.listLength + 20
+          }
+        })
+    }
+  };
+  
   componentDidMount() {
-    this.setState({
-      movieList : this.props.movieList
-    })
+    window.addEventListener("scroll", this.handleScroll);
+    fetch("http://localhost:3000/Data/Data.json")
+      .then((response) => response.json())
+      .then((result) => this.setState( prevState =>{
+       return { 
+        allMovieList: result.allMovies,
+        movieList : result.allMovies.slice(0,20),
+        listLength: prevState.listLength + 20 
+      }
+      }));
+    // this.setState({
+    //   movieList : this.props.movieList
+    // })
   }
   componentDidUpdate(prevProps) {
-    const { category, movieList } = this.props;
+    const { category } = this.props;
+    const { allMovieList } = this.state;
     if(prevProps.category.genre !== category.genre) {
       if(category.genre === '모든 장르') {
         this.setState({
-          movieList,
+          movieList : allMovieList
         })
         return
       } 
 
-      const newList = movieList.filter((movie) => {
-        return movie.genre === category.genre
+      const newList = allMovieList.filter((movie) => {
+        return movie.genre.includes(category.genre)
       })
       this.setState({
-        movieList : newList
+        movieList : newList.slice(0,20)
       })
     }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 
     render() {

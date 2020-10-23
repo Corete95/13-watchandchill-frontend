@@ -4,6 +4,9 @@ import { connect } from "react-redux";
 import { actionCreators } from "../../store";
 
 class RatingBox extends Component {
+  state = {
+    movieList: {}
+  }
   //  ratingMessageList = [
   //     {0 : '제가 취향을 알 수 있게, 15개 이상의 작품을 평가해주세요.'},
   //     {2 : '조금씩 당신의 취향을 알아가는 중입니다.'},
@@ -26,12 +29,15 @@ class RatingBox extends Component {
   //  ]
 
   componentDidMount() {
-    const { movieList, RatingLength } = this.props;
-    let list = movieList.filter(movie => {
-      return movie.rating > 0;
-    });
-    RatingLength(list.length);
+        // const { movieList, RatingLength } = this.props;
+    // let list = movieList.filter(movie => {
+    //   return movie.rating > 0;
+    // });
+    // RatingLength(list.length);
+
   }
+
+
 
   render() {
     const { handleModal, ratingLength, currentCategory } = this.props;

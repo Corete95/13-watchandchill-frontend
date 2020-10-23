@@ -11,14 +11,14 @@ class Item extends Component {
 
   movieInfoInq = () => {
     const { CurrentMovie, ChangeMovieInfo, handleMovieInfo } = this.props;
-    const { id, title, poster_url, premier_date, country, genre, rating, status } = this.props;
-    CurrentMovie({ id, title, poster_url, premier_date, genre, rating, status, country })
+    const { id, title, poster, date, country, genre, rating, status } = this.props;
+    CurrentMovie({ id, title, poster, date, genre, rating, status, country })
     ChangeMovieInfo(true)
     handleMovieInfo()
   }
 
   isStatus = (status) => {
-    const { premier_date, country } = this.props;
+    const { date, country } = this.props;
     switch(status) {
       case 'wished' : {
         return (<div className="/">
@@ -32,18 +32,18 @@ class Item extends Component {
         보는중
       </div>)
       }
-      case null : {
-        return `${premier_date} ・ ${country}`
+      default : {
+        return `${date} ・ ${country}`
       }
     }
      }
 
   render() {
-    const { title, poster_url, rating, status } = this.props;
+    const { title, poster, rating, status } = this.props;
     return (
       <li className="Item">
         <div className="poster">
-          <img src={poster_url} alt={title} />
+          <img src={poster} alt={title} />
           {/* link태그로 해당 영화 상세페이로 이동시키기 */}
         </div>
         <div className="description">
