@@ -48,6 +48,12 @@
           border-style: none;
           outline: none;
         }
+        .is_email {
+          display: none;
+        }
+        .is_email1 {
+          color: red;
+        }
         .login_pw {
           width: 92%;
           height: 44px;

@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import "./Password.scss";
 
 class Password extends Component {
+  passWordClose = ({ target }) => {
+    if (target.className === "pw_modal") {
+      this.props.close();
+    }
+  };
+
   render() {
     return (
       <>
-        <div className="pw_modal">
+        <div className="pw_modal" onClick={this.passWordClose}>
           <div className="pw_box">
             <div className="pw_contents">
               <button onClick={this.props.close}></button>

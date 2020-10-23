@@ -55,23 +55,25 @@ class Login extends Component {
   };
 
   goToMain = () => {
-    const API = "http://localhost:3000/";
-    const { email, password } = this.state;
+    const { email, passWord } = this.state;
+
+    const API = "http://ip/user/";
     fetch(API, {
       method: "POST",
       body: JSON.stringify({
         email,
-        password
+        password: passWord
       })
     })
       .then(response => response.json())
       .then(result => {
         if (result.message == "SUCCESS") {
-          alert("회원가입을 축하드립니다!");
-          this.mainMove();
+          localStorage.setItem("token", result.token);
+          alert("로그인을 축하드립니다!");
           console.log("백엔드에서 오는 응답 메세지:", result);
+          this.mainMove();
         } else if (result.message == "NOOO") {
-          alert("이미 가입된 계정입니다.");
+          alert("로그인 불가");
         }
       });
   };
@@ -89,7 +91,6 @@ class Login extends Component {
                   <h2>로그인</h2>
                   <div className="login_input">
                     <input
-                      value
                       onChange={this.handeEmail}
                       className="login_id"
                       type="email"
