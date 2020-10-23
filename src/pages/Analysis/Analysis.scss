@@ -196,7 +196,7 @@ section {
             ul {
               display: flex;
               position: relative;
-              left: -598px;
+              left: 0px;
               flex-flow: column wrap;
               height: 230px;
               transition: left .5s;
@@ -240,6 +240,18 @@ section {
                     padding: 5px 0;
                   }
                 }
+              }
+            }
+            .left_bar {
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              top: 0;
+              left: 0;
+              height: 100%;
+              div {
+                cursor: pointer;
               }
             }
             .right_bar {

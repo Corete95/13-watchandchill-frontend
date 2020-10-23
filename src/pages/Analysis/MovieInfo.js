@@ -3,6 +3,7 @@ export class MovieInfo extends Component {
   constructor() {
     super();
     this.state = {
+      slicks: 0,
       supervisor: [
         {
           img:
@@ -57,8 +58,25 @@ export class MovieInfo extends Component {
   }
 
   btnRef = createRef();
-  move = () => {
-    console.log(this.btnRef.current.className);
+  moveRight = () => {
+    if (this.state.slicks > -1195) {
+      this.setState( (prevState) => {
+        return { slicks : prevState.slicks - 598 }
+      }, () => {
+        this.btnRef.current.style.left = this.state.slicks + 'px';
+        
+      })
+    }
+  };
+
+  moveLeft = () => {
+    if (this.state.slicks < 0) {
+      this.setState( (prevState) => {
+        return { slicks : prevState.slicks + 598 }
+      }, () => {
+        this.btnRef.current.style.left = this.state.slicks + 'px';
+      })
+    }
   };
   /**  ul의 left값을 -598px씩 바꾸면 slick 끝일거 같은데 어떻게 바꿔야 할지 감이 잘 안온다.  **/
 
@@ -91,8 +109,11 @@ export class MovieInfo extends Component {
                   </li>
                 ))}
               </ul>
+              <div className="left_bar">
+                <div onClick={this.moveLeft}>왼쪽</div>
+              </div>
               <div className="right_bar">
-                <div onClick={this.move}>클릭</div>
+                <div onClick={this.moveRight}>클릭</div>
               </div>
             </div>
           </div>
