@@ -113,7 +113,7 @@ class Signup extends Component {
     const { name, email, passWord } = this.state;
 
     if (this.allValid) {
-      const API = "http://ip/user/signup";
+      const API = "http://10.58.5.88:8000/user";
       fetch(API, {
         method: "POST",
         body: JSON.stringify({
@@ -124,10 +124,11 @@ class Signup extends Component {
       })
         .then(response => response.json())
         .then(result => {
-          if (result.message == "SUCCESS") {
+          console.log(result);
+          if (result.MESSAGE == "SUCCESS") {
             alert("회원가입을 축하드립니다!");
             console.log("백엔드에서 오는 응답 메세지:", result);
-          } else if (result.message == "NOOO") {
+          } else if (result.MESSAGE == "EMAIL_OVERLAP") {
             alert("이미 가입된 계정입니다.");
           }
         });

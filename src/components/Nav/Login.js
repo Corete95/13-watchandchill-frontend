@@ -57,7 +57,7 @@ class Login extends Component {
   goToMain = () => {
     const { email, passWord } = this.state;
 
-    const API = "http://ip/user/";
+    const API = "http://10.58.5.88:8000/user/login";
     fetch(API, {
       method: "POST",
       body: JSON.stringify({
@@ -67,12 +67,13 @@ class Login extends Component {
     })
       .then(response => response.json())
       .then(result => {
-        if (result.message == "SUCCESS") {
-          localStorage.setItem("token", result.token);
+        console.log(result);
+        if (result.MESSAGE == "SUCCESS") {
+          localStorage.setItem("token", result.AUTHORIZATION);
           alert("로그인을 축하드립니다!");
           console.log("백엔드에서 오는 응답 메세지:", result);
           this.mainMove();
-        } else if (result.message == "NOOO") {
+        } else if (result.MESSAGE == "EMAIL_OVERLAP") {
           alert("로그인 불가");
         }
       });
@@ -104,7 +105,7 @@ class Login extends Component {
                     />
                   </div>
                   <div className="login_button">
-                    <button onClick={this.mainMove}>로그인</button>
+                    <button onClick={this.goToMain}>로그인</button>
                   </div>
                   <div className="pw_button">
                     <button onClick={this.passWordOpen}>
