@@ -4,6 +4,16 @@
   background-color: $whiteColor;
   border-radius: 5px;
 }
+@mixin mainContentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@mixin mainContentTitle {
+  font-size: 19px;
+  font-weight: 700;
+}
 section {
   width: 100%;
   height: 500px;
@@ -37,7 +47,7 @@ section {
   .movie_title_section {
     position: relative;
 
-    .movie_title_section-poster {
+    .movie_title_section_poster {
       width: 170px;
       height: 240px;
       border: $border;
@@ -46,7 +56,7 @@ section {
       position: absolute;
       top: -25px;
     }
-    .movie_title_section-desc {
+    .movie_title_section_desc {
       position: absolute;
       left: 350px;
       right: 160px;
@@ -84,8 +94,10 @@ section {
         outline: none;
       }
     }
-
-    .addBtn-not_clicked {
+    .buttons {
+      display: flex;
+    }
+    .addBtn_not_clicked {
       @include addBtn;
       color: white;
       background-color: $themeColor;
@@ -100,9 +112,9 @@ section {
     transition: 0.2s ease-in-out;
   }
   .pinkFlag {
-    width: 15px;
+    width: 20px;
   }
-  .addBtn-clicked {
+  .addBtn_clicked {
     width: 205px;
     height: 40px;
     border: none;
@@ -115,7 +127,7 @@ section {
     }
   }
 
-  .dropdownBtn-not_clicked {
+  .dropdownBtn_not_clicked {
     margin-top: 22px;
     width: 50px;
     height: 40px;
@@ -125,6 +137,9 @@ section {
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border-left: 1px solid rgb(231, 18, 82);
+    &:focus {
+      outline: none;
+    }
     &:hover {
       .dropdown_icon {
         transform: translateY(2px);
@@ -134,25 +149,54 @@ section {
   .dropdown_icon {
     transition: 0.2s ease-in-out;
   }
-  &:focus {
-    outline: none;
-  }
-  .dropdownBtn-clicked {
-    margin-top: 22px;
-    width: 50px;
-    height: 40px;
-    border: none;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-  }
+}
+.dropdownBtn_clicked {
+  margin-top: 22px;
+  width: 50px;
+  height: 40px;
+  border: none;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
   &:focus {
     outline: none;
   }
 }
+
+.dropdownBtn_not_clicked_color {
+  margin-top: 22px;
+  width: 50px;
+  height: 40px;
+  color: white;
+  background-color: $themeColor;
+  border: none;
+  border-left: 1px solid rgb(231, 18, 82);
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    .dropdown_icon {
+      transform: translateY(2px);
+    }
+  }
+}
+.dropdown_icon {
+  transition: 0.2s ease-in-out;
+}
+
+.dropdownBtn_clicked_color {
+  margin-top: 22px;
+  width: 50px;
+  height: 40px;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
 main {
-  display: flex;
   justify-content: center;
   background-color: $grayColor;
+  display: flex;
 
   article {
     display: flex;
@@ -179,6 +223,9 @@ main {
         font-weight: 600;
         width: 255px;
         height: 38px;
+        &:focus {
+          outline: none;
+        }
       }
     }
     .main_content {
@@ -192,23 +239,62 @@ main {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      div {
-        display: flex;
-        border: $border;
+      .main_content_container_rating {
+        @include mainContentContainer;
+        .main_content_title_rating {
+          @include mainContentTitle;
+        }
+      .main_content_container_info {
+        @include mainContentContainer;
+        .main_content_title_info {
+          @include mainContentTitle;
+        }
       }
-      button {
-        width: 600px;
-        height: 33px;
-        @include box;
-        font-size: 15px;
-        font-weight: 600;
+      .main_content_container_actor {
+        @include mainContentContainer;
+        .main_content_title_actor {
+          @include mainContentTitle;
+        }
+      }
+      .main_content_container_graph {
+        @include mainContentContainer;
+        .main_content_title_graph {
+          @include mainContentTitle;
+        }
+      }
+      .main_content_container_comment {
+        @include mainContentContainer;
+        .main_content_title_comment {
+          @include mainContentTitle;
+        }
+      }
+      .main_content_container_collection {
+        @include mainContentContainer;
+        .main_content_title_collection {
+          @include mainContentTitle;
+        }
+      }
+      .main_content_container_movie {
+        @include mainContentContainer;
+        .main_content_title_movie {
+          @include mainContentTitle;
+        }
+      }
       }
     }
+
+    button {
+      width: 600px;
+      height: 33px;
+      @include box;
+      font-size: 15px;
+      font-weight: 600;
+    }
   }
-  aside {
-    margin-top: 30px;
-    width: 319px;
-    height: 454px;
-    @include box;
-  }
+}
+aside {
+  margin-top: 30px;
+  width: 319px;
+  height: 454px;
+  @include box;
 }
