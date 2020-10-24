@@ -1,0 +1,9 @@
+@import "../../Styles/common.scss";
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  .profile_top {
+    margin: 28px 0px 30px;
+  }
+}

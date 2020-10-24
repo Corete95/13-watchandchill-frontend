@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Main from "./pages/Main/Main";
+import Main from "./components/Nav/profile";
 import Rating from "./pages/Rating/Rating";
 import Users from "./pages/Users/Users";
 import Contents from "./pages/Contents/Contents";
