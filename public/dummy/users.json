@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "김정현",
+      "star": 7,
+      "missyou": 5
+    },
+    {
+      "id": 2,
+      "name": "김예진",
+      "star": 3.5,
+      "missyou": 2
+    },
+    {
+      "id": 3,
+      "name": "전민승",
+      "star": 1,
+      "missyou": 2
+    },
+    {
+      "id": 4,
+      "name": "황채영",
+      "star": 10,
+      "missyou": 9
+    },
+    {
+      "id": 5,
+      "name": "허덕형",
+      "star": 1,
+      "missyou": 15
+    },
+    {
+      "id": 6,
+      "name": "백은진",
+      "star": 11,
+      "missyou": 24
+    },
+    {
+      "id": 7,
+      "name": "신은선",
+      "star": 19,
+      "missyou": 23
+    },
+    {
+      "id": 8,
+      "name": "정양효",
+      "star": 10,
+      "missyou": 36
+    }
+  ]
+}

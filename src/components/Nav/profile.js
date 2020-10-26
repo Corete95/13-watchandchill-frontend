@@ -2,7 +2,27 @@ import React, { Component } from "react";
 import "./profile.scss";
 
 class profile extends Component {
+  constructor() {
+    super();
+    this.state = {
+      users: []
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000/dummy/users.json", {
+      method: "GET"
+    })
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          users: res.users
+        });
+      });
+  }
   render() {
+    const { users } = this.state;
+    console.log(this.state.users);
     return (
       <>
         <div className="profile">
@@ -10,7 +30,7 @@ class profile extends Component {
             <div className="profile_margin">
               <div className="profie_box">
                 <div className="box_first">
-                  <buton className="box_top_gear"></buton>
+                  <button className="box_top_gear"></button>
                 </div>
                 <div className="box_second">
                   <div className="box_center">
@@ -18,13 +38,13 @@ class profile extends Component {
                       <div className="profile_circle">
                         <div className="circle"></div>
                       </div>
-                      <h1>김정현</h1>
+                      <h1>{users.length && users[0].name}</h1>
                       <div className="text">프로필이 없습니다.</div>
                     </div>
                     <div className="taste_analysis">
                       <a title="taste_analysis">
                         <span className="icon"></span>
-                        <sapn className="text">취향분석</sapn>
+                        <span className="text">취향분석</span>
                       </a>
                     </div>
                   </div>
@@ -32,10 +52,12 @@ class profile extends Component {
                     <a>
                       <ul>
                         <li>영화</li>
-                        <li>★5</li>
+                        <li>
+                          ★<strong>{users.length && users[0].star}</strong>
+                        </li>
                         <li className="imissyou">
                           보고싶어요
-                          <strong>2</strong>
+                          <strong>{users.length && users[0].missyou}</strong>
                         </li>
                       </ul>
                     </a>
