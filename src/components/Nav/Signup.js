@@ -23,7 +23,7 @@ class Signup extends Component {
   };
 
   signClose = ({ target }) => {
-    if (target.className === "signup_outline") {
+    if (target.className === "signUpOutLine") {
       this.props.close();
     }
   };
@@ -101,9 +101,9 @@ class Signup extends Component {
   inputClassName = boolean => {
     switch (boolean) {
       case true:
-        return "input_green";
+        return "inputGreen";
       case false:
-        return "input_red";
+        return "inputRed";
       default:
         return "";
     }
@@ -140,13 +140,13 @@ class Signup extends Component {
     return (
       <>
         {this.props.open ? (
-          <div className="signup_modal">
-            <div className="signup_outline" onClick={this.signClose}>
-              <div className="signup_box">
-                <div className="modal_contents">
+          <div className="signUpModal">
+            <div className="signUpOutLine" onClick={this.signClose}>
+              <div className="signUpBox">
+                <div className="modalContents">
                   <img src="watcha.png" />
                   <h2>회원가입</h2>
-                  <div className="signup_input">
+                  <div className="signUpInput">
                     <input
                       className={`input ${this.inputClassName(
                         this.isNameValid()
@@ -173,13 +173,13 @@ class Signup extends Component {
                     />
                   </div>
                   <button className="language" type="button">
-                    <span className="icon_earth"></span>한국어(대한민국)
-                    <span className="icon_arrow"></span>
+                    <span className="iconEarth"></span>한국어(대한민국)
+                    <span className="iconArrow"></span>
                   </button>
-                  <div className="signup_button">
+                  <div className="signUpButton">
                     <button onClick={this.signupComplete}>회원가입</button>
                   </div>
-                  <div className="signup">
+                  <div className="signUp">
                     이미 가입하셨나요?
                     <button onClick={this.loginMove}>로그인</button>
                   </div>
@@ -189,7 +189,7 @@ class Signup extends Component {
                     autoLoad={false}
                     fields="name,email,picture"
                     callback={responseFacebook}
-                    cssClass="facebook_btn"
+                    cssClass="faceBookBtn"
                     textButton="Facebook 으로 로그인"
                   />
                 </div>

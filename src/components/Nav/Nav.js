@@ -75,10 +75,10 @@ class Nav extends Component {
                 </>
               ) : (
                 <>
-                  <div className="login_frame">
+                  <div className="loginFrame">
                     <button onClick={loginOpen}>로그인</button>
                   </div>
-                  <div className="singup_freame">
+                  <div className="singUpFrame">
                     <button onClick={signupOpen}>회원가입</button>
                   </div>
                   <Login
