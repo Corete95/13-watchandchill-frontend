@@ -1,11 +1,11 @@
 import React, { Component, createRef } from "react";
-import { LeftOutlined, RightOutlined } from '@ant-design/icons'
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 export class MovieInfo extends Component {
   constructor() {
     super();
     this.state = {
       slicks: 0,
-      supervisor: [
+      supervisors: [
         {
           id: 0,
           img:
@@ -62,48 +62,117 @@ export class MovieInfo extends Component {
           name: "존 머스커",
           vg: "알라딘"
         }
-      ]
+      ],
+      countrys: [
+        {
+          name: "미국",
+          films: 26
+        },
+        {
+          name: "영국",
+          films: 24
+        },
+        {
+          name: "일본",
+          films: 21
+        },
+        {
+          name: "한국",
+          films: 18
+        },
+        {
+          name: "프랑스",
+          films: 13
+        },
+        {
+          name: "탄자니아",
+          films: 11
+        }
+      ],
+      genres: [
+        {
+          name: "애니메이션",
+          films: 28
+        },
+        {
+          name: "가족",
+          films: 28
+        },
+        {
+          name: "모험",
+          films: 28
+        },
+        {
+          name: "판타지",
+          films: 28
+        },
+        {
+          name: "코믹스",
+          films: 28
+        },
+        {
+          name: "드라마",
+          films: 28
+        },
+        {
+          name: "음악",
+          films: 28
+        },
+        {
+          name: "액션",
+          films: 28
+        },
+        {
+          name: "SF",
+          films: 28
+        },
+        {
+          name: "로맨스",
+          films: 28
+        }
+      ],
+      WatchingTime: 178
     };
   }
 
   btnRef = createRef();
   moveRight = () => {
     if (this.state.slicks > -1195) {
-      this.setState( (prevState) => {
-        return { slicks : prevState.slicks - 598 }
-      }, () => {
-        this.btnRef.current.style.left = this.state.slicks + 'px';
-        
-      })
+      this.setState(
+        prevState => {
+          return { slicks: prevState.slicks - 598 };
+        },
+        () => {
+          this.btnRef.current.style.left = this.state.slicks + "px";
+        }
+      );
     }
   };
 
   moveLeft = () => {
     if (this.state.slicks < 0) {
-      this.setState( (prevState) => {
-        return { slicks : prevState.slicks + 598 }
-      }, () => {
-        this.btnRef.current.style.left = this.state.slicks + 'px';
-      })
+      this.setState(
+        prevState => {
+          return { slicks: prevState.slicks + 598 };
+        },
+        () => {
+          this.btnRef.current.style.left = this.state.slicks + "px";
+        }
+      );
     }
   };
   /**  ul의 left값을 -598px씩 바꾸면 slick 끝일거 같은데 어떻게 바꿔야 할지 감이 잘 안온다.  **/
 
   render() {
+    const { supervisors, countrys, genres, WatchingTime } = this.state;
     return (
       <div className="MovieInfos">
         <div className="MovieInfoInner">
-          <div className="MovieLikeTag">
-            <h2>영화 선호태그</h2>
-            <div>
-              선호태그 어떻게 만드는거지...?
-            </div>
-          </div>
           <div className="LikeSupervisor">
             <h2>선호감독</h2>
-            <div className="evev">
-              <ul className="sdf" ref={this.btnRef}>
-                {this.state.supervisor.map(({ id, img, name, vg }) => (
+            <div className="SupervisorList">
+              <ul ref={this.btnRef}>
+                {supervisors.map(({ id, img, name, vg }) => (
                   <li key={id}>
                     <div>
                       <img src={img} alt={name} />
@@ -119,82 +188,54 @@ export class MovieInfo extends Component {
                 ))}
               </ul>
               <div className="LeftBar">
-                <div onClick={this.moveLeft}><LeftOutlined style={{ fontSize: '16px'}} /></div>
+                <div onClick={this.moveLeft}>
+                  <LeftOutlined style={{ fontSize: "16px" }} />
+                </div>
               </div>
               <div className="RightBar">
-                <div onClick={this.moveRight}><RightOutlined style={{ fontSize: '16px'}} /></div>
+                <div onClick={this.moveRight}>
+                  <RightOutlined style={{ fontSize: "16px" }} />
+                </div>
               </div>
             </div>
           </div>
           <div className="LikeCountry">
             <h2>영화 선호국가</h2>
             <div>
+              {countrys.slice(0, 3).map(({ name, films }) => (
+                <div>
+                  <h3>{name}</h3>
+                  <p>{films} 편</p>
+                </div>
+              ))}
+            </div>
+            {countrys.slice(3).map(({ name, films }) => (
               <div>
-                <h3>미국</h3>
-                <p>92점</p>
+                <span>{name}</span> <p>{films} 편</p>
               </div>
-              <div>
-                <h3>영국</h3>
-                <p>92점</p>
-              </div>
-              <div>
-                <h3>일본</h3>
-                <p>92점</p>
-              </div>
-            </div>
-            <div>
-              <span>한국</span> <p>72점</p>
-            </div>
-            <div>
-              <span>프랑스</span> <p>65점</p>
-            </div>
-            <div>
-              <span>탄자니아</span> <p>44점</p>
-            </div>
+            ))}
           </div>
           <div className="LikeGenre">
             <h2>영화 선호장르</h2>
             <span>애니메이션 좋아하는 사람 치고 나쁜 사람 없어요</span>
             <div>
+              {genres.slice(0, 3).map(({ name, films }) => (
+                <div>
+                  <h3>{name}</h3>
+                  <p>{films} 편</p>
+                </div>
+              ))}
+            </div>
+            {genres.slice(3).map(({ name, films }) => (
               <div>
-                <h3>애니메이션</h3>
-                <p>99점</p>
+                <span>{name}</span> <p>{films} 편</p>
               </div>
-              <div>
-                <h3>가족</h3>
-                <p>96점</p>
-              </div>
-              <div>
-                <h3>모험</h3>
-                <p>96점</p>
-              </div>
-            </div>
-            <div>
-              <span>판타지</span> <p>94점</p>
-            </div>
-            <div>
-              <span>드라마</span> <p>90점</p>
-            </div>
-            <div>
-              <span>코미디</span> <p>88점</p>
-            </div>
-            <div>
-              <span>음악</span> <p>85점</p>
-            </div>
-            <div>
-              <span>액션</span> <p>82점</p>
-            </div>
-            <div>
-              <span>SF</span> <p>80점</p>
-            </div>
-            <div>
-              <span>로맨스</span> <p>78점</p>
-            </div>
+            ))}
           </div>
           <div className="MovieWatchingTime">
             <h2>영화 감상 시간</h2>
             <div>
-              <span>178 시간</span>
+              <span>{WatchingTime} 시간</span>
               <p>조금 더 시간을 내셔서 영화 보심이 어떠세요?</p>
             </div>
           </div>

@@ -151,7 +151,6 @@ section {
           display: flex;
           justify-content: center;
           flex-direction: column;
-          .MovieLikeTag,
           .LikeSupervisor,
           .LikeCountry,
           .LikeGenre {
@@ -167,7 +166,6 @@ section {
             }
           }
 
-          .MovieLikeTag,
           .LikeSupervisor,
           .LikeCountry,
           .LikeGenre,
@@ -183,7 +181,7 @@ section {
 
           .LikeSupervisor {
             overflow:hidden;
-            .evev {
+            .SupervisorList {
               position: relative;
             }
             ul {

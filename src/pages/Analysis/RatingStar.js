@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Chart from './Component/Chart';
+
 export class RatignStar extends Component {
  
     
@@ -17,7 +19,7 @@ export class RatignStar extends Component {
           <div className="RatingDistribution">
             <h2>별점 분포</h2>
             <div>
-              라이브러리 사용 대기중
+              <Chart />
             </div>
           </div>
         </div>        

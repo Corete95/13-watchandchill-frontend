@@ -3,6 +3,7 @@ import { MoreOutlined } from "@ant-design/icons";
 import { connect } from 'react-redux';
 import RatingStar from './Components/RatingStar';
 import { pinkFlag, blueEye } from './Components/Datas';
+import { Link } from 'react-router-dom';
 import { actionCreators } from '../../store';
 import "./Rating.scss";
 import '../../../node_modules/font-awesome/css/font-awesome.min.css';
@@ -43,8 +44,7 @@ class Item extends Component {
     return (
       <li className="Item">
         <div className="Poster">
-          <img src={poster} alt={title} />
-          {/* link태그로 해당 영화 상세페이로 이동시키기 */}
+          <Link to={`/contents/${title}`}><img src={poster} alt={title} /></Link>
         </div>
         <div className="Description">
           <h3>{title}
