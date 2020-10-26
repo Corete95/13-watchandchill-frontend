@@ -1,89 +1,7 @@
 @import "../../Styles/common.scss";
-@mixin box {
-  border: $border;
-  background-color: $whiteColor;
-  border-radius: 5px;
-}
-section {
-  width: 100%;
-  height: 500px;
-  border-bottom: $border;
 
-  .header_box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: relative;
-    height: 266px;
-    width: 100%;
-  }
-  .dark_box {
-    width: 100%;
-    height: 266px;
-    background-color: black;
-  }
-  .main_image {
-    position: absolute;
-    top: 0px;
-    height: 266px;
-    width: 100%;
-    background-image: linear-gradient(to right, transparent 30%, black 100%),
-      url("https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_720,q_80,w_1280/v1463551411/mqsgvr-14521.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 60%;
-  }
 
-  .movie_title_section {
-    position: relative;
-
-    .movie_title_section_poster {
-      width: 170px;
-      height: 240px;
-      border: $border;
-      border-radius: 4px;
-      margin-left: 160px;
-      position: absolute;
-      top: -25px;
-    }
-    .movie_title_section_desc {
-      position: absolute;
-      left: 350px;
-      right: 160px;
-      height: 236px;
-      padding: 20px 0 0 0;
-      h1 {
-        font-size: 33px;
-      }
-      div:nth-child(2) {
-        font-size: 17px;
-        color: rgba($color: gray, $alpha: 0.8);
-        margin-top: 10px;
-      }
-      div:nth-child(3) {
-        font-size: 17px;
-        margin: 17px 0;
-        padding: 10px 0;
-        border-top: $border;
-        border-bottom: $border;
-      }
-      .rating {
-        font-size: 12px;
-        opacity: 0.5;
-      }
-    }
-    @mixin addBtn {
-      width: 205px;
-      height: 40px;
-      border: none;
-      border-top-left-radius: 6px;
-      border-bottom-left-radius: 6px;
-      font-size: 17px;
-      font-weight: 600;
-      &:focus {
-        outline: none;
-      }
-    }
+    
     .buttons {
       display: flex;
     }
@@ -97,8 +15,8 @@ section {
         }
       }
     }
-  }
-  .plus_icon {
+  
+  .plusicon {
     transition: 0.2s ease-in-out;
   }
   .pinkFlag {
@@ -136,10 +54,10 @@ section {
       }
     }
   }
-  .dropdown_icon {
+  .dropdownIcon {
     transition: 0.2s ease-in-out;
   }
-}
+
 .dropdownBtn_clicked {
   margin-top: 22px;
   width: 50px;
@@ -164,12 +82,12 @@ section {
     outline: none;
   }
   &:hover {
-    .dropdown_icon {
+    .dropdownIcon {
       transform: translateY(2px);
     }
   }
 }
-.dropdown_icon {
+.dropdownIcon {
   transition: 0.2s ease-in-out;
 }
 
@@ -193,7 +111,7 @@ main {
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
-    .comment_box {
+    .commentBox {
       display: flex;
       justify-content: space-between;
       width: 640px;
@@ -218,15 +136,8 @@ main {
         }
       }
     }
-    @mixin contentContainer {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      border-bottom: $border;
-      margin-top: 25px;
-    }
-    .main_content {
+    
+    .mainContent {
       margin-top: 30px;
       padding: 0 20px;
       width: 640px;
@@ -237,32 +148,32 @@ main {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      .main_content_container_rating {
+      .containerRating {
         @include contentContainer;
         .main_content_title_rating {
           font-size: 19px;
           font-weight: 700;
         }
-        .main_content_desc_rating {
+        .descRating {
           width: 100%;
           display: flex;
           justify-content: space-between;
           align-items: center;
           margin: 40px 0;
-          .tag_desc {
+          .tagDesc {
             color: #787878;
           }
           .tags {
             display: flex;
             font-size: 14px;
-            .first_tag {
+            .firstTag {
               border: 1px solid #00aae6;
               color: #00aae6;
               border-radius: 4px;
               margin: 0 2px 0 0;
               padding: 10px;
             }
-            .second_tag {
+            .secondTag {
               border: 1px solid #ff8644;
               color: #ff8644;
               border-radius: 4px;
@@ -272,58 +183,68 @@ main {
           }
         }
       }
-      .main_content_container_info {
+      .containerInfo {
         @include contentContainer;
         .main_content_title_info {
           margin: 20px 0;
           width: 100%;
           display: flex;
           justify-content: space-between;
-          .main_content_title_main {
+          .titleMain {
             font-size: 19px;
             font-weight: 700;
           }
-          .main_content_title_more {
+          .titleMore {
             font-size: 16px;
             color: #ff2f6e;
           }
         }
-      }
-      .main_content_container_actor {
-        @include contentContainer;
-        .main_content_title_actor {
-          font-size: 19px;
-          font-weight: 700;
+        .descInfo {
+          .overallInfo {
+            .original_name {
+              padding: 5px 0;
+            }
+            .year {
+              padding: 5px 0;
+            }
+            .runningTime {
+              padding: 5px 0;
+            }
+          }
+          .summary {
+            padding: 30px 0;
+          }
         }
       }
-      .main_content_container_graph {
+    
+      .containerGraph {
         @include contentContainer;
         .main_content_title_graph {
           font-size: 19px;
           font-weight: 700;
         }
       }
-      .main_content_container_comment {
+      .containerComment {
         @include contentContainer;
         .main_content_title_comment {
           font-size: 19px;
           font-weight: 700;
         }
       }
-      .main_content_container_collection {
+      .containerCollection {
         @include contentContainer;
         .main_content_title_collection {
           font-size: 19px;
           font-weight: 700;
         }
       }
-      .main_content_container_movie {
+      .containerMovie {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         margin-top: 25px;
-        .main_content_title_movie {
+        .titleMovie {
           font-size: 19px;
           font-weight: 700;
         }

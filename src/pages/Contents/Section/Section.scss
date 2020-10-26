@@ -1,1 +1,71 @@
 @import "../../Styles/common.scss";
+ 
+section {
+  width: 100%;
+  height: 500px;
+  border-bottom: $border;
+
+  .headerBox {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    height: 266px;
+    width: 100%;
+  }
+  .darkBox {
+    width: 100%;
+    height: 266px;
+    background-color: black;
+  }
+  .mainImage {
+    position: absolute;
+    top: 0px;
+    height: 266px;
+    width: 100%;
+    background-image: linear-gradient(to right, transparent 30%, black 100%),
+      url("https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_720,q_80,w_1280/v1463551411/mqsgvr-14521.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+  }
+
+  .movieTitle {
+    position: relative;
+
+    .poster {
+      width: 170px;
+      height: 240px;
+      border: $border;
+      border-radius: 4px;
+      margin-left: 160px;
+      position: absolute;
+      top: -25px;
+    }
+    .desc {
+      position: absolute;
+      left: 350px;
+      right: 160px;
+      height: 236px;
+      padding: 20px 0 0 0;
+      h1 {
+        font-size: 33px;
+      }
+      div:nth-child(2) {
+        font-size: 17px;
+        color: rgba($color: gray, $alpha: 0.8);
+        margin-top: 10px;
+      }
+      div:nth-child(3) {
+        font-size: 17px;
+        margin: 17px 0;
+        padding: 10px 0;
+        border-top: $border;
+        border-bottom: $border;
+      }
+      .rating {
+        font-size: 12px;
+        opacity: 0.5;
+      }
+    }
+  }
+}

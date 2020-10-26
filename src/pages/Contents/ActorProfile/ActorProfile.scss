@@ -1,1 +1,33 @@
-@import "../../Styles/common.scss";
+.ActorProfile {
+  // @include contentContainer;
+  .titleActor {
+    font-size: 19px;
+    font-weight: 700;
+  }
+  .descActor {
+    .profile {
+      display: flex;
+      margin: 10px 0;
+      .photo {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: url(https://images.watcha.net/people/medium/12b4d0125a858c96314a.jpg?1560143102)
+          center center / cover no-repeat;
+        margin-right: 10px;
+      }
+      .desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .name {
+          font-size: 17px;
+        }
+        .role {
+          font-size: 14px;
+          color: #8c8c8c;
+        }
+      }
+    }
+  }
+}
