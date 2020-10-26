@@ -18,19 +18,19 @@ class CommentWrite extends Component {
     const { title, handleClickOutside, commentValue } = this.props;
     return (
       <div className="CommentWrite">
-        <div className="comment_write_header">
-          <div className="close_btn" onClick={handleClickOutside}>
+        <div className="CommentWriteHeader">
+          <div className="CloseBtn" onClick={handleClickOutside}>
             X
           </div>
-          <span className="movie_title">{title}</span>
+          <span className="MovieTitle">{title}</span>
           <span
-            className="comment_btn"
+            className="CommentBtn"
             disabled={commentValue.length > 0 ? false : true}
           >
             코멘트 작성
           </span>
         </div>
-        <div className="comment_write_desc">
+        <div className="CommentWriteDesc">
           <textarea
             value={commentValue}
             onChange={this.commentValueChanges}

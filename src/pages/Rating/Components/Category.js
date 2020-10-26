@@ -26,7 +26,7 @@ class Category extends Component {
             <h3>영화</h3>
           </header>
           <div>
-            <ul className="category_list">
+            <ul className="CategoryList">
               {/* {this.state.categories.event.map(category => (
                 <li>{category}</li>
               ))} */}

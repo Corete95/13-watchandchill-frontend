@@ -20,14 +20,14 @@ class Item extends Component {
   isStatus = (status) => {
     const { date, country } = this.props;
     switch(status) {
-      case 'wished' : {
-        return (<div className="/">
+      case 'Wished' : {
+        return (<div className="Wished">
         <span style={{backgroundImage: `url(${pinkFlag})`}}></span>
         보고싶어요
       </div>)
       }
-      case 'watching' : {
-        return (<div className="watching">
+      case 'Watching' : {
+        return (<div className="Watching">
         <span style={{backgroundImage: `url(${blueEye}) `}}></span>
         보는중
       </div>)
@@ -42,17 +42,17 @@ class Item extends Component {
     const { title, poster, rating, status } = this.props;
     return (
       <li className="Item">
-        <div className="poster">
+        <div className="Poster">
           <img src={poster} alt={title} />
           {/* link태그로 해당 영화 상세페이로 이동시키기 */}
         </div>
-        <div className="description">
+        <div className="Description">
           <h3>{title}
-          <div className="threedot" onClick={() => this.movieInfoInq()}>
+          <div className="Threedot" onClick={() => this.movieInfoInq()}>
           <MoreOutlined />
           </div>
           </h3>
-          <div className="dateleng">
+          <div className="DateLeng">
            {this.isStatus(status)}
           </div>
           <div className="star">

@@ -18,7 +18,7 @@ class MovieInfo extends Component {
   };
 
   handleClickOutside = ({ target }) => {
-    if (target.className === "MovieInfo" || target.className === "close_btn") {
+    if (target.className === "MovieInfo" || target.className === "CloseBtn") {
       this.handleModal();
       this.props.CommentValueChange("");
     }
@@ -36,27 +36,27 @@ class MovieInfo extends Component {
     const { isCommentWrite, ChangeCommentWrite } = this.props;
     return (
       <div className="MovieInfo">
-        <div className="movie_info_wrap">
-          <div className="movie_info_header">
-            <div className="info_image">
+        <div className="MoveInfoWrap">
+          <div className="MoveInfoHeader">
+            <div className="InfoImage">
               <span style={{ backgroundImage: `url(${poster})` }}></span>
             </div>
-            <div className="info_desc">
+            <div className="InfoDesc">
               <div>{title}</div>
               <span>영화・{date}</span>
             </div>
           </div>
-          <div className="movie_info_icon">
+          <div className="MovieInfoIcon">
             <div>
-              <img src={status === "wished" ? pinkFlag : normalFlag} alt="wished" />
+              <img src={status === "Wished" ? pinkFlag : normalFlag} alt="wished" />
               <span>보고싶어요</span>
             </div>
             <div>
-              <img src={status === "watching" ? blueEye : normalEye} alt="watching" />
+              <img src={status === "Watching" ? blueEye : normalEye} alt="watching" />
               <span>보는중</span>
             </div>
           </div>
-          <div className="movie_info_btn">
+          <div className="MovieInfoBtn">
             <div onClick={() => ChangeCommentWrite(!isCommentWrite)}>
               <span>코멘트 작성하기</span>
               <img src={talkIcon} alt="comment" />
@@ -66,7 +66,7 @@ class MovieInfo extends Component {
               <img src={banIcon} />
             </div>
           </div>
-          <div className="close_btn" onClick={this.handleClickOutside}>
+          <div className="CloseBtn" onClick={this.handleClickOutside}>
             취소
           </div>
         </div>

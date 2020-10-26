@@ -3,8 +3,7 @@
 section {
   background-color: #f8f8f8;
 
-  .full_container {
-
+  .FullContainer {
     @mixin infoTitle {
       margin: 8px 0;
       color: #000;
@@ -13,8 +12,7 @@ section {
       margin-bottom: 15px;
     }
 
-
-    .analysis_wrap {
+    .AnalysisWrap {
       padding: 20px 0;
       max-width: 640px;
       margin: 0 auto;
@@ -25,13 +23,13 @@ section {
         background: url('https://d2rlq84xifqisi.cloudfront.net/images/analysisBackground.86647f491610a6893109.png') center no-repeat;
         background-size: cover;
 
-        .analysis_header_inner {
+        .AnalysisHeaderInner {
           margin: 0 20px;
           display: flex;
           flex-direction: column;
           justify-content: center;
 
-          .analysis_logo {
+          .AnalysisLogo {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -61,13 +59,13 @@ section {
               margin: 0 0 12px;
             }
 
-            .user_wrap {
+            .UserWrap {
               display: flex;
               width: 48px;
               border: 0;
               height: 48px;
 
-              .user_profile {
+              .UserProfile {
                 position: relative;
                 background: url(https://d3sz5r0rl9fxuc.cloudfront.net/assets/default/user/photo_file_name_small-bc8b334acec6a4e386249dedf9e763b5e6aff523fa85cc29211f22e6bed540df.jpg) no-repeat center;
                 background-size: cover;
@@ -77,7 +75,7 @@ section {
               }
             }
 
-            .nickname {
+            .Nickname {
               color: #ffffff;
               font-size: 19px;
               letter-spacing: -0.7px;
@@ -99,7 +97,7 @@ section {
 
 
 
-        .rating_star_inner {
+        .RatingStarInner {
           margin: 0 20px;
           padding: 10px 0;
           display: flex;
@@ -107,7 +105,7 @@ section {
           justify-content: center;
           flex-direction: column;
 
-          .rating_length {
+          .RatingLength {
             padding-bottom: 10px;
             border-bottom: 1px solid #e3e3e3;
             width: 100%;
@@ -131,7 +129,7 @@ section {
             }
           }
 
-          .rating_distribution {
+          .RatingDistribution {
             width: 100%;
             padding: 10px 0;
 
@@ -147,16 +145,16 @@ section {
         border-radius: 6px;
         background-color: white;
         margin: 12px 0 0;
-        .movie_info_inner {
+        .MovieInfoInner {
           margin: 0 20px;
           padding: 10px 0;
           display: flex;
           justify-content: center;
           flex-direction: column;
-          .movie_like_tag,
-          .like_supervisor,
-          .like_country,
-          .like_genre {
+          .MovieLikeTag,
+          .LikeSupervisor,
+          .LikeCountry,
+          .LikeGenre {
             border-bottom: 1px solid #e3e3e3;
             border-radius: 6px;
             background-color: white;
@@ -169,11 +167,11 @@ section {
             }
           }
 
-          .movie_like_tag,
-          .like_supervisor,
-          .like_country,
-          .like_genre,
-          .movie_watching_time {
+          .MovieLikeTag,
+          .LikeSupervisor,
+          .LikeCountry,
+          .LikeGenre,
+          .MovieWatchingTime {
             h2 {
               margin: 8px 0;
               color: #000;
@@ -183,9 +181,7 @@ section {
             }
           }
 
-          .movie_like_tag {}
-
-          .like_supervisor {
+          .LikeSupervisor {
             overflow:hidden;
             .evev {
               position: relative;
@@ -201,9 +197,9 @@ section {
                 display: flex;
                 width: 100%;
                 align-items: center;
-                padding-bottom: 15px;
+                padding: 7px 0;
                 &:nth-of-type(3n) {
-                  .supervisor_info  {
+                  .SupervisorInfo  {
                     border: none;
                   }
                 }
@@ -211,7 +207,7 @@ section {
                   width: 55px;
                   border-radius: 50%;
                 }
-                .supervisor_info {
+                .SupervisorInfo {
                   display: flex;
                   flex-direction: column;
                   justify-content: center;
@@ -239,7 +235,21 @@ section {
                 }
               }
             }
-            .left_bar {
+            .LeftBar div, .RightBar div {
+                font-size: 20px;
+                border-radius: 50%;
+                padding: 5px;
+                box-shadow:0 0 3px 1px #f8f8f8;
+                background: rgba(255,255,255,0.5);
+                cursor: pointer;
+                > * {
+                  transition: color .4s;
+                  &:hover {
+                    color: blue;
+                  }
+                }
+            }
+            .LeftBar {
               position: absolute;
               display: flex;
               justify-content: center;
@@ -247,11 +257,8 @@ section {
               top: 0;
               left: 0;
               height: 100%;
-              div {
-                cursor: pointer;
-              }
             }
-            .right_bar {
+            .RightBar {
               position: absolute;
               display: flex;
               justify-content: center;
@@ -265,8 +272,8 @@ section {
             }
           }
          
-          .like_country,
-          .like_genre {
+          .LikeCountry,
+          .LikeGenre {
             padding-bottom: 20px;
             div:first-of-type {
               display: flex;
@@ -301,7 +308,7 @@ section {
             }
           }
          
-          .movie_watching_time {
+          .MovieWatchingTime {
             div {
               display: flex;
               flex-direction: column;

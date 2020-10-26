@@ -49,7 +49,7 @@ class Rating extends Component {
     const { isMovieInfo } = this.props;
     return (
       <section className="Rating">
-        <div className="rating_wrap">
+        <div className="RatingWrap">
           {isModalOn && (
             <Category
               isModalOn={isModalOn}

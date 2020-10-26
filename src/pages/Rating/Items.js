@@ -72,7 +72,7 @@ class Items extends Component {
     return (
       <section className="Items">
         <div>
-          <div className="items_wrap">
+          <div className="ItemWrap">
             <ul>
               {this.state.movieList.map(movie => (
                 <Item key={movie.id} handleMovieInfo={this.props.handleMovieInfo} {...movie} />

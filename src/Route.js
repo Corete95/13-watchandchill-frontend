@@ -15,12 +15,10 @@ class Routes extends Component {
   }
 
   isNavHidden = (props) => {
-    console.log(this.state.navHidden)
     this.setState({
       navHidden: props
     })
   }
-
 
   render() {
     const { navHidden } = this.state;

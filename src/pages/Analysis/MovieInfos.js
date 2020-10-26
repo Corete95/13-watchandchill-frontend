@@ -1,4 +1,5 @@
 import React, { Component, createRef } from "react";
+import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 export class MovieInfo extends Component {
   constructor() {
     super();
@@ -6,48 +7,56 @@ export class MovieInfo extends Component {
       slicks: 0,
       supervisor: [
         {
+          id: 0,
           img:
             "https://images.watcha.net/people/medium/70f163070222e17236c2.jpg?1561521117",
           name: "론 클레멘츠",
           vg: "알라딘"
         },
         {
+          id: 1,
           img:
             "https://images.watcha.net/people/medium/a68d932ce122ce92b3c7.jpg?1561521129",
           name: "존 머스커",
           vg: "알라딘"
         },
         {
+          id: 2,
           img:
             "https://images.watcha.net/people/medium/7d2d2507658e6b0a68fa.jpg?1574311608",
           name: "수오 마사유키",
           vg: "마이코는 레이디"
         },
         {
+          id: 3,
           img:
             "https://images.watcha.net/people/medium/70f163070222e17236c2.jpg?1561521117",
           name: "론 클레멘츠",
           vg: "알라딘"
         },
         {
+          id: 4,
           img:
             "https://images.watcha.net/people/medium/a68d932ce122ce92b3c7.jpg?1561521129",
           name: "존 머스커",
           vg: "알라딘"
         },
         {
+          id: 5,
           img:
             "https://images.watcha.net/people/medium/7d2d2507658e6b0a68fa.jpg?1574311608",
           name: "수오 마사유키",
           vg: "마이코는 레이디"
         },
         {
+          id: 6,
           img:
             "https://images.watcha.net/people/medium/70f163070222e17236c2.jpg?1561521117",
           name: "론 클레멘츠",
           vg: "알라딘"
         },
         {
+          id: 7,
           img:
             "https://images.watcha.net/people/medium/a68d932ce122ce92b3c7.jpg?1561521129",
           name: "존 머스커",
@@ -83,23 +92,23 @@ export class MovieInfo extends Component {
   render() {
     return (
       <div className="MovieInfos">
-        <div className="movie_info_inner">
-          <div className="movie_like_tag">
+        <div className="MovieInfoInner">
+          <div className="MovieLikeTag">
             <h2>영화 선호태그</h2>
             <div>
               선호태그 어떻게 만드는거지...?
             </div>
           </div>
-          <div className="like_supervisor">
+          <div className="LikeSupervisor">
             <h2>선호감독</h2>
             <div className="evev">
               <ul className="sdf" ref={this.btnRef}>
-                {this.state.supervisor.map(({ img, name, vg }) => (
-                  <li>
+                {this.state.supervisor.map(({ id, img, name, vg }) => (
+                  <li key={id}>
                     <div>
                       <img src={img} alt={name} />
                     </div>
-                    <div className="supervisor_info">
+                    <div className="SupervisorInfo">
                       <div>
                         <span>{name}</span>
                         <span>100점</span>
@@ -109,15 +118,15 @@ export class MovieInfo extends Component {
                   </li>
                 ))}
               </ul>
-              <div className="left_bar">
-                <div onClick={this.moveLeft}>왼쪽</div>
+              <div className="LeftBar">
+                <div onClick={this.moveLeft}><LeftOutlined style={{ fontSize: '16px'}} /></div>
               </div>
-              <div className="right_bar">
-                <div onClick={this.moveRight}>클릭</div>
+              <div className="RightBar">
+                <div onClick={this.moveRight}><RightOutlined style={{ fontSize: '16px'}} /></div>
               </div>
             </div>
           </div>
-          <div className="like_country">
+          <div className="LikeCountry">
             <h2>영화 선호국가</h2>
             <div>
               <div>
@@ -143,7 +152,7 @@ export class MovieInfo extends Component {
               <span>탄자니아</span> <p>44점</p>
             </div>
           </div>
-          <div className="like_genre">
+          <div className="LikeGenre">
             <h2>영화 선호장르</h2>
             <span>애니메이션 좋아하는 사람 치고 나쁜 사람 없어요</span>
             <div>
@@ -182,7 +191,7 @@ export class MovieInfo extends Component {
               <span>로맨스</span> <p>78점</p>
             </div>
           </div>
-          <div className="movie_watching_time">
+          <div className="MovieWatchingTime">
             <h2>영화 감상 시간</h2>
             <div>
               <span>178 시간</span>

@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.rating_wrap {
+.RatingWrap {
   padding-top: 60px;
   width: 100%;
 }
@@ -98,7 +98,7 @@
   }
 }
 
-.MoviesInfo {
+.MovieInfo {
   display: flex;
   position: fixed;
   top: 0px;
@@ -112,17 +112,17 @@
   justify-content: center;
   align-items: center;
 
-  .movie_info_wrap {
+  .MoveInfoWrap {
     width: 375px;
     background: white;
     border-radius: 5px;
     padding: 0 20px;
 
-    .movie_info_header {
+    .MoveInfoHeader {
       display: flex;
       border-bottom: 1px solid rgb(240, 240, 240);
 
-      .info_image {
+      .InfoImage {
         position: relative;
         width: 48px;
         height: 68px;
@@ -151,7 +151,7 @@
         }
       }
 
-      .info_desc {
+      .InfoDesc {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -169,7 +169,7 @@
       }
     }
 
-    .movie_info_icon {
+    .MovieInfoIcon {
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid #f0f0f0;
@@ -194,7 +194,7 @@
       }
     }
 
-    .movie_info_btn {
+    .MovieInfoBtn {
       div {
         display: flex;
         justify-content: space-between;
@@ -218,7 +218,7 @@
       }
     }
 
-    .close_btn {
+    .CloseBtn {
       cursor: pointer;
       text-align: center;
       padding: 17px 0;
@@ -242,14 +242,14 @@
   border-radius: 5px;
   background: white;
 
-  .comment_write_header {
+  .CommentWriteHeader {
     display: flex;
     border-bottom: 1px solid rgb(227, 227, 227);
     width: 100%;
     justify-content: space-between;
     padding: 14px 20px;
 
-    .close_btn {
+    .CloseBtn {
       cursor: pointer;
       z-index: 2;
       border: none;
@@ -257,7 +257,7 @@
       color: rgb(255, 47, 110);
     }
 
-    .movie_title {
+    .MovieTitle {
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
@@ -265,7 +265,7 @@
       font-weight: 800;
     }
 
-    .comment_btn {
+    .CommentBtn {
       vertical-align: middle;
       cursor: pointer;
       font-size: 17px;
@@ -280,7 +280,7 @@
     }
   }
 
-  .comment_write_desc {
+  .CommentWriteDesc {
     padding: 0 20px;
     padding-top: 30px;
     width: 100%;
@@ -324,7 +324,7 @@
     justify-content: center;
     background: white;
 
-    .pick_count {
+    .PickCount {
       display: flex;
       justify-content: center;
       font-size: 25px;
@@ -353,7 +353,7 @@
       flex-direction: row;
       padding: 0 20px;
 
-      .focus_list {
+      .FocusList {
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -371,7 +371,7 @@
         background: rgb(255, 255, 255);
       }
 
-      .normal_list {
+      .NormalList {
         display: inline-flex;
         justify-content: center;
         align-items: center;
@@ -397,7 +397,7 @@
       border: none;
       border-top: 1px solid #e3e3e3;
 
-      .categoray_selecter {
+      .CategorySelector {
         display: flex;
         align-items: flex-start;
         height: 48px;
@@ -414,7 +414,7 @@
           margin: 0px;
         }
 
-        .down_bar {
+        .DownBar {
           color: gray;
           padding: 0 5px;
         }
@@ -438,7 +438,7 @@
   margin: 213px auto 40px;
   border: 1px solid #e3e3e3;
 
-  .items_wrap {
+  .ItemWrap {
 
     margin: 0 20px;
   }
@@ -450,7 +450,7 @@
   padding: 12px 0px;
   border-bottom: 1px solid #ededed;
 
-  .poster {
+  .Poster {
     img {
       width: 76px;
       height: 110px;
@@ -458,7 +458,7 @@
     }
   }
 
-  .description {
+  .Description {
     flex: 1 1 0%;
 
     h3 {
@@ -471,12 +471,12 @@
       font-weight: 400;
       margin: 0px 0px 2px;
 
-      .threedot {
+      .Threedot {
         cursor: pointer;
       }
     }
 
-    .dateleng {
+    .DateLeng {
       margin: 0px 0px 14px;
       color: #787878;
       font-size: 14px;
@@ -492,17 +492,17 @@
         margin: 0px 3px 0px 0px;
       }
 
-      .wished,
-      .watching {
+      .Wished,
+      .Watching {
         display: flex;
         align-items: center;
       }
 
-      .wished {
+      .Wished {
         color: #ff2f6e;
       }
 
-      .watching {
+      .Watching {
         color: #00a0ff;
       }
     }

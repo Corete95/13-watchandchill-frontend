@@ -44,17 +44,17 @@ class RatingBox extends Component {
     return (
       <section className="RatingBox">
         <div>
-          <h2 className="pick_count">{ratingLength}</h2>
+          <h2 className="PickCount">{ratingLength}</h2>
           <p>제가 취향을 알 수 있게, 15개 이상의 작품을 평가해주세요.</p>
           <ul>
-            <li className="focus_list">영화</li>
-            <li className="normal_list">TV 프로그램</li>
-            <li className="normal_list">책</li>
+            <li className="FocusList">영화</li>
+            <li className="NormalList">TV 프로그램</li>
+            <li className="NormalList">책</li>
           </ul>
           <div>
-            <div className="categoray_selecter">
+            <div className="CategorySelector">
               <button onClick={handleModal}>
-                <CaretDownOutlined className="down_bar" />
+                <CaretDownOutlined className="DownBar" />
                 <span>{currentCategory}</span>
               </button>
             </div>
