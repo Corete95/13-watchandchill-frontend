@@ -20,18 +20,36 @@ class Contents extends Component {
       addBtnClicked: false,
       dropdownBtnClicked: false,
       dropdownBtnColorChanged: false,
-      commentBtnClicked: false
+      commentBtnClicked: false,
+      currentHandleScroll: 0
     };
   }
 
+  handleScroll = () => {
+    this.setState({
+      currentHandleScroll: document.documentElement.scrollTop
+    });
+  };
   componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
     fetch(API, { method: "GET" })
-      .then(response => response.json())
-      .then(result => {
+      .then((response) => response.json())
+      .then((result) => {
         this.setState({
           movieInfo: result.movieInformation
         });
       });
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+    document.querySelector(".Nav").classList.remove("Transpa");
+  }
+  componentDidUpdate() {
+    if (this.state.currentHandleScroll > 0) {
+      document.querySelector(".Nav").classList.remove("Transpa");
+    } else {
+      document.querySelector(".Nav").classList.add("Transpa");
+    }
   }
 
   render() {
@@ -45,35 +63,7 @@ class Contents extends Component {
             {movieInfo && <Info movieInfo={movieInfo} />}
 
             {movieInfo &&
-              movieInfo.cast.map(actor => <ActorProfile actorInfo={actor} />)}
-            <div className="containerGraph">
-              <div className="titleGraph">별점 그래프</div>
-              <div className="descGraph">
-                <div>1</div>
-                <div>2</div>
-              </div>
-            </div>
-            <div className="containerComment">
-              <div className="titleComment">코멘트</div>
-              <div className="descComment"></div>
-            </div>
-            <div className="containerCollection">
-              <div className="titleCollection">이 작품이 담긴 컬렉션</div>
-              <div className="descCollection">
-                <div>1</div>
-                <div>2</div>
-              </div>
-            </div>
-            <div className="containerMovie">
-              <div className="titleMovie">비슷한 작품</div>
-              <div className="descMovie">
-                <div>1</div>
-                <div>2</div>
-              </div>
-            </div>
-
-            {movieInfo &&
-              movieInfo.cast.map(actor => <ActorProfile actorInfo={actor} />)}
+              movieInfo.cast.map((actor) => <ActorProfile actorInfo={actor} />)}
             <div className="containerGraph">
               <div className="titleGraph">별점 그래프</div>
               <div className="descGraph">
@@ -101,9 +91,8 @@ class Contents extends Component {
             </div>
 
             <button>더보기</button>
-
-            <aside>aside</aside>
           </article>
+          <aside>aside</aside>
         </body>
       </div>
     );

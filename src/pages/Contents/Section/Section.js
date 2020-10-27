@@ -32,12 +32,11 @@ class Section extends Component {
           </div>
           <div className="info">
             <h1>{movieInfo.title}</h1>
-            <div>
+            <p>
               {movieInfo.date} · {movieInfo.genre} · {movieInfo.country}
-            </div>
-          </div>
-
-          <div className="buttons">
+            </p>
+            <div className="my_rating">평균 ★4.4 (43만명)</div>
+            <div className="buttons">
             <button
               onClick={() => {
                 this.setState({ addBtnClicked: true });
@@ -67,7 +66,27 @@ class Section extends Component {
           </div>
           {/* <span className="rating">평가하기</span> */}
         </div>
+        <div className="Button">
+        {this.state.addBtnClicked && (
+          <div className="commentBox">
+            <span>김지안 님의 생각을 글로 적어보세요.</span>
+            <button
+              onClick={() => {
+                this.setState({
+                  commentBtnClicked: true
+                });
+              }}
+            >
+              코멘트 남기기
+            </button>
+            {this.state.commentBtnClicked && <div>comment modal</div>}
+          </div>
+        )}
       </div>
+      </div>
+          </div>
+
+          
     );
   }
 }

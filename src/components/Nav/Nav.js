@@ -8,13 +8,13 @@ class Nav extends Component {
   render() {
     return (
       <>
-        <nav>
+        <nav className="Nav">
           <div className="navbarBox">
             <div className="navbarLeft">
               <Link to="/main">
                 <img
                   className="navbarLogo"
-                  src="/watcha.png"
+                  src="/logo2.png"
                   alt="whatcha_log"
                 />
               </Link>

@@ -4,7 +4,7 @@
   text-decoration: none;
 }
 
-nav {
+.Nav {
   position: fixed;
   top: 0;
   width: 100%;
@@ -16,12 +16,21 @@ nav {
   border-bottom: 1px solid #ebebeb;
   background-color: #ffffff;
 }
+.Transpa {
+  transition: all 0.2s;
+  background: transparent;
+  border-bottom: none;
+  input {
+    border: 1px solid #ebebeb;
+    background: none;
+  }
+}
 
 .navbarBox {
   width: 1320px;
   display: flex;
   justify-content: space-between;
-  padding: 5px 0;
+  padding: 5px 15px;
 }
 
 .navbarLeft {
