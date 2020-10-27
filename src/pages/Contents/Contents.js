@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-
+import React, { Component, createRef } from "react";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "./Contents.scss";
 import Section from "./Section/Section";
 // import CommentBox from "./CommentBox/CommentBox";
@@ -17,14 +17,16 @@ class Contents extends Component {
   constructor() {
     super();
     this.state = {
+      slicks: 0,
       addBtnClicked: false,
       dropdownBtnClicked: false,
       dropdownBtnColorChanged: false,
       commentBtnClicked: false,
-      currentHandleScroll: 0
+      currentHandleScroll: 0,
     };
   }
 
+  liLength;
   handleScroll = () => {
     this.setState({
       currentHandleScroll: document.documentElement.scrollTop
@@ -36,8 +38,8 @@ class Contents extends Component {
       .then((response) => response.json())
       .then((result) => {
         this.setState({
-          movieInfo: result.movieInformation
-        });
+          movieInfo: result.movieInformation,
+        }, () => this.liLength = parseInt(result.movieInformation.cast.length / 6) * 598)
       });
   }
   componentWillUnmount() {
@@ -50,10 +52,39 @@ class Contents extends Component {
     } else {
       document.querySelector(".Nav").classList.add("Transpa");
     }
+
   }
 
+  btnRef = createRef();
+
+  moveRight = () => {
+    if (this.state.slicks > -this.liLength) {
+      this.setState(
+        prevState => {
+          return { slicks: prevState.slicks - 598 };
+        },
+        () => {
+          this.btnRef.current.style.left = this.state.slicks + "px"
+        }
+      );
+    }
+  };
+
+  moveLeft = () => {
+    if (this.state.slicks < 0) {
+      this.setState(
+        prevState => {
+          return { slicks: prevState.slicks + 598 };
+        },
+        () => {
+          this.btnRef.current.style.left = this.state.slicks + "px"
+        }
+      );
+    }
+  };
+
   render() {
-    const { movieInfo } = this.state;
+    const { movieInfo, slicks } = this.state;
 
     return (
       <div className="Contents">
@@ -66,8 +97,28 @@ class Contents extends Component {
             {movieInfo && <Info movieInfo={movieInfo} />}
 
             <h1>출연/제작</h1>
+            <div className="actors">
+            <ul ref={this.btnRef}>
             {movieInfo &&
-              movieInfo.cast.map((actor) => <ActorProfile actorInfo={actor} />)}
+              movieInfo.cast.map((actor) => 
+              <ActorProfile actorInfo={actor} />
+              )}
+              </ul>
+              {slicks !== 0 && (
+                <div className="LeftBar">
+                  <div onClick={this.moveLeft}>
+                    <LeftOutlined style={{ fontSize: "16px" }} />
+                  </div>
+                </div>
+              )}
+              {slicks !== -this.liLength && (
+                <div className="RightBar">
+                  <div onClick={this.moveRight}>
+                    <RightOutlined style={{ fontSize: "16px" }} />
+                  </div>
+                </div>
+              )}
+              </div>
             <div className="containerGraph">
               <div className="titleGraph">별점 그래프</div>
               <div className="descGraph">
