@@ -2,15 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./Styles/reset.scss";
 import "./Styles/common.scss";
-import Nav from "./components/Nav/Nav";
-import Footer from "./components/Footer";
 import Route from "./Route";
+import { Provider } from 'react-redux';
+import store from './store';
 
 ReactDOM.render(
-  <>
-    <Nav />
+  <Provider store={store}>
     <Route />
-    <Footer />
-  </>,
+  </Provider>,
   document.getElementById("root")
 );

@@ -1,0 +1,328 @@
+@import "../../Styles/common.scss";
+
+section {
+  background-color: #f8f8f8;
+
+  .FullContainer {
+    @mixin infoTitle {
+      margin: 8px 0;
+      color: #000;
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .AnalysisWrap {
+      padding: 20px 0;
+      max-width: 640px;
+      margin: 0 auto;
+
+      .Header {
+        border: 1px solid #e3e3e3;
+        border-radius: 6px;
+        background: url('https://d2rlq84xifqisi.cloudfront.net/images/analysisBackground.86647f491610a6893109.png') center no-repeat;
+        background-size: cover;
+
+        .AnalysisHeaderInner {
+          margin: 0 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .AnalysisLogo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 0;
+
+            span {
+              background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTAxcHgiIGhlaWdodD0iNjJweCIgdmlld0JveD0iMCAwIDEwMSA2MiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDx0aXRsZT5Mb2dpbiAvIEFzc2V0IC8gbG9nbyB3aGl0ZTwvdGl0bGU+CiAgICA8ZyBpZD0iTG9naW4tLy1Bc3NldC0vLWxvZ28td2hpdGUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAuNTcxNDI5IiBoZWlnaHQ9IjY0Ij48L3JlY3Q+CiAgICAgICAgPGcgaWQ9Ikdyb3VwLTI2IiBmaWxsPSIjRkZGRkZGIj4KICAgICAgICAgICAgPHBhdGggZD0iTTg5LjA4MDUxNSw4LjYyNTY3MjUgTDg3LjU1MjIxNSwzMC4xNjIxNDc1IEw5MS40MjE3OSwyOS43NTUyNzI1IEw5MS41NDU0MDI1LDI1LjM4MjcyMjUgTDkyLjkyMzM1MjUsMjUuMjY0OTIyNSBMOTMuMTY2NzAyNSwyOS41NzI3NiBMOTYuNTgwNTc3NSwyOS4yMTQ3MSBMOTQuODM2MDUyNSw4LjYyNTY3MjUgTDg5LjA4MDUxNSw4LjYyNTY3MjUgWiBNOTEuODgxNzUyNSwxMy41MzI5NzI1IEw5Mi4yNjA3Mjc1LDEzLjUzMjk3MjUgTDkyLjczMDM3NzUsMjEuODQ0NDYgTDkxLjY0MzgyNzUsMjEuOTExNDk3NSBMOTEuODgxNzUyNSwxMy41MzI5NzI1IFoiIGlkPSJGaWxsLTEiPjwvcGF0aD4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IkZpbGwtMiIgcG9pbnRzPSIyOC4wNzEyMzYzIDMuODc1ZS0wNSAyNi4yNjkzNjEyIDI2LjIwMDA3NjIgMjUuODE3OTIzOCAyNi4yMjUyNjM3IDIyLjAwMTgyMzggOC42MjU3ODg3NSAxNS45MzI3OTg3IDguNjI1Nzg4NzUgMTMuMDc0NTk4OCAyNy4wNjc2ODg3IDEyLjQ2NzM4NjMgMjcuMTAyMTc2MiA5LjcxMTQ4NjI1IDguNjI1Nzg4NzUgLTMuODc1ZS0wNSA4LjYyNTc4ODc1IDUuODQxOTExMjUgMzguNzUwMDM4NyAxNi43NjY2OTg3IDM3LjYwMTg3NjIgMTguOTM0MzczOCAyMC41OTEwMTM4IDE5LjU0MTE5ODcgMjAuNTU5MjM4OCAyMi40NTcxMzYzIDM3LjAwMzk2MzcgMzEuNDA5NTQ4NyAzNi4wNjI3MjYyIDM3LjQwMzM5ODggMy44NzVlLTA1Ij48L3BvbHlnb24+CiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJGaWxsLTMiIHBvaW50cz0iNTQuNjI1NTY1IDMzLjYyMjg3MTIgNjAuMDg4MTUyNSAzMy4wNDg5ODM3IDYwLjA4ODE1MjUgMTQuNzg2ODgzNyA2My4xOTg2MTUgMTQuNzA1NTA4NyA2My4xOTg2MTUgOC42MjU2MzM3NSA1MC45MDc4OSA4LjYyNTYzMzc1IDUwLjkwNzg5IDE1LjAyNzUyMTIgNTQuNjI1NTY1IDE0LjkyOTg3MTIiPjwvcG9seWdvbj4KICAgICAgICAgICAgPHBhdGggZD0iTTY5LjY3OTAxLDMyLjI5NjUzNjIgQzczLjI0MjQ2LDMxLjg5NzQxMTIgNzUuMTIwNjcyNSwyOS45MDk1MzYyIDc1LjEyMDY3MjUsMjYuOTQyMDYxMiBMNzUuMTIwNjcyNSwyMi4wOTk0NzM3IEw3MC41MTMyOTc1LDIyLjM3MzQzNjIgTDcwLjUxMzI5NzUsMjguNjM2MjExMiBMNjguOTk2MjM1LDI4Ljc2MjUzNjIgTDY4Ljk5NjIzNSwxMy4xMzA3ODYyIEw3MC41MTMyOTc1LDEzLjEwODY5ODcgTDcwLjUxMzI5NzUsMTcuMzY3MzIzNyBMNzUuMDQ0NzIyNSwxNy4xOTQxMTEyIEw3NS4wNDQ3MjI1LDEzLjAyNDIyMzcgQzc1LjA0NDcyMjUsMTAuMjQ1NDYxMiA3My4xNjkyMjI1LDguMjk5MDQ4NzUgNjkuNzU0OTYsOC4yOTkwNDg3NSBDNjYuMTEzMjM1LDguMjk5MDQ4NzUgNjMuOTk5NDIyNSwxMC4yNDU0NjEyIDYzLjk5OTQyMjUsMTMuMjEzMzIzNyBMNjMuOTk5NDIyNSwyOC4xNDgzNDg3IEM2My45OTk0MjI1LDMxLjI0MjE0ODcgNjUuNzMzODcyNSwzMi43Mzg2NzM3IDY5LjY3OTAxLDMyLjI5NjUzNjIiIGlkPSJGaWxsLTQiPjwvcGF0aD4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IkZpbGwtNiIgcG9pbnRzPSI4MC44NzYwMTYyIDIxLjc1MTE1IDgyLjQ2OTAyODcgMjEuNjUzODg3NSA4Mi40NjkwMjg3IDMwLjY5NjIgODYuNDkwMTE2MiAzMC4yNzM0Mzc1IDg2LjQ5MDExNjIgOC42MjU3NSA4Mi40NjkwMjg3IDguNjI1NzUgODIuNDY5MDI4NyAxNy40Mzk4MjUgODAuODc2MDE2MiAxNy41MDY4NjI1IDgwLjg3NjAxNjIgOC42MjU3NSA3Ni40MTA0NjYyIDguNjI1NzUgNzYuNDEwNDY2MiAzMS4zMjYyNzUgODAuODc2MDE2MiAzMC44NjM5ODc1Ij48L3BvbHlnb24+CiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJGaWxsLTgiIHBvaW50cz0iNzEuMjY0MjMzOCA2MS43Mzk3MTYyIDc3LjIxODk0NjMgNjEuNzM5NzE2MiA3Ny4yMTg5NDYzIDM1LjU4MTUyODggNzEuMjY0MjMzOCAzNi4yNDg4MDM4Ij48L3BvbHlnb24+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik02NC4yNTIxNSw1Ny4xNDc2MDg3IEw2Mi40ODUxNSw1Ny4xODQ0MjEyIEw2Mi40ODUxNSw0Mi4wNTY0MjEyIEw2NC4yNTIxNSw0MS45MjY5OTYyIEw2NC4yNTIxNSw1Ny4xNDc2MDg3IFogTTYzLjYzNzU3NSwzNi45ODg2OTYyIEw1Ny4yMjUyMjUsMzcuNjYyNTU4NyBMNTcuMjI1MjI1LDYxLjczOTg3MTIgTDYyLjMwMzAyNSw2MS43Mzk4NzEyIEM2Ny45ODk5NzUsNjEuNzM5ODcxMiA2OS44NjcwMjUsNTkuMDYxODU4NyA2OS44NjcwMjUsNTMuODU0NjMzNyBMNjkuODY3MDI1LDQ0LjEyOTkzMzcgQzY5Ljg2NzAyNSwzOS4yOTc4MDg3IDY4LjU1OTIxMjUsMzYuNDcxMzgzNyA2My42Mzc1NzUsMzYuOTg4Njk2MiBMNjMuNjM3NTc1LDM2Ljk4ODY5NjIgWiIgaWQ9IkZpbGwtMTEiPjwvcGF0aD4KICAgICAgICAgICAgPHBhdGggZD0iTTg1Ljc0Nzc4MjUsNTAuODM3MDkzNyBMODYuMzc0MzcsNDAuNzM2OTA2MiBMODcuNDY3ODk1LDQwLjY2OTA5MzcgTDg4LjQzNTg3LDUwLjcyNDMzMTIgTDg1Ljc0Nzc4MjUsNTAuODM3MDkzNyBaIE04MS44MTczNywzNS4xMDQ5ODEzIEw3OC42MTkzMzI1LDYxLjczOTc5MzcgTDg1LjA3MTIwNzUsNjEuNzM5NzkzNyBMODUuNDA3OTQ1LDU2LjMxMjg1NjIgTDg4Ljk2NTU4MjUsNTYuMjI0NTA2MiBMODkuNDk2NDU3NSw2MS43Mzk3OTM3IEw5Ni41NTkwMzI1LDYxLjczOTc5MzcgTDkyLjE0MjY5NSwzMy45OTEzMDYzIEw4MS44MTczNywzNS4xMDQ5ODEzIFoiIGlkPSJGaWxsLTE0Ij48L3BhdGg+CiAgICAgICAgICAgIDxwYXRoIGQ9Ik00Mi4yMzgyMzYyLDI1LjE1Mzg2NSBMNDMuMTczNjYxMywxNC43ODMyMDI1IEw0NC4wMDc5NDg3LDE0Ljc3MDgwMjUgTDQ0Ljk4NDgzNjIsMjQuOTczNjc3NSBMNDIuMjM4MjM2MiwyNS4xNTM4NjUgWiBNNDguNDA0NTIzNyw4LjYyNTgyNzUgTDM4LjY5Mjk5ODgsOC42MjU4Mjc1IEwzNC4yMTY5ODYyLDM1Ljc2NzEwMjUgTDQxLjM0ODUzNjIsMzUuMDE4MDY1IEw0MS43ODcxODYyLDMwLjE1Mzc3NzUgTDQ1LjQ1MDIyMzcsMjkuODM0MDkgTDQ1LjkwMDQ5ODcsMzQuNTM5ODkgTDUyLjI3MzcxMTIsMzMuODY5OTAyNSBMNDguNDA0NTIzNyw4LjYyNTgyNzUgWiIgaWQ9IkZpbGwtMTciPjwvcGF0aD4KICAgICAgICAgICAgPHBvbHlnb24gaWQ9IkZpbGwtMTkiIHBvaW50cz0iNTEuNjUzNDc4NyA1Mi4xMzI4MTYyIDU1LjI0Mjg5MTIgNTEuOTgwOTE2MiA1NS4yNDI4OTEyIDQ3LjYxODgyODcgNTEuNjUzNDc4NyA0Ny44MjAzMjg3IDUxLjY1MzQ3ODcgNDMuNDA2NzAzNyA1NS42NTc1MTYzIDQzLjA5NjMxNjIgNTUuNjU3NTE2MyAzNy44MjcwOTEyIDQ2LjY1ODIxNjIgMzguNzcyNTkxMiA0Ni42NTgyMTYyIDYxLjczOTcxNjIgNTUuOTk4NTE2MiA2MS43Mzk3MTYyIDU1Ljk5ODUxNjIgNTYuOTIxNTQxMiA1MS42NTM0Nzg3IDU2Ljk5OTA0MTIiPjwvcG9seWdvbj4KICAgICAgICAgICAgPHBhdGggZD0iTTQwLjk5NTcxNzUsNDkuOTMyMzIgTDM5LjUzNTIzLDUwLjAwNzg4MjUgTDM5LjUzNTIzLDQzLjY3MTQ4MjUgTDQwLjk5NTcxNzUsNDMuNTUxMzU3NSBMNDAuOTk1NzE3NSw0OS45MzIzMiBaIE00MS4xODEzMywzOS4zNDg5MiBMMzQuNjk0NTgsNDAuMDMwNTMyNSBMMzQuNjk0NTgsNjEuNzM5ODMyNSBMMzkuNTM1MjMsNjEuNzM5ODMyNSBMMzkuNTM1MjMsNTMuNDg5NTcgTDQxLjQ2NjkxNzUsNTMuNDE1MTcgQzQ0LjM5MjU0MjUsNTMuMzAyNzk1IDQ1LjQ4MTQxNzUsNTEuMzE2ODU3NSA0NS40ODE0MTc1LDQ4LjQ0OTM1NzUgTDQ1LjQ4MTQxNzUsNDQuMjUzNTA3NSBDNDUuNDgxNDE3NSw0MC40NzE1MDc1IDQzLjc4ODQzLDM5LjA3NDU3IDQxLjE4MTMzLDM5LjM0ODkyIEw0MS4xODEzMywzOS4zNDg5MiBaIiBpZD0iRmlsbC0yMiI+PC9wYXRoPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+') no-repeat center;
+              background-size: contain;
+              display: inline-block;
+              width: 101px;
+              height: 64px;
+            }
+          }
+
+          h1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            span {
+              font-size: 12px;
+              color: white;
+              font-weight: 400;
+              letter-spacing: - 0.2px;
+              line-height: 19px;
+              margin: 0 0 12px;
+            }
+
+            .UserWrap {
+              display: flex;
+              width: 48px;
+              border: 0;
+              height: 48px;
+
+              .UserProfile {
+                position: relative;
+                background: url(https://d3sz5r0rl9fxuc.cloudfront.net/assets/default/user/photo_file_name_small-bc8b334acec6a4e386249dedf9e763b5e6aff523fa85cc29211f22e6bed540df.jpg) no-repeat center;
+                background-size: cover;
+                width: 100%;
+                border-radius: 50%;
+                height: 100%;
+              }
+            }
+
+            .Nickname {
+              color: #ffffff;
+              font-size: 19px;
+              letter-spacing: -0.7px;
+              line-height: 28px;
+              font-weight: 600;
+              text-align: center;
+              min-height: 56px;
+              margin: 8px 0 12px;
+            }
+          }
+        }
+      }
+
+      .RatingStar {
+        border: 1px solid #e3e3e3;
+        border-radius: 6px;
+        background-color: white;
+        margin: 12px 0 0;
+
+
+
+        .RatingStarInner {
+          margin: 0 20px;
+          padding: 10px 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          .RatingLength {
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e3e3e3;
+            width: 100%;
+            text-align: center;
+
+            >h2 {
+              text-align:left;
+              @include infoTitle;
+            }
+
+            >div {
+              >h2 {
+                font-size: 60px;
+                margin-bottom: 6px;
+              }
+
+              >p {
+                font-size: 13px;
+                color: #787878;
+              }
+            }
+          }
+
+          .RatingDistribution {
+            width: 100%;
+            padding: 10px 0;
+
+            h2 {
+              @include infoTitle
+            }
+          }
+        }
+      }
+
+      .MovieInfos {
+        border: 1px solid #e3e3e3;
+        border-radius: 6px;
+        background-color: white;
+        margin: 12px 0 0;
+        .MovieInfoInner {
+          margin: 0 20px;
+          padding: 10px 0;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          .LikeSupervisor,
+          .LikeCountry,
+          .LikeGenre {
+            border-bottom: 1px solid #e3e3e3;
+            border-radius: 6px;
+            background-color: white;
+            margin: 8px 0;
+            span {
+              display: flex;
+              justify-content: center;
+              font-size: 12.5px;
+              color: #ff2f6e;
+            }
+          }
+
+          .LikeSupervisor,
+          .LikeCountry,
+          .LikeGenre,
+          .MovieWatchingTime {
+            h2 {
+              margin: 8px 0;
+              color: #000;
+              font-size: 19px;
+              font-weight: 600;
+              margin-bottom: 15px;
+            }
+          }
+
+          .LikeSupervisor {
+            overflow:hidden;
+            .SupervisorList {
+              position: relative;
+            }
+            ul {
+              display: flex;
+              position: relative;
+              left: 0px;
+              flex-flow: column wrap;
+              height: 230px;
+              transition: left .5s;
+              li {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                padding: 7px 0;
+                &:nth-of-type(3n) {
+                  .SupervisorInfo  {
+                    border: none;
+                  }
+                }
+                img {
+                  width: 55px;
+                  border-radius: 50%;
+                }
+                .SupervisorInfo {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  width: 100%;
+                  height: 100%;
+                  padding: 10px;
+                  border-bottom: 1px solid #e3e3e3;
+                
+                  div {        
+                    display: flex;
+                    justify-content: space-between;           
+                    span {
+                      font-size: 17px;
+                      &:last-of-type {
+                        color: gray;
+                        font-size: 14px;
+                      }
+                    }
+                  }
+                  p {
+                    font-size: 14px;
+                    color: gray;
+                    padding: 5px 0;
+                  }
+                }
+              }
+            }
+            .LeftBar div, .RightBar div {
+                font-size: 20px;
+                border-radius: 50%;
+                padding: 5px;
+                box-shadow:0 0 3px 1px #f8f8f8;
+                background: rgba(255,255,255,0.5);
+                cursor: pointer;
+                > * {
+                  transition: color .4s;
+                  &:hover {
+                    color: blue;
+                  }
+                }
+            }
+            .LeftBar {
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              top: 0;
+              left: 0;
+              height: 100%;
+            }
+            .RightBar {
+              position: absolute;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              top: 0;
+              right: 0;
+              height: 100%;
+              div {
+                cursor: pointer;
+              }
+            }
+          }
+         
+          .LikeCountry,
+          .LikeGenre {
+            padding-bottom: 20px;
+            div:first-of-type {
+              display: flex;
+              justify-content: center;
+              div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                margin: 15px;
+                h3 {
+                  padding: 8px;
+                }
+                p {
+                  font-size: 12px;
+                  color: gray;
+                }
+              }
+            }
+            div {
+              display: flex;
+              justify-content: space-between;
+              padding: 8px 0;
+              span {
+                color: gray;
+                font-size: 13px;
+              }
+              p {
+                color: gray;
+                font-size: 12px;
+              }
+            }
+          }
+         
+          .MovieWatchingTime {
+            div {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              color: #ff2f6e;
+              span {
+                font-weight: 600;
+              }
+              p {
+                font-size: 13px;
+                padding: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
