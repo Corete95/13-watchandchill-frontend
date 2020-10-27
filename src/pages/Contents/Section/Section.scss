@@ -1,4 +1,4 @@
-@import "../../Styles/common.scss";
+@import "../../../Styles/common.scss";
  
 section {
   width: 100%;
@@ -22,8 +22,6 @@ section {
     top: 0px;
     height: 266px;
     width: 100%;
-    background-image: linear-gradient(to right, transparent 30%, black 100%),
-      url("https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_720,q_80,w_1280/v1463551411/mqsgvr-14521.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 60%;
