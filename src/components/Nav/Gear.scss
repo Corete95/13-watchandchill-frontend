@@ -12,9 +12,11 @@
   overflow: hidden scroll;
   .gearOutLine {
     text-align: center;
+    text-align: center;
     padding: 20px 0px;
     overflow: auto;
     .gearBox {
+      overflow: hidden;
       display: inline-block;
       position: relative;
       vertical-align: middle;
