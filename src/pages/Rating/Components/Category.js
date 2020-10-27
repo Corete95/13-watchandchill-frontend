@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { actionCreators } from "../../../store";
 
 class Category extends Component {
+  
   componentDidMount() {
     window.addEventListener("click", this.props.handleClickOutside);
   }
