@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./MainInfo.scss";
+import "./Info.scss";
 
 class MainInfo extends Component {
   render() {

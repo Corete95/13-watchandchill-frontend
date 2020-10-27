@@ -4,7 +4,7 @@ import "./Contents.scss";
 import Section from "./Section/Section";
 // import CommentBox from "./CommentBox/CommentBox";
 // import Tag from "./Tag/Tag";
-// import Info from "./Info/Info";
+import Info from "./Info/Info";
 import ActorProfile from "./ActorProfile/ActorProfile";
 // import Graph from "./Graph/Graph";
 // import Comment from "./Comment/Comment";
@@ -39,44 +39,73 @@ class Contents extends Component {
 
     return (
       <div className="Contents">
-        <main>
-          {movieInfo && <Section movieInfo={movieInfo} />}
-        </main>
+        <main>{movieInfo && <Section movieInfo={movieInfo} />}</main>
+
         <article>
-          {/* {movieInfo && <Info movieInfo={movieInfo} />} */}
+          {movieInfo && <Info movieInfo={movieInfo} />}
+          {movieInfo && <Section movieInfo={movieInfo}/>}
+          
+            {movieInfo &&
+              movieInfo.cast.map(actor => <ActorProfile actorInfo={actor} />)}
+            <div className="containerGraph">
+              <div className="titleGraph">별점 그래프</div>
+              <div className="descGraph">
+                <div>1</div>
+                <div>2</div>
+              </div>
+            </div>
+            <div className="containerComment">
+              <div className="titleComment">코멘트</div>
+              <div className="descComment"></div>
+            </div>
+            <div className="containerCollection">
+              <div className="titleCollection">이 작품이 담긴 컬렉션</div>
+              <div className="descCollection">
+                <div>1</div>
+                <div>2</div>
+              </div>
+            </div>
+            <div className="containerMovie">
+              <div className="titleMovie">비슷한 작품</div>
+              <div className="descMovie">
+                <div>1</div>
+                <div>2</div>
+              </div>
+            </div>
 
-          {movieInfo &&
-            movieInfo.cast.map(actor => <ActorProfile actorInfo={actor} />)}
-          <div className="containerGraph">
-            <div className="titleGraph">별점 그래프</div>
-            <div className="descGraph">
-              <div>1</div>
-              <div>2</div>
+            {movieInfo &&
+              movieInfo.cast.map(actor => <ActorProfile actorInfo={actor} />)}
+            <div className="containerGraph">
+              <div className="titleGraph">별점 그래프</div>
+              <div className="descGraph">
+                <div>1</div>
+                <div>2</div>
+              </div>
             </div>
-          </div>
-          <div className="containerComment">
-            <div className="titleComment">코멘트</div>
-            <div className="descComment"></div>
-          </div>
-          <div className="containerCollection">
-            <div className="titleCollection">이 작품이 담긴 컬렉션</div>
-            <div className="descCollection">
-              <div>1</div>
-              <div>2</div>
+            <div className="containerComment">
+              <div className="titleComment">코멘트</div>
+              <div className="descComment"></div>
             </div>
-          </div>
-          <div className="containerMovie">
-            <div className="titleMovie">비슷한 작품</div>
-            <div className="descMovie">
-              <div>1</div>
-              <div>2</div>
+            <div className="containerCollection">
+              <div className="titleCollection">이 작품이 담긴 컬렉션</div>
+              <div className="descCollection">
+                <div>1</div>
+                <div>2</div>
+              </div>
             </div>
-          </div>
+            <div className="containerMovie">
+              <div className="titleMovie">비슷한 작품</div>
+              <div className="descMovie">
+                <div>1</div>
+                <div>2</div>
+              </div>
+            </div>
 
-          <button>더보기</button>
+            <button>더보기</button>
+
+            <aside>aside</aside>
+          
         </article>
-
-        <aside>aside</aside>
       </div>
     );
   }
