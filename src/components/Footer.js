@@ -7,7 +7,7 @@ import "./Footer.scss";
 class Footer extends Component {
   render() {
     return (
-      <footer>
+      <footer className="Footer">
         <div className="userData">
           <div>
             지금까지
@@ -46,10 +46,6 @@ class Footer extends Component {
             </div>
             <div className="footerRight">
               <div className="snsBox">
-                {/* <button>
-                  한국어<span className="in_button">▾</span>
-                </button> */}
-
                 <select>
                   <option value="한국어" selected="selected">
                     한국어

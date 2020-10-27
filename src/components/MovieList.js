@@ -4,7 +4,6 @@ import "./MovieList.scss";
 
 class MovieList extends Component {
   render() {
-    // console.log(this.props.id);
     return (
       <div className="MovieList">
         <Link to={`/contents/${this.props.id}`}>

@@ -3,8 +3,8 @@ import "./Main.scss";
 import MovieList from "../../components/MovieList";
 
 // 백엔드와 맞춰보기 위해서 남겨놓은 주석입니다.
-// const API = "http://10.58.4.235:8000/movie/list";
-// const API = "http://localhost:3000/Data/mock.json";
+// const API = "http://10.58.4.235:8000/info/front";
+const API = "http://localhost:3001/Data/mock.json";
 
 class Main extends Component {
   constructor() {
@@ -19,7 +19,7 @@ class Main extends Component {
   // `API`${this.props.match.params.id}
   componentDidMount() {
     // console.log(this.props);
-    fetch(`http://localhost:3000/Data/mock.json`)
+    fetch(API)
       .then(res => res.json())
       .then(res => this.setState({ movies: { ...res } }));
   }
