@@ -1,11 +1,13 @@
 import React, { Component } from "react";
-import "./profile.scss";
+import "./Profile.scss";
+import Gear from "./Gear";
 
-class profile extends Component {
+class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      users: []
+      users: [],
+      gearModalOpen: false
     };
   }
 
@@ -20,8 +22,17 @@ class profile extends Component {
         });
       });
   }
+
+  isGearOpen = () => {
+    this.setState({ gearModalOpen: true });
+  };
+
+  isGearClose = () => {
+    this.setState({ gearModalOpen: false });
+  };
+
   render() {
-    const { users } = this.state;
+    const { users, gearModalOpen } = this.state;
     console.log(this.state.users);
     return (
       <>
@@ -30,7 +41,10 @@ class profile extends Component {
             <div className="profile_margin">
               <div className="profie_box">
                 <div className="box_first">
-                  <button className="box_top_gear"></button>
+                  <button
+                    className="box_top_gear"
+                    onClick={this.isGearOpen}
+                  ></button>
                 </div>
                 <div className="box_second">
                   <div className="box_center">
@@ -67,9 +81,13 @@ class profile extends Component {
             </div>
           </div>
         </div>
+
+        {gearModalOpen && (
+          <Gear open={gearModalOpen} close={this.isGearClose} />
+        )}
       </>
     );
   }
 }
 
-export default profile;
+export default Profile;
