@@ -509,3 +509,70 @@
     }
   }
 }
+
+
+@mixin tablet {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+
+@include tablet {
+  .RatingWrap {
+    // background: white;
+    .RatingBox {
+      top: 0;
+      padding-top: 0;
+      div {
+        max-width: 100%;
+      }
+    }
+    .Items {
+      max-width: 100%;
+      margin: 115px auto 40px;
+    }
+    .Item {
+      .Poster {
+        img {
+          width: 60px;
+          height: 90px;
+        }
+      }
+    }
+  }
+  .Category {
+    padding: 0;
+    div {
+      width: 100%;
+      border-radius: 0;
+      div {
+        ul {
+
+          li {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .MovieInfo {
+    .MoveInfoWrap {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      border-radius: 0px;
+      
+    }
+  }
+  .CommentWrite {
+    top:0;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    border-radius: 0;
+    .CommentWriteDesc {
+      height: inherit;
+    }
+  }
+}

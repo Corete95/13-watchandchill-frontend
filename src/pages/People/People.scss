@@ -1,0 +1,42 @@
+
+.People {
+  margin-top: 64px;
+  .GoBack {
+    padding: 10px 15px;
+    img {
+      cursor:pointer;
+    }
+  }
+
+  div {
+    .Header {
+      border-bottom: 1px solid #e8e8e8;
+
+      h2 {
+        font-size: 22px;
+        margin: 15px 20px;
+      }
+    }
+      ul {
+        display: flex;
+        margin: 10px;
+        flex-wrap: wrap;
+        li {
+          width: 140px;
+          display: flex;
+          flex-grow: 0;
+          flex-direction: column;
+          margin: 10px 6px;
+          img {
+            width:inherit;
+            border-radius: 5px;
+        }
+        span {
+          font-weight: 400;
+          font-size: 1rem;
+          padding: 6px 0;
+        }
+      }
+    }
+  }
+}

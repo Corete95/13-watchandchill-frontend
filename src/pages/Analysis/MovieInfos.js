@@ -1,5 +1,7 @@
 import React, { Component, createRef } from "react";
+import { withRouter } from 'react-router-dom'
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+
 export class MovieInfo extends Component {
   constructor() {
     super();
@@ -192,6 +194,10 @@ export class MovieInfo extends Component {
     );
   };
 
+  goToSupervisors = (id) => {
+    this.props.history.push(`/people/${id}`)
+  }
+
   render() {
     const { supervisors, countrys, genres, WatchingTime, slicks } = this.state;
     return (
@@ -202,7 +208,7 @@ export class MovieInfo extends Component {
             <div className="SupervisorList">
               <ul ref={this.btnRef}>
                 {supervisors.map(({ id, img, name, films, vg }) => (
-                  <li key={id}>
+                  <li onClick={() => this.goToSupervisors(id)} key={id}>
                     <div>
                       <img src={img} alt={name} />
                     </div>
@@ -254,4 +260,4 @@ export class MovieInfo extends Component {
   }
 }
 
-export default MovieInfo;
+export default withRouter(MovieInfo);

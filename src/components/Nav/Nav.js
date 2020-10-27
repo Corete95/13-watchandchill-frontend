@@ -8,7 +8,7 @@ class Nav extends Component {
   render() {
     return (
       <>
-        <nav>
+        <nav className="Nav">
           <div className="navbarBox">
             <div className="navbarLeft">
               <Link to="/main">

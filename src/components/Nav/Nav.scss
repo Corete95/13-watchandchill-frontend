@@ -4,11 +4,11 @@
   text-decoration: none;
 }
 
-nav {
+.Nav {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9;
+  z-index: 6;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -79,4 +79,18 @@ input {
   font-size: 30px;
   color: #d5d4d8;
   padding-top: 10px;
+}
+
+
+@mixin tablet {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+
+@include tablet {
+  .Nav {
+    display: none;
+  }
 }
