@@ -144,11 +144,11 @@ export class MovieInfo extends Component {
       WatchingTime: 178
     };
   }
-
+  liLength;
   btnRef = createRef();
   
   moveRight = () => {
-    if (this.state.slicks > -1195) {
+    if (this.state.slicks > -this.liLength) {
       this.setState(
         prevState => {
           return { slicks: prevState.slicks - 598 };
@@ -197,6 +197,9 @@ export class MovieInfo extends Component {
   goToSupervisors = (id) => {
     this.props.history.push(`/people/${id}`)
   }
+  componentDidMount() {
+    this.liLength = parseInt(this.state.supervisors.length / 3) * 598
+  }
 
   render() {
     const { supervisors, countrys, genres, WatchingTime, slicks } = this.state;
@@ -229,7 +232,7 @@ export class MovieInfo extends Component {
                   </div>
                 </div>
               )}
-              {slicks !== -1196 && (
+              {slicks !== -this.liLength && (
                 <div className="RightBar">
                   <div onClick={this.moveRight}>
                     <RightOutlined style={{ fontSize: "16px" }} />
