@@ -5,9 +5,16 @@
 }
 
 nav {
+<<<<<<< HEAD
   z-index: 6;
   position: fixed;
+=======
+  position: fixed;
+  top:0;
+>>>>>>> ae59550b63281a97b37f0fa1087b22a9181cfc97
   width: 100%;
+  z-index: 9;
+  background-color: white;
   display: flex;
   justify-content: center;
   margin: auto 0;
@@ -41,6 +48,9 @@ nav {
 
 .navbarRight {
   display: flex;
+  input {
+    outline: none;
+  }
 }
 
 input {
