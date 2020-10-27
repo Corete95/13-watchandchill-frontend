@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./Password.scss";
 
 class Password extends Component {
-  passWordClose = ({ target }) => {
-    if (target.className === "pwModal") {
+  passWordClose = (event) => {
+    if (event.target.className === "pwModal") {
       this.props.close();
     }
   };

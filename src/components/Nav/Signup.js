@@ -3,6 +3,8 @@ import "./Signup.scss";
 import FacebookLogin from "react-facebook-login";
 import Login from "../Nav/Login";
 
+const API = "http://10.58.5.88:8000/user";
+
 class Signup extends Component {
   state = {
     loginModalOpen: false,
@@ -22,8 +24,8 @@ class Signup extends Component {
     this.setState({ loginModalOpen: false });
   };
 
-  signClose = ({ target }) => {
-    if (target.className === "signUpOutLine") {
+  signClose = (event) => {
+    if (event.target.className === "signUpOutLine") {
       this.props.close();
     }
   };
@@ -33,18 +35,12 @@ class Signup extends Component {
     this.loginOpen();
   };
 
-  valiDateName = name => {
-    if (name.length > 1) {
-      this.setState({
-        isNameValid: true,
-        name
-      });
-    } else {
-      this.setState({
-        isNameValid: false,
-        name
-      });
-    }
+  valiDateName = (name) => {
+    const isNameValid = name.length > 1;
+    this.setState({
+      isNameValid,
+      name
+    });
   };
 
   isNameValid = () => {
@@ -52,20 +48,13 @@ class Signup extends Component {
     if (name) return isNameValid;
   };
 
-  valiDateEmail = email => {
+  valiDateEmail = (email) => {
     const emailRegp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-    if (email.match(emailRegp)) {
-      this.setState({
-        isEmailValid: true,
-        email
-      });
-    } else {
-      this.setState({
-        isEmailValid: false,
-        email
-      });
-    }
+    const isEmailValid = email.match(emailRegp) ? true : false;
+    this.setState({
+      isEmailValid,
+      email
+    });
   };
 
   isEmailValid = () => {
@@ -73,19 +62,13 @@ class Signup extends Component {
     if (email) return isEmailValid;
   };
 
-  valiDatePassword = passWord => {
+  valiDatePassword = (passWord) => {
     const passwordRegp = /^[A-Za-z0-9]{6,12}$/;
-    if (passWord.match(passwordRegp)) {
-      this.setState({
-        isPasswordValid: true,
-        passWord
-      });
-    } else {
-      this.setState({
-        isPasswordValid: false,
-        passWord
-      });
-    }
+    const isPasswordValid = passWord.match(passwordRegp) ? true : false;
+    this.setState({
+      isPasswordValid,
+      passWord
+    });
   };
 
   isPasswordValid = () => {
@@ -98,7 +81,7 @@ class Signup extends Component {
     return isNameValid && isEmailValid && isPasswordValid;
   };
 
-  inputClassName = boolean => {
+  inputClassName = (boolean) => {
     switch (boolean) {
       case true:
         return "inputGreen";
@@ -109,11 +92,10 @@ class Signup extends Component {
     }
   };
 
-  signupComplete = e => {
+  signupComplete = (e) => {
     const { name, email, passWord } = this.state;
 
     if (this.allValid) {
-      const API = "http://10.58.5.88:8000/user";
       fetch(API, {
         method: "POST",
         body: JSON.stringify({
@@ -122,13 +104,11 @@ class Signup extends Component {
           password: passWord
         })
       })
-        .then(response => response.json())
-        .then(result => {
-          console.log(result);
-          if (result.MESSAGE == "SUCCESS") {
+        .then((response) => response.json())
+        .then((result) => {
+          if (result.MESSAGE === "SUCCESS") {
             alert("회원가입을 축하드립니다!");
-            console.log("백엔드에서 오는 응답 메세지:", result);
-          } else if (result.MESSAGE == "EMAIL_OVERLAP") {
+          } else if (result.MESSAGE === "EMAIL_OVERLAP") {
             alert("이미 가입된 계정입니다.");
           }
         });
@@ -136,7 +116,7 @@ class Signup extends Component {
   };
 
   render() {
-    const responseFacebook = response => {};
+    const responseFacebook = (response) => {};
     return (
       <>
         {this.props.open ? (
@@ -153,7 +133,7 @@ class Signup extends Component {
                       )}`}
                       type="text"
                       placeholder="이름"
-                      onChange={e => this.valiDateName(e.target.value)}
+                      onChange={(e) => this.valiDateName(e.target.value)}
                     />
                     <input
                       className={`input ${this.inputClassName(
@@ -161,7 +141,7 @@ class Signup extends Component {
                       )}`}
                       type="email"
                       placeholder="이메일"
-                      onChange={e => this.valiDateEmail(e.target.value)}
+                      onChange={(e) => this.valiDateEmail(e.target.value)}
                     />
                     <input
                       className={`input ${this.inputClassName(
@@ -169,7 +149,7 @@ class Signup extends Component {
                       )}`}
                       type="password"
                       placeholder="비밀번호"
-                      onChange={e => this.valiDatePassword(e.target.value)}
+                      onChange={(e) => this.valiDatePassword(e.target.value)}
                     />
                   </div>
                   <button className="language" type="button">

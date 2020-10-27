@@ -4,48 +4,57 @@ import Password from "./Password";
 import FacebookLogin from "react-facebook-login";
 import Signup from "./Signup";
 
+const API = "http://10.58.5.88:8000/user/login";
+
 class Login extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      passWordModal: false,
-      signupModalOpen: false,
+      passwordModal: false,
+      signupModal: false,
       email: "",
-      passWord: ""
+      password: ""
     };
   }
-
-  handeEmail = event => {
-    this.setState({ email: event.target.value });
+  openModal = (e) => {
+    this.setState({ [`${e.target.name}Modal`]: true });
   };
 
-  handePw = event => {
-    this.setState({ passWord: event.target.value });
+  closeModal = (e) => {
+    this.setState({ [`${e.target.name}Modal`]: false });
+  };
+
+  handleInput = (e) => {
+    const { value, name } = e.target;
+    this.setState({
+      [name]: value
+    });
   };
 
   signupOpen = () => {
-    this.setState({ signupModalOpen: true });
+    this.setState({ signupModal: true });
   };
 
   signupClose = () => {
-    this.setState({ signupModalOpen: false });
+    this.setState({ signupModal: false });
   };
 
   passWordOpen = () => {
-    this.setState({ passWordModal: true });
+    this.setState({ passwordModal: true });
   };
 
   passWordClose = () => {
-    this.setState({ passWordModal: false });
+    this.setState({ passwordModal: false });
   };
 
-  loginClose = ({ target }) => {
-    if (target.className === "loginOutLine") {
+  loginClose = (event) => {
+    if (event.target.className === "loginOutLine") {
       this.props.close();
     }
   };
 
-  signupMove = () => {
+  signupModalve = () => {
     this.props.close();
     this.signupOpen();
   };
@@ -55,32 +64,28 @@ class Login extends Component {
   };
 
   goToMain = () => {
-    const { email, passWord } = this.state;
-
-    const API = "http://10.58.5.88:8000/user/login";
+    const { email, password } = this.state;
     fetch(API, {
       method: "POST",
       body: JSON.stringify({
         email,
-        password: passWord
+        password: password
       })
     })
-      .then(response => response.json())
-      .then(result => {
-        console.log(result);
-        if (result.MESSAGE == "SUCCESS") {
+      .then((response) => response.json())
+      .then((result) => {
+        if (result.MESSAGE === "SUCCESS") {
           localStorage.setItem("token", result.AUTHORIZATION);
+          this.props.isLogin(true);
           alert("로그인을 축하드립니다!");
-          console.log("백엔드에서 오는 응답 메세지:", result);
-          this.mainMove();
-        } else if (result.MESSAGE == "EMAIL_OVERLAP") {
+        } else if (result.MESSAGE === "EMAIL_OVERLAP") {
           alert("로그인 불가");
         }
       });
   };
 
   render() {
-    const responseFacebook = response => {};
+    const responseFacebook = (response) => {};
     return (
       <>
         {this.props.open ? (
@@ -92,14 +97,16 @@ class Login extends Component {
                   <h2>로그인</h2>
                   <div className="loginInput">
                     <input
-                      onChange={this.handeEmail}
+                      onChange={this.handleInput}
                       className="loginId"
+                      name="email"
                       type="email"
                       placeholder="이메일"
                     />
                     <input
-                      onChange={this.handePw}
+                      onChange={this.handleInput}
                       className="loginPw"
+                      name="password"
                       type="password"
                       placeholder="비밀번호"
                     />
@@ -114,7 +121,7 @@ class Login extends Component {
                   </div>
                   <div className="signUp">
                     계정이 없으신가요?
-                    <button onClick={this.signupMove}>회원가입</button>
+                    <button onClick={this.signupModalve}>회원가입</button>
                   </div>
                   <hr className="or"></hr>
                   <FacebookLogin
@@ -131,15 +138,12 @@ class Login extends Component {
           </div>
         ) : null}
 
-        {this.state.passWordModal && (
-          <Password
-            open={this.state.passWordModal}
-            close={this.passWordClose}
-          />
+        {this.state.passwordModal && (
+          <Password open={this.state.passwordModal} close={this.closeModal} />
         )}
 
-        {this.state.signupModalOpen && (
-          <Signup open={this.state.signupModalOpen} close={this.signupClose} />
+        {this.state.signupModal && (
+          <Signup open={this.state.signupModal} close={this.signupClose} />
         )}
       </>
     );
