@@ -312,13 +312,14 @@
   padding-top: 42px;
   background: $grayColor;
   overflow-y: hidden;
-
+  
   div {
     display: flex;
     max-width: 640px;
     border-width: 1px solid #e3e3e3;
     border-image: initial;
     margin: 0px auto;
+    border:  1px solid #e3e3e3;
     overflow: hidden;
     flex-direction: column;
     justify-content: center;

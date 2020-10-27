@@ -15,7 +15,7 @@ export class RatingStar extends Component {
           count={5}
           value={this.props.rating}
           onChange={this.ratingChanged}
-          size={45}
+          size={42}
           color1={"#eeeeee"}
           color2={"#ffdd63"}
         />
