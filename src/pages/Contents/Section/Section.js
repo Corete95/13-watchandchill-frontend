@@ -17,12 +17,13 @@ class Section extends Component {
   }
   render() {
     const { actorInfo } = this.props;
+    const { movieInfo } = this.props;
 
     return (
       <div className="Section">
         <div className="headerBox">
           <div className="darkBox" />
-          <img className="mainImage" src={actorInfo.main_image} />
+          <img className="mainImage" src={movieInfo.poster_url} />
         </div>
 
         <div className="movieTitle">

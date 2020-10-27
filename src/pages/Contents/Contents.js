@@ -34,7 +34,7 @@ class Contents extends Component {
     
     return (
       <div className="Contents">
-        {movieInfo &&  <Section/>}
+        {movieInfo &&  <Section movieInfo={movieInfo}/>}
         <main>
           <article>
             
