@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./Info.scss";
 
-class MainInfo extends Component {
+class Info extends Component {
   render() {
     const { movieInfo } = this.props;
     return (
-      <div className="MainInfo">
+      <div className="Info">
         <div className="containerRating">
           <div className="titleRating">내 예상별점</div>
           <div className="descRating">
@@ -36,4 +36,4 @@ class MainInfo extends Component {
   }
 }
 
-export default MainInfo;
+export default Info;

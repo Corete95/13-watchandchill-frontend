@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Main from "./pages/Main/Main";
+// import Main from "./pages/Main/Main";
 import Rating from "./pages/Rating/Rating";
 import Users from "./pages/Users/Users";
 import Contents from "./pages/Contents/Contents";
@@ -35,7 +35,7 @@ class Routes extends Component {
       <Router>
         {!navHidden && <Nav />}
         <Switch>
-          <Route exact path="/" component={Main} />
+          {/* <Route exact path="/" component={Main} /> */}
           <Route
             exact
             path="/users/analysis"

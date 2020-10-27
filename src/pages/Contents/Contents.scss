@@ -1,62 +1,66 @@
 @import "../../Styles/common.scss";
 
+.Contents {
+  article {
+    background-color: $whiteColor;
+  }
+}
 
-    
-    .buttons {
-      display: flex;
-    }
-    .addBtn_not_clicked {
-      @include addBtn;
-      color: white;
-      background-color: $themeColor;
-      &:hover {
-        .plus_icon {
-          transform: rotateZ(90deg);
-        }
-      }
-    }
-  
-  .plusicon {
-    transition: 0.2s ease-in-out;
-  }
-  .pinkFlag {
-    width: 20px;
-  }
-  .addBtn_clicked {
-    width: 205px;
-    height: 40px;
-    border: none;
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
-    font-size: 17px;
-    font-weight: 600;
-    &:focus {
-      outline: none;
+.buttons {
+  display: flex;
+}
+.addBtn_not_clicked {
+  @include addBtn;
+  color: white;
+  background-color: $themeColor;
+  &:hover {
+    .plus_icon {
+      transform: rotateZ(90deg);
     }
   }
+}
 
-  .dropdownBtn_not_clicked {
-    margin-top: 22px;
-    width: 50px;
-    height: 40px;
-    color: white;
-    background-color: $themeColor;
-    border: none;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-left: 1px solid rgb(231, 18, 82);
-    &:focus {
-      outline: none;
-    }
-    &:hover {
-      .dropdown_icon {
-        transform: translateY(2px);
-      }
+.plusicon {
+  transition: 0.2s ease-in-out;
+}
+.pinkFlag {
+  width: 20px;
+}
+.addBtn_clicked {
+  width: 205px;
+  height: 40px;
+  border: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  font-size: 17px;
+  font-weight: 600;
+  &:focus {
+    outline: none;
+  }
+}
+
+.dropdownBtn_not_clicked {
+  margin-top: 22px;
+  width: 50px;
+  height: 40px;
+  color: white;
+  background-color: $themeColor;
+  border: none;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-left: 1px solid rgb(231, 18, 82);
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    .dropdown_icon {
+      transform: translateY(2px);
     }
   }
-  .dropdownIcon {
-    transition: 0.2s ease-in-out;
-  }
+}
+.dropdownIcon {
+  transition: 0.2s ease-in-out;
+}
 
 .dropdownBtn_clicked {
   margin-top: 22px;
@@ -136,7 +140,7 @@ main {
         }
       }
     }
-    
+
     .mainContent {
       margin-top: 30px;
       padding: 0 20px;
@@ -216,7 +220,7 @@ main {
           }
         }
       }
-    
+
       .containerGraph {
         @include contentContainer;
         .main_content_title_graph {

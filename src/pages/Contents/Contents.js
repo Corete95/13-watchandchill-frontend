@@ -39,72 +39,70 @@ class Contents extends Component {
 
     return (
       <div className="Contents">
-        <main>{movieInfo && <Section movieInfo={movieInfo} />}</main>
+        {movieInfo && <Section movieInfo={movieInfo} />}
 
         <article>
           {movieInfo && <Info movieInfo={movieInfo} />}
-          {movieInfo && <Section movieInfo={movieInfo}/>}
-          
-            {movieInfo &&
-              movieInfo.cast.map(actor => <ActorProfile actorInfo={actor} />)}
-            <div className="containerGraph">
-              <div className="titleGraph">별점 그래프</div>
-              <div className="descGraph">
-                <div>1</div>
-                <div>2</div>
-              </div>
-            </div>
-            <div className="containerComment">
-              <div className="titleComment">코멘트</div>
-              <div className="descComment"></div>
-            </div>
-            <div className="containerCollection">
-              <div className="titleCollection">이 작품이 담긴 컬렉션</div>
-              <div className="descCollection">
-                <div>1</div>
-                <div>2</div>
-              </div>
-            </div>
-            <div className="containerMovie">
-              <div className="titleMovie">비슷한 작품</div>
-              <div className="descMovie">
-                <div>1</div>
-                <div>2</div>
-              </div>
-            </div>
 
-            {movieInfo &&
-              movieInfo.cast.map(actor => <ActorProfile actorInfo={actor} />)}
-            <div className="containerGraph">
-              <div className="titleGraph">별점 그래프</div>
-              <div className="descGraph">
-                <div>1</div>
-                <div>2</div>
-              </div>
+          {movieInfo &&
+            movieInfo.cast.map(actor => <ActorProfile actorInfo={actor} />)}
+          <div className="containerGraph">
+            <div className="titleGraph">별점 그래프</div>
+            <div className="descGraph">
+              <div>1</div>
+              <div>2</div>
             </div>
-            <div className="containerComment">
-              <div className="titleComment">코멘트</div>
-              <div className="descComment"></div>
+          </div>
+          <div className="containerComment">
+            <div className="titleComment">코멘트</div>
+            <div className="descComment"></div>
+          </div>
+          <div className="containerCollection">
+            <div className="titleCollection">이 작품이 담긴 컬렉션</div>
+            <div className="descCollection">
+              <div>1</div>
+              <div>2</div>
             </div>
-            <div className="containerCollection">
-              <div className="titleCollection">이 작품이 담긴 컬렉션</div>
-              <div className="descCollection">
-                <div>1</div>
-                <div>2</div>
-              </div>
+          </div>
+          <div className="containerMovie">
+            <div className="titleMovie">비슷한 작품</div>
+            <div className="descMovie">
+              <div>1</div>
+              <div>2</div>
             </div>
-            <div className="containerMovie">
-              <div className="titleMovie">비슷한 작품</div>
-              <div className="descMovie">
-                <div>1</div>
-                <div>2</div>
-              </div>
-            </div>
+          </div>
 
-            <button>더보기</button>
+          {movieInfo &&
+            movieInfo.cast.map(actor => <ActorProfile actorInfo={actor} />)}
+          <div className="containerGraph">
+            <div className="titleGraph">별점 그래프</div>
+            <div className="descGraph">
+              <div>1</div>
+              <div>2</div>
+            </div>
+          </div>
+          <div className="containerComment">
+            <div className="titleComment">코멘트</div>
+            <div className="descComment"></div>
+          </div>
+          <div className="containerCollection">
+            <div className="titleCollection">이 작품이 담긴 컬렉션</div>
+            <div className="descCollection">
+              <div>1</div>
+              <div>2</div>
+            </div>
+          </div>
+          <div className="containerMovie">
+            <div className="titleMovie">비슷한 작품</div>
+            <div className="descMovie">
+              <div>1</div>
+              <div>2</div>
+            </div>
+          </div>
 
-            <aside>aside</aside>
-          
+          <button>더보기</button>
+
+          <aside>aside</aside>
         </article>
       </div>
     );
