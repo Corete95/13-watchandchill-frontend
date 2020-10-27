@@ -60,8 +60,12 @@ class Contents extends Component {
         {movieInfo && <Section movieInfo={movieInfo} />}
         <body>
           <article>
+            <div className="Tags">
+              
+            </div>
             {movieInfo && <Info movieInfo={movieInfo} />}
 
+            <h1>출연/제작</h1>
             {movieInfo &&
               movieInfo.cast.map((actor) => <ActorProfile actorInfo={actor} />)}
             <div className="containerGraph">
@@ -89,7 +93,6 @@ class Contents extends Component {
                 <div>2</div>
               </div>
             </div>
-
             <button>더보기</button>
           </article>
           <aside>aside</aside>
