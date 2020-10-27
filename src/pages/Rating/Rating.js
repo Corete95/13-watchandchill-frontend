@@ -14,6 +14,9 @@ class Rating extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.hidden(true);
+  }
   handleModal = () => {
     this.setState(
       prevState => {

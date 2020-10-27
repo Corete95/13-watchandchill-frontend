@@ -31,14 +31,12 @@ class Contents extends Component {
 
   render() {
     const { movieInfo } = this.state;
-    
+
     return (
       <div className="Contents">
-        {movieInfo &&  <Section/>}
+        {movieInfo && <Section />}
         <main>
           <article>
-            
-
             <div className="mainContent">
               <div className="containerRating">
                 <div className="titleRating">내 예상별점</div>
