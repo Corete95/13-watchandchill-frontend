@@ -11,56 +11,64 @@ export class MovieInfo extends Component {
           img:
             "https://images.watcha.net/people/medium/70f163070222e17236c2.jpg?1561521117",
           name: "론 클레멘츠",
-          vg: "알라딘"
+          vg: "알라딘",
+          films: 28
         },
         {
           id: 1,
           img:
             "https://images.watcha.net/people/medium/a68d932ce122ce92b3c7.jpg?1561521129",
           name: "존 머스커",
-          vg: "알라딘"
+          vg: "알라딘",
+          films: 28
         },
         {
           id: 2,
           img:
             "https://images.watcha.net/people/medium/7d2d2507658e6b0a68fa.jpg?1574311608",
           name: "수오 마사유키",
-          vg: "마이코는 레이디"
+          vg: "마이코는 레이디",
+          films: 28
         },
         {
           id: 3,
           img:
             "https://images.watcha.net/people/medium/70f163070222e17236c2.jpg?1561521117",
           name: "론 클레멘츠",
-          vg: "알라딘"
+          vg: "알라딘",
+          films: 28
         },
         {
           id: 4,
           img:
             "https://images.watcha.net/people/medium/a68d932ce122ce92b3c7.jpg?1561521129",
           name: "존 머스커",
-          vg: "알라딘"
+          vg: "알라딘",
+          films: 28
         },
         {
           id: 5,
           img:
             "https://images.watcha.net/people/medium/7d2d2507658e6b0a68fa.jpg?1574311608",
           name: "수오 마사유키",
-          vg: "마이코는 레이디"
+          vg: "마이코는 레이디",
+          films: 28
         },
         {
           id: 6,
           img:
             "https://images.watcha.net/people/medium/70f163070222e17236c2.jpg?1561521117",
           name: "론 클레멘츠",
-          vg: "알라딘"
+          vg: "알라딘",
+          films: 28
         },
         {
           id: 7,
           img:
             "https://images.watcha.net/people/medium/a68d932ce122ce92b3c7.jpg?1561521129",
           name: "존 머스커",
-          vg: "알라딘"
+          vg: "알라딘",
+          films: 28
         }
       ],
       countrys: [
@@ -136,6 +144,7 @@ export class MovieInfo extends Component {
   }
 
   btnRef = createRef();
+  
   moveRight = () => {
     if (this.state.slicks > -1195) {
       this.setState(
@@ -161,10 +170,30 @@ export class MovieInfo extends Component {
       );
     }
   };
-  /**  ul의 left값을 -598px씩 바꾸면 slick 끝일거 같은데 어떻게 바꿔야 할지 감이 잘 안온다.  **/
+
+  clie = item => {
+    return (
+      <>
+        <div>
+          {item.slice(0, 3).map(({ name, films }) => (
+            <div>
+              <h3>{name}</h3>
+              <p>{films} 편</p>
+            </div>
+          ))}
+        </div>
+        {item.slice(3).map(({ name, films }) => (
+          <div>
+            <span>{name}</span>
+            <p>{films} 편</p>
+          </div>
+        ))}
+      </>
+    );
+  };
 
   render() {
-    const { supervisors, countrys, genres, WatchingTime } = this.state;
+    const { supervisors, countrys, genres, WatchingTime, slicks } = this.state;
     return (
       <div className="MovieInfos">
         <div className="MovieInfoInner">
@@ -172,7 +201,7 @@ export class MovieInfo extends Component {
             <h2>선호감독</h2>
             <div className="SupervisorList">
               <ul ref={this.btnRef}>
-                {supervisors.map(({ id, img, name, vg }) => (
+                {supervisors.map(({ id, img, name, films, vg }) => (
                   <li key={id}>
                     <div>
                       <img src={img} alt={name} />
@@ -180,57 +209,37 @@ export class MovieInfo extends Component {
                     <div className="SupervisorInfo">
                       <div>
                         <span>{name}</span>
-                        <span>100점</span>
+                        <span>{films} 편</span>
                       </div>
                       <p>{vg}</p>
                     </div>
                   </li>
                 ))}
               </ul>
-              <div className="LeftBar">
-                <div onClick={this.moveLeft}>
-                  <LeftOutlined style={{ fontSize: "16px" }} />
+              {slicks !== 0 && (
+                <div className="LeftBar">
+                  <div onClick={this.moveLeft}>
+                    <LeftOutlined style={{ fontSize: "16px" }} />
+                  </div>
                 </div>
-              </div>
-              <div className="RightBar">
-                <div onClick={this.moveRight}>
-                  <RightOutlined style={{ fontSize: "16px" }} />
+              )}
+              {slicks !== -1196 && (
+                <div className="RightBar">
+                  <div onClick={this.moveRight}>
+                    <RightOutlined style={{ fontSize: "16px" }} />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
           <div className="LikeCountry">
             <h2>영화 선호국가</h2>
-            <div>
-              {countrys.slice(0, 3).map(({ name, films }) => (
-                <div>
-                  <h3>{name}</h3>
-                  <p>{films} 편</p>
-                </div>
-              ))}
-            </div>
-            {countrys.slice(3).map(({ name, films }) => (
-              <div>
-                <span>{name}</span> <p>{films} 편</p>
-              </div>
-            ))}
+            {this.clie(countrys)}
           </div>
           <div className="LikeGenre">
             <h2>영화 선호장르</h2>
             <span>애니메이션 좋아하는 사람 치고 나쁜 사람 없어요</span>
-            <div>
-              {genres.slice(0, 3).map(({ name, films }) => (
-                <div>
-                  <h3>{name}</h3>
-                  <p>{films} 편</p>
-                </div>
-              ))}
-            </div>
-            {genres.slice(3).map(({ name, films }) => (
-              <div>
-                <span>{name}</span> <p>{films} 편</p>
-              </div>
-            ))}
+            {this.clie(genres)}
           </div>
           <div className="MovieWatchingTime">
             <h2>영화 감상 시간</h2>

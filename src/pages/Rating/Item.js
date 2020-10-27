@@ -44,7 +44,7 @@ class Item extends Component {
     return (
       <li className="Item">
         <div className="Poster">
-          <Link to={`/contents/${title}`}><img src={poster} alt={title} /></Link>
+          <Link to={`/contents/${id}`}><img src={poster} alt={title} /></Link>
         </div>
         <div className="Description">
           <h3>{title}
