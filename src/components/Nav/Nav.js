@@ -9,32 +9,32 @@ class Nav extends Component {
     return (
       <>
         <nav>
-          <div className="navbar_box">
-            <div className="navbar_left">
+          <div className="navbarBox">
+            <div className="navbarLeft">
               <Link to="/main">
                 <img
-                  className="navbar_logo"
+                  className="navbarLogo"
                   src="/watcha.png"
                   alt="whatcha_log"
                 />
               </Link>
-              <Link to="/contents" className="navbar_movie">
+              <Link to="/contents" className="navbarMovie">
                 영화
               </Link>
             </div>
-            <div className="navbar_right">
-              <SearchOutlined className="search_icon" alt="search_icon" />
+            <div className="navbarRight">
+              <SearchOutlined className="searchIcon" alt="search_icon" />
               <input
                 className="search"
                 type="search"
                 placeholder="작품 제목,배우,감독을 검색해보세요."
               />
 
-              <Link to="/rating" className="navbar_rating">
+              <Link to="/rating" className="navbarRating">
                 평가하기
               </Link>
               <Link to="">
-                <UserOutlined className="user_profile" alt="profile_icon" />
+                <UserOutlined className="userProfile" alt="profile_icon" />
               </Link>
             </div>
           </div>
