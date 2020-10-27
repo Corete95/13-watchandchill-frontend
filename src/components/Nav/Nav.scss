@@ -6,7 +6,7 @@
 
 nav {
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
   z-index: 9;
   background-color: white;
@@ -14,31 +14,34 @@ nav {
   justify-content: center;
   margin: auto 0;
   border-bottom: 1px solid #ebebeb;
+  background-color: #ffffff;
 }
 
-.navbar_box {
+.navbarBox {
   width: 1320px;
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
 }
 
-.navbar_left {
+.navbarLeft {
   display: flex;
 }
 
-.navbar_logo {
+.navbarLogo {
   width: 151px;
   margin-right: 20px;
 }
 
-.navbar_movie {
+.navbarMovie {
   font-size: 15px;
+  display: block;
+  width: 100%;
   margin: auto 0;
   color: #070707;
 }
 
-.navbar_right {
+.navbarRight {
   display: flex;
   input {
     outline: none;
@@ -58,21 +61,21 @@ input {
   background-color: #f5f5f7;
 }
 
-.search_icon {
+.searchIcon {
   position: absolute;
   font-size: 18px;
   margin: 17px 10px;
   color: #d5d4d8;
 }
 
-.navbar_rating {
+.navbarRating {
   font-size: 14px;
   margin: auto 0;
   margin-right: 30px;
   color: #74747a;
 }
 
-.user_profile {
+.userProfile {
   font-size: 30px;
   color: #d5d4d8;
   padding-top: 10px;
