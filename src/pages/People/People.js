@@ -14,7 +14,6 @@ export class People extends Component {
 
   componentDidMount() {
     this.props.hidden(true);
-    console.log('asdas')
     fetch('http://localhost:3000/Data/people.json')
     .then(res => res.json())
     .then(res => this.setState({
@@ -30,6 +29,7 @@ export class People extends Component {
   }
   
   render() {
+    const { actor, films } = this.state;
     return (
       <div className="People">
         <div>
@@ -38,11 +38,11 @@ export class People extends Component {
             <GoBack onClick={this.goBack} />
           </div>
           <h2>
-            {this.state.actor}
+            {actor}
           </h2>
           </div>
           <ul>
-          {this.state.films.map(({title, poster, genre}) => 
+          {films.map(({title, poster}) => 
             <li>
             <img src={poster} alt={title} />
             <span>{title.length > 6 ? title.slice(0,7) + '...' : title}</span>

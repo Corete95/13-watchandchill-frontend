@@ -509,3 +509,35 @@
     }
   }
 }
+
+
+@mixin tablet {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+
+@include tablet {
+  .RatingWrap {
+    // background: white;
+    .RatingBox {
+      top: 0;
+      padding-top: 0;
+      div {
+        max-width: 100%;
+      }
+    }
+    .Items {
+      max-width: 100%;
+    }
+    .Item {
+      .Poster {
+        img {
+          width: 60px;
+          height: 90px;
+        }
+      }
+    }
+  }
+}
