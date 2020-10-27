@@ -11,33 +11,22 @@ import Analysis from "./pages/Analysis/Analysis";
 
 class Routes extends Component {
   state = {
-<<<<<<< HEAD
-    navHidden: false
-  };
-
-  isNavHidden = props => {
-    this.setState({
-      navHidden: props
-    });
-  };
-=======
     navHidden: false,
-    footerHidden: false,
-  }
+    footerHidden: false
+  };
 
-  isFooterHidden = (props) => {
+  isFooterHidden = props => {
     this.setState({
       footerHidden: props
-    })
-  }
+    });
+  };
 
-  isNavFooterHidden = (props) => {
+  isNavFooterHidden = props => {
     this.setState({
       navHidden: props,
       footerHidden: props
-    })
-  }
->>>>>>> 71de789e922634007004aef896e1390cb5d063bd
+    });
+  };
 
   render() {
     const { navHidden, footerHidden } = this.state;
@@ -46,26 +35,22 @@ class Routes extends Component {
       <Router>
         {!navHidden && <Nav />}
         <Switch>
-<<<<<<< HEAD
+          <Route exact path="/" component={Main} />
           <Route
             exact
             path="/users/analysis"
-            render={() => <Analysis hidden={isNavHidden} />}
+            render={() => <Analysis hidden={isNavFooterHidden} />}
           />
-=======
->>>>>>> 71de789e922634007004aef896e1390cb5d063bd
-          <Route exact path="/" component={Main} />
-          <Route exact path="/users/analysis" render={
-            () => <Analysis hidden={isNavFooterHidden}  />
-          } />
-          <Route exact path="/rating" render={
-            () => <Rating hidden={isFooterHidden} />
-          } />
+          <Route
+            exact
+            path="/rating"
+            render={() => <Rating hidden={isFooterHidden} />}
+          />
           <Route exact path="/users" component={Users} />
           {/* <Route exact path="/contents/" component={Contents} /> */}
           <Route exact path="/contents/:id" component={Contents} />
         </Switch>
-        {!footerHidden && <Footer /> }
+        {!footerHidden && <Footer />}
       </Router>
     );
   }
