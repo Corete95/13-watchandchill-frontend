@@ -96,7 +96,7 @@ class Contents extends Component {
             </div>
             {movieInfo && <Info movieInfo={movieInfo} />}
 
-            <h1>출연/제작</h1>
+            <h2>출연/제작</h2>
             <div className="actors">
             <ul ref={this.btnRef}>
             {movieInfo &&
