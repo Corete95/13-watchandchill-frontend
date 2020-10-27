@@ -3,11 +3,12 @@
 $navtext: #74747a;
 
 .Nav {
-  width: 100%;
   margin: auto 0;
-  top: 0;
   position: fixed;
-  z-index: 9;
+  top: 0;
+  width: 100%;
+  z-index: 6;
+  background-color: white;
   display: flex;
   justify-content: center;
   border-bottom: 1px solid #ebebeb;
@@ -66,5 +67,17 @@ $navtext: #74747a;
       color: #d5d4d8;
       padding-top: 10px;
     }
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+@include tablet {
+  .Nav {
+    display: none;
   }
 }

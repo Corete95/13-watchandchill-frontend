@@ -1,0 +1,142 @@
+ {
+  "actor": "론 클레멘츠",
+  "films": [
+    {
+      "id": 97,
+      "title": "동화에는 공주가 산다",
+      "date": "2/12/78",
+      "country": "한국",
+      "poster": "https://images.unsplash.com/photo-1585237016526-18dd5457778c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "genre": [
+          "판타지",
+          "로맨스"
+      ]
+  },
+  {
+      "id": 98,
+      "title": "무엇을보오",
+      "date": "1/6/01",
+      "country": "한국",
+      "poster": "https://images.unsplash.com/photo-1584367369849-668e6a5b5326?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "genre": [
+          "범죄",
+          "스릴러",
+          "공포"
+      ]
+  },
+  {
+      "id": 99,
+      "title": "WOW IM DONE!",
+      "date": "6/20/13",
+      "country": "미국",
+      "poster": "https://images.unsplash.com/photo-1589995358068-cf709addda7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "genre": [
+          "슈퍼히어로",
+          "액션",
+          "코미디"
+      ]
+  },{
+    "id": 97,
+    "title": "동화에는 공주가 산다",
+    "date": "2/12/78",
+    "country": "한국",
+    "poster": "https://images.unsplash.com/photo-1585237016526-18dd5457778c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+    "genre": [
+        "판타지",
+        "로맨스"
+    ]
+},
+{
+    "id": 98,
+    "title": "무엇을보오",
+    "date": "1/6/01",
+    "country": "한국",
+    "poster": "https://images.unsplash.com/photo-1584367369849-668e6a5b5326?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+    "genre": [
+        "범죄",
+        "스릴러",
+        "공포"
+    ]
+},
+{
+    "id": 99,
+    "title": "WOW IM DONE!",
+    "date": "6/20/13",
+    "country": "미국",
+    "poster": "https://images.unsplash.com/photo-1589995358068-cf709addda7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+    "genre": [
+        "슈퍼히어로",
+        "액션",
+        "코미디"
+    ]
+},{
+  "id": 97,
+  "title": "동화에는 공주가 산다",
+  "date": "2/12/78",
+  "country": "한국",
+  "poster": "https://images.unsplash.com/photo-1585237016526-18dd5457778c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+  "genre": [
+      "판타지",
+      "로맨스"
+  ]
+},
+{
+  "id": 98,
+  "title": "무엇을보오",
+  "date": "1/6/01",
+  "country": "한국",
+  "poster": "https://images.unsplash.com/photo-1584367369849-668e6a5b5326?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+  "genre": [
+      "범죄",
+      "스릴러",
+      "공포"
+  ]
+},
+{
+  "id": 99,
+  "title": "WOW IM DONE!",
+  "date": "6/20/13",
+  "country": "미국",
+  "poster": "https://images.unsplash.com/photo-1589995358068-cf709addda7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+  "genre": [
+      "슈퍼히어로",
+      "액션",
+      "코미디"
+  ]
+},{
+  "id": 97,
+  "title": "동화에는 공주가 산다",
+  "date": "2/12/78",
+  "country": "한국",
+  "poster": "https://images.unsplash.com/photo-1585237016526-18dd5457778c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+  "genre": [
+      "판타지",
+      "로맨스"
+  ]
+},
+{
+  "id": 98,
+  "title": "무엇을보오",
+  "date": "1/6/01",
+  "country": "한국",
+  "poster": "https://images.unsplash.com/photo-1584367369849-668e6a5b5326?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+  "genre": [
+      "범죄",
+      "스릴러",
+      "공포"
+  ]
+},
+{
+  "id": 99,
+  "title": "WOW IM DONE!",
+  "date": "6/20/13",
+  "country": "미국",
+  "poster": "https://images.unsplash.com/photo-1589995358068-cf709addda7a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+  "genre": [
+      "슈퍼히어로",
+      "액션",
+      "코미디"
+  ]
+}
+  ]
+}

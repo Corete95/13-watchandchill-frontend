@@ -1,93 +1,146 @@
 {
     "movieInformation": {
-        "id": 5,
-        "main_image": "https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_720,q_80,w_1280/v1463551411/mqsgvr-14521.jpg",
-        "title": "Life of Bimbo",
-        "date": "10/26/20",
-        "poster_url": "https://images.unsplash.com/photo-1545315003-c5ad6226c272?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
-        "country": "일본",
+        "id": 1,
+        "title": "Rabbi Rabbit",
+        "date": "2019-01-15",
+        "poster_url": "https://images.unsplash.com/photo-1590698933947-a202b069a861?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+        "country": "미국",
         "service": [
-            "Watcha"
+            "Netflix",
+            "Watcha",
+            "Tving"
         ],
         "genre": [
-            "슈퍼히어로",
-            "액션"
+            "느와르"
         ],
         "photos": [],
         "videos": [],
         "tag": [
-            "슈퍼히어로",
-            "액션"
+            "느와르"
         ],
-        "runtime": "2:44:41",
-        "premier": "10/26/20",
+        "runtime": "1:48:02",
+        "coverpic_url": "https://images.unsplash.com/photo-1520371764250-8213f40bc3ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
         "description": "왓챠디피아를 만난 왓챠앤칠 백둥이들인 창공과 예징은 거대한 데이터베이스를 자랑하는 왓챠디피아를 보고 고개를 젓는다. 왜 이렇게나 데이터를 만든 것인지 아무도 모른다. 혼란에 빠진 창공과 예징, 그래도 그들만의 프로젝트를 위해 다른 별에 살고 있는 프둥이들을 만나 왓챠디피아에 한 발씩 다가서고, 프로젝트 성공을 위한 그들만의 사투가 시작된다. 변태 데이터 왓챠디피아.. 너를 정복하리라..",
         "cast": [
             {
-                "name": "Amber Dean",
-                "role": "감독",
-                "cast_as": "Joe",
-                "photo": "https://images.unsplash.com/photo-1516585427167-9f4af9627e6c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-            },
-            {
-                "name": "Christopher Walton",
-                "role": "주연",
-                "cast_as": "Kevin",
-                "photo": "https://images.unsplash.com/photo-1534954553104-88cb75be7648?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=84"
-            },
-            {
-                "name": "Taylor Jimenez",
-                "role": "주연",
-                "cast_as": "Matthew",
-                "photo": "https://images.unsplash.com/photo-1519699047748-de8e457a634e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=88"
-            },
-            {
-                "name": "Kyle Phillips",
-                "role": "조연",
-                "cast_as": "Jacob",
-                "photo": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=92"
-            },
-            {
-                "name": "Amber Fisher",
-                "role": "조연",
-                "cast_as": "Scott",
-                "photo": "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=96"
-            },
-            {
                 "name": "Justin Cruz",
-                "role": "조연",
-                "cast_as": "Robert",
+                "role": "감독",
+                "cast_as": "Christopher",
                 "photo": "https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
             },
             {
                 "name": "Michael Craig",
-                "role": "조연",
-                "cast_as": "Gregory",
+                "role": "주연",
+                "cast_as": "Heather",
                 "photo": "https://images.unsplash.com/photo-1546458904-143d1674858d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=83"
             },
             {
                 "name": "Matthew Barnes",
-                "role": "조연",
-                "cast_as": "Christopher",
+                "role": "주연",
+                "cast_as": "Nicholas",
                 "photo": "https://images.unsplash.com/photo-1566895733044-d2bdda8b6234?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=87"
             },
             {
                 "name": "Thomas Garner",
                 "role": "조연",
-                "cast_as": "Adam",
+                "cast_as": "Theresa",
                 "photo": "https://images.unsplash.com/photo-1520451644838-906a72aa7c86?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=91"
             },
             {
                 "name": "Michael Wright",
                 "role": "조연",
-                "cast_as": "Lindsay",
+                "cast_as": "Jamie",
                 "photo": "https://images.unsplash.com/photo-1485893086445-ed75865251e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=95"
             },
             {
                 "name": "Deborah Erickson",
                 "role": "조연",
-                "cast_as": "Antonio",
+                "cast_as": "Jonathan",
                 "photo": "https://images.unsplash.com/photo-1542909168-6296a31d7689?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=99"
+            },
+            {
+                "name": "Amber Waters",
+                "role": "조연",
+                "cast_as": "Valerie",
+                "photo": "https://images.unsplash.com/photo-1542909168-6296a31d7689?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=83"
+            },
+            {
+                "name": "Kristin Brooks",
+                "role": "조연",
+                "cast_as": "Carrie",
+                "photo": "https://images.unsplash.com/photo-1585175917762-ce1a5d9124a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=87"
+            },
+            {
+                "name": "Mark Reed",
+                "role": "조연",
+                "cast_as": "Vanessa",
+                "photo": "https://images.unsplash.com/photo-1598641795816-a84ac9eac40c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=91"
+            },
+            {
+                "name": "Christopher Singleton",
+                "role": "조연",
+                "cast_as": "Melissa",
+                "photo": "https://images.unsplash.com/photo-1577975819014-2d6f1e721e77?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=95"
+            },
+            {
+                "name": "Jeffery Davis",
+                "role": "조연",
+                "cast_as": "Craig",
+                "photo": "https://images.unsplash.com/photo-1485893226355-9a1c32a0c81e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=99"
+            },
+            {
+                "name": "Amanda Ward",
+                "role": "조연",
+                "cast_as": "Richard",
+                "photo": "https://images.unsplash.com/photo-1485893226355-9a1c32a0c81e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=83"
+            },
+            {
+                "name": "Gina Daniels",
+                "role": "조연",
+                "cast_as": "William",
+                "photo": "https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=87"
+            },
+            {
+                "name": "Joan Castro",
+                "role": "조연",
+                "cast_as": "Michelle",
+                "photo": "https://images.unsplash.com/photo-1543123820-ac4a5f77da38?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=91"
+            },
+            {
+                "name": "Heather Griffin",
+                "role": "조연",
+                "cast_as": "Jennifer",
+                "photo": "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=95"
+            },
+            {
+                "name": "Christopher Nelson",
+                "role": "조연",
+                "cast_as": "Kelly",
+                "photo": "https://images.unsplash.com/photo-1546458904-143d1674858d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+            },
+            {
+                "name": "Joshua Anderson",
+                "role": "조연",
+                "cast_as": "Kayla",
+                "photo": "https://images.unsplash.com/photo-1546458904-143d1674858d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+            },
+            {
+                "name": "Jerry Williams",
+                "role": "조연",
+                "cast_as": "Erica",
+                "photo": "https://images.unsplash.com/photo-1588671335940-2a6646b6bb0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=87"
+            },
+            {
+                "name": "Reginald Gordon",
+                "role": "조연",
+                "cast_as": "Janet",
+                "photo": "https://images.unsplash.com/photo-1485290334039-a3c69043e517?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=91"
+            },
+            {
+                "name": "Michael Watts",
+                "role": "조연",
+                "cast_as": "Nicholas",
+                "photo": "https://images.unsplash.com/photo-1447194047554-cfe888edc98c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=95"
             }
         ]
     }
