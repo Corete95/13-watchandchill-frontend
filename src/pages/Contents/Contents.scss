@@ -1,8 +1,13 @@
 @import "../../Styles/common.scss";
 
 .Contents {
+  body {
+    width: 100vw;
+    background-color: $grayColor;
+  }
   article {
     background-color: $whiteColor;
+    display: flex;
   }
 }
 
@@ -129,15 +134,15 @@ main {
         width: 324px;
         height: 20px;
       }
-      button {
-        @include box;
-        font-size: 17px;
-        font-weight: 600;
-        width: 255px;
-        height: 38px;
-        &:focus {
-          outline: none;
-        }
+      // button {
+      //   @include box;
+      //   font-size: 17px;
+      //   font-weight: 600;
+      //   width: 255px;
+      //   height: 38px;
+      //   &:focus {
+      //     outline: none;
+      //   }
       }
     }
 
@@ -255,13 +260,13 @@ main {
       }
     }
 
-    button {
-      width: 600px;
-      height: 33px;
-      @include box;
-      font-size: 15px;
-      font-weight: 600;
-    }
+    // button {
+    //   width: 600px;
+    //   height: 33px;
+    //   @include box;
+    //   font-size: 15px;
+    //   font-weight: 600;
+    // }
   }
 }
 aside {
