@@ -1,5 +1,7 @@
 @import "../../Styles/common.scss";
 
+$borderSix: 6px;
+
 section {
   background-color: #f8f8f8;
 
@@ -19,7 +21,7 @@ section {
 
       .Header {
         border: 1px solid #e3e3e3;
-        border-radius: 6px;
+        border-radius: $borderSix;
         background: url('https://d2rlq84xifqisi.cloudfront.net/images/analysisBackground.86647f491610a6893109.png') center no-repeat;
         background-size: cover;
 
@@ -91,7 +93,7 @@ section {
 
       .RatingStar {
         border: 1px solid #e3e3e3;
-        border-radius: 6px;
+        border-radius: $borderSix;
         background-color: white;
         margin: 12px 0 0;
 
@@ -142,7 +144,7 @@ section {
 
       .MovieInfos {
         border: 1px solid #e3e3e3;
-        border-radius: 6px;
+        border-radius: $borderSix;
         background-color: white;
         margin: 12px 0 0;
         .MovieInfoInner {
@@ -323,6 +325,29 @@ section {
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+
+
+@mixin tablet {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+
+@include tablet {
+  section {
+    .FullContainer {
+      .AnalysisWrap {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        > * {
+          border-radius: 0px !important; 
         }
       }
     }
