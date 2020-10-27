@@ -44,21 +44,21 @@ class Nav extends Component {
     return (
       <>
         <nav>
-          <div className="navbar_box">
-            <div className="navbar_left">
+          <div className="navbarBox">
+            <div className="navbarLeft">
               <Link to="/main">
                 <img
-                  className="navbar_logo"
+                  className="navbarLogo"
                   src="/watcha.png"
                   alt="whatcha_log"
                 />
               </Link>
-              <Link to="/contents" className="navbar_movie">
+              <Link to="/contents" className="navbarMovie">
                 영화
               </Link>
             </div>
-            <div className="navbar_right">
-              <SearchOutlined className="search_icon" alt="search_icon" />
+            <div className="navbarRight">
+              <SearchOutlined className="searchIcon" alt="search_icon" />
               <input
                 className="search"
                 type="search"

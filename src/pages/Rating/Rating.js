@@ -1,45 +1,50 @@
-import React, { Component, createRef } from "react";
-import "./Rating.scss";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 import RatingBox from "./RatingBox";
 import Items from "./Items";
 import Category from "./Components/Category";
 import MovieInfo from "./Components/MovieInfo";
-import { connect } from 'react-redux';
+import "./Rating.scss";
 
 class Rating extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
       isModalOn: false
-    }
+    };
   }
 
+  componentDidMount() {
+    this.props.hidden(true);
+  }
   handleModal = () => {
-    this.setState((prevState) => {
-      return {
-      isModalOn: !prevState.isModalOn
+    this.setState(
+      prevState => {
+        return {
+          isModalOn: !prevState.isModalOn
+        };
+      },
+      () => {
+        if (this.state.isModalOn) {
+          document.body.style.overflow = "hidden";
+        } else {
+          document.body.style.overflow = "";
+        }
       }
-    }, () =>  {
-      if(this.state.isModalOn) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = '';
-      }
-    })
-
-  }
+    );
+  };
   handleMovieInfo = () => {
-    this.setState((prevState) => {
+    this.setState(prevState => {
       return {
         isMovieInfo: !prevState.isMovieInfo
-      }
-    })
-  }
-  handleClickOutside = ({target}) =>  {
-    if(target.className==="Category") {
-      this.handleModal()
+      };
+    });
+  };
+  handleClickOutside = ({ target }) => {
+    if (target.className === "Category") {
+      this.handleModal();
     }
-  }
+  };
 
   render() {
     const { handleModal, handleClickOutside, handleMovieInfo } = this;
@@ -47,15 +52,15 @@ class Rating extends Component {
     const { isMovieInfo } = this.props;
     return (
       <section className="Rating">
-        <div className="rating_wrap">
-          {isModalOn && <Category 
-          isModalOn={isModalOn} 
-          handleModal={handleModal} 
-          handleClickOutside={handleClickOutside}
-          />}
-          {isMovieInfo && 
-          <MovieInfo 
-          />}
+        <div className="RatingWrap">
+          {isModalOn && (
+            <Category
+              isModalOn={isModalOn}
+              handleModal={handleModal}
+              handleClickOutside={handleClickOutside}
+            />
+          )}
+          {isMovieInfo && <MovieInfo />}
           <RatingBox handleModal={handleModal} />
           <Items handleMovieInfo={handleMovieInfo} />
         </div>
@@ -67,7 +72,7 @@ class Rating extends Component {
 function mapStateToProps(state) {
   return {
     isMovieInfo: state.isMovieInfo
-  }
+  };
 }
 
 export default connect(mapStateToProps)(Rating);
