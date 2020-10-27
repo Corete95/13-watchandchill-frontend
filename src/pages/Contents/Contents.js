@@ -20,11 +20,19 @@ class Contents extends Component {
       addBtnClicked: false,
       dropdownBtnClicked: false,
       dropdownBtnColorChanged: false,
-      commentBtnClicked: false
+      commentBtnClicked: false,
+      currentHandleScroll: 0,
     };
   }
 
+  handleScroll = () => {
+    this.setState({
+      currentHandleScroll: document.documentElement.scrollTop
+    })
+  }
+
   componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
     fetch(API, { method: "GET" })
       .then(response => response.json())
       .then(result => {
@@ -34,9 +42,21 @@ class Contents extends Component {
       });
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+    document.querySelector('.Nav').classList.remove('Transpa')
+  }
+
+  componentDidUpdate() {
+    if(this.state.currentHandleScroll > 0) {
+      document.querySelector('.Nav').classList.remove('Transpa')
+    } else {
+      document.querySelector('.Nav').classList.add('Transpa')
+    }
+  }
+  
   render() {
     const { movieInfo } = this.state;
-
     return (
       <div className="Contents">
         {movieInfo && <Section movieInfo={movieInfo} />}
