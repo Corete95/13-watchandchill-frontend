@@ -4,6 +4,8 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { pinkFlag } from "../ActorProfile/data";
 import "./Section.scss";
+// import Button from "./Button/Button";
+// import Rating from "../../Rating/Rating";
 
 class Section extends Component {
   constructor() {
@@ -16,25 +18,23 @@ class Section extends Component {
     };
   }
   render() {
-    const { actorInfo } = this.props;
+    const { movieInfo } = this.props;
 
     return (
       <div className="Section">
         <div className="headerBox">
           <div className="darkBox" />
-          <img className="mainImage" src={actorInfo.main_image} />
+          <img className="mainImage" src={movieInfo.coverpic_url} />
         </div>
 
         <div className="movieTitle">
-          <img
-            className="poster"
-            src="https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1467960957/ywqqu9uz55x8ysn4jupi.jpg"
-            alt="인생은 아름다워 poster"
-          ></img>
+          <img className="poster" src={movieInfo.poster_url}></img>
 
           <div className="desc">
-            <h1>인생은 아름다워</h1>
-            <div>1997 · 드라마 · 이탈리아</div>
+            <h1>{movieInfo.title}</h1>
+            <div>
+              {movieInfo.date} · {movieInfo.genre} · {movieInfo.country}
+            </div>
             <div>
               <span>평균 ★4.4(43만명)</span>
             </div>
