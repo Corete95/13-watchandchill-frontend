@@ -23,10 +23,12 @@ class Section extends Component {
     return (
       <div className="Section">
         <div className="headerBox">
-          <div className="background" />
+          <div className="background">
           <img src={movieInfo.coverpic_url} alt="영화 메인 이미지" />
+          </div>
         </div>
         <div className="titleBox">
+          <div>
           <div className="poster">
             <img src={movieInfo.poster_url} />
           </div>
@@ -51,8 +53,7 @@ class Section extends Component {
                 <img src={pinkFlag} className="pinkFlag" />
               ) : (
                 <FontAwesomeIcon icon={faPlus} className="plusIcon" />
-              )}
-              &nbsp;&nbsp;보고싶어요
+              )}보고싶어요
             </button>
             <button
               onClick={() => {
@@ -63,6 +64,7 @@ class Section extends Component {
               <CaretDownOutlined className="dropdownIcon" />
             </button>
             {this.state.dropdownBtnClicked && <div>modal</div>}
+          </div>
           </div>
           {/* <span className="rating">평가하기</span> */}
         </div>
