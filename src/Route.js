@@ -17,7 +17,8 @@ class Routes extends Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/rating" component={Rating} />
           <Route exact path="/users" component={Users} />
-          <Route exact path="/contents" component={Contents} />
+          {/* <Route exact path="/contents/" component={Contents} /> */}
+          <Route exact path="/contents/:id" component={Contents} />
         </Switch>
         <Footer />
       </Router>

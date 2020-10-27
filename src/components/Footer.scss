@@ -1,4 +1,4 @@
-@import "../Styles/common.scss";
+//  @import "../Styles/common.scss";
 
 * {
   list-style: none;
@@ -10,11 +10,10 @@
 
 footer {
   width: 100%;
-  // position: fixed;
   bottom: 0px;
 }
 
-.user_data {
+.userData {
   width: 100%;
   height: 62px;
   background-color: #000000;
@@ -25,7 +24,7 @@ footer {
   justify-content: center;
 }
 
-.rating_count {
+.ratingCount {
   color: #ff0558;
   font-weight: bold;
 }
@@ -33,7 +32,7 @@ footer {
 .footer {
   width: 100%;
   height: 163px;
-  padding: 20px 0 38px 0;
+  padding: 20px 0 38px;
   background-color: #1c1e20;
   display: flex;
   justify-content: center;
@@ -45,55 +44,55 @@ footer {
   margin-right: 5px;
 }
 
-.footer_box {
+.footerBox {
   font-size: 13px;
   display: flex;
   justify-content: center;
 }
 
-.footer_left {
+.footerLeft {
   width: 1203px;
 }
 
-.footer_box li {
+.footerBox li {
   margint-left: 5px;
 }
 
-.policy_list {
+.policyList {
   display: flex;
 }
 
-.cs_list {
-  display: flex;
-  padding-top: 20px;
-}
-
-.company_number {
-  display: flex;
-  padding-top: 10px;
-}
-
-.company_info {
+.csList {
   display: flex;
   padding-top: 20px;
 }
 
-.company_info_list {
+.companyNumber {
   display: flex;
   padding-top: 10px;
 }
 
-.company_logo {
+.companyInfo {
+  display: flex;
+  padding-top: 20px;
+}
+
+.companyInfoList {
   display: flex;
   padding-top: 10px;
 }
 
-.sns_box {
+.companyLogo {
+  display: flex;
+  padding-top: 10px;
+}
+
+.snsBox {
   width: 117px;
   height: 163px;
 }
 
-button {
+select {
   display: block;
   width: 100%;
   height: 30px;

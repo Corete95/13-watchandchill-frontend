@@ -1,25 +1,29 @@
 // @import "../../Styles/common.scss";
 
-.movie_img {
+a {
+  color: black;
+}
+
+.movieImg {
   display: flex;
   width: 100%;
   height: 458px;
 }
 
-.movie_poster {
+.moviePoster {
   width: 249px;
   height: 100%;
   margin-right: 6px;
 }
 
-.poster_img img {
+.posterImg img {
   width: 249px;
   height: 353px;
   border-radius: 3px;
   margin-bottom: 5px;
 }
 
-.movie_title {
+.movieTitle {
   height: 22px;
   font-size: 16px;
   font-weight: 600;
@@ -27,8 +31,7 @@
   margin-bottom: 3px;
 }
 
-.opening_date {
-  // height: 21px;
+.openingDate {
   line-height: 21px;
   font-size: 14px;
   margin-bottom: 2px;
