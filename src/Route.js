@@ -18,6 +18,7 @@ class Routes extends Component {
 
   isFooterHidden = (props) => {
     this.setState({
+      navHidden: !props,
       footerHidden: props
     })
   }

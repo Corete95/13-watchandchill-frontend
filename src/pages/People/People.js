@@ -14,13 +14,16 @@ export class People extends Component {
 
   componentDidMount() {
     this.props.hidden(true);
+    console.log('asdas')
     fetch('http://localhost:3000/Data/people.json')
     .then(res => res.json())
     .then(res => this.setState({
       actor: res.actor,
       films: res.films,
     }))
+    this.props.hidden(true);
   }
+
 
   goBack = () => {
     this.props.history.goBack();
