@@ -11,19 +11,12 @@ class Login extends Component {
     super(props);
 
     this.state = {
-      passwordModal: false,
-      signupModal: false,
+      passWordModal: false,
+      signupModalOpen: false,
       email: "",
-      password: ""
+      passWord: ""
     };
   }
-  openModal = (e) => {
-    this.setState({ [`${e.target.name}Modal`]: true });
-  };
-
-  closeModal = (e) => {
-    this.setState({ [`${e.target.name}Modal`]: false });
-  };
 
   handleInput = (e) => {
     const { value, name } = e.target;
@@ -33,19 +26,19 @@ class Login extends Component {
   };
 
   signupOpen = () => {
-    this.setState({ signupModal: true });
+    this.setState({ signupModalOpen: true });
   };
 
   signupClose = () => {
-    this.setState({ signupModal: false });
+    this.setState({ signupModalOpen: false });
   };
 
   passWordOpen = () => {
-    this.setState({ passwordModal: true });
+    this.setState({ passWordModal: true });
   };
 
   passWordClose = () => {
-    this.setState({ passwordModal: false });
+    this.setState({ passWordModal: false });
   };
 
   loginClose = (event) => {
@@ -54,7 +47,7 @@ class Login extends Component {
     }
   };
 
-  signupModalve = () => {
+  signupMove = () => {
     this.props.close();
     this.signupOpen();
   };
@@ -64,12 +57,12 @@ class Login extends Component {
   };
 
   goToMain = () => {
-    const { email, password } = this.state;
+    const { email, passWord } = this.state;
     fetch(API, {
       method: "POST",
       body: JSON.stringify({
         email,
-        password: password
+        password: passWord
       })
     })
       .then((response) => response.json())
@@ -106,7 +99,7 @@ class Login extends Component {
                     <input
                       onChange={this.handleInput}
                       className="loginPw"
-                      name="password"
+                      name="passWord"
                       type="password"
                       placeholder="비밀번호"
                     />
@@ -121,7 +114,7 @@ class Login extends Component {
                   </div>
                   <div className="signUp">
                     계정이 없으신가요?
-                    <button onClick={this.signupModalve}>회원가입</button>
+                    <button onClick={this.signupMove}>회원가입</button>
                   </div>
                   <hr className="or"></hr>
                   <FacebookLogin
@@ -138,12 +131,15 @@ class Login extends Component {
           </div>
         ) : null}
 
-        {this.state.passwordModal && (
-          <Password open={this.state.passwordModal} close={this.closeModal} />
+        {this.state.passWordModal && (
+          <Password
+            open={this.state.passWordModal}
+            close={this.passWordClose}
+          />
         )}
 
-        {this.state.signupModal && (
-          <Signup open={this.state.signupModal} close={this.signupClose} />
+        {this.state.signupModalOpen && (
+          <Signup open={this.state.signupModalOpen} close={this.signupClose} />
         )}
       </>
     );

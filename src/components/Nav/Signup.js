@@ -121,7 +121,11 @@ class Signup extends Component {
       <>
         {this.props.open ? (
           <div className="signUpModal">
-            <div className="signUpOutLine" onClick={this.signClose}>
+            <div
+              className="signUpOutLine"
+              name="signup"
+              onClick={this.signClose}
+            >
               <div className="signUpBox">
                 <div className="modalContents">
                   <img src="watcha.png" />
