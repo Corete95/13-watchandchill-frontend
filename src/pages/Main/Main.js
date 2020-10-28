@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Main.scss";
+import Login from "../../components/Nav/Login";
+import Signup from "../../components/Nav/Signup";
 import MovieList from "../../components/MovieList";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
