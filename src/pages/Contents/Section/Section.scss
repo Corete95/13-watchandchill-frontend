@@ -48,7 +48,6 @@
       padding-top: 20px;
       flex-direction: column;
       margin-left: 15px;
-      width: 400px;
       h1 {
         font-size: 33px;
         font-weight: 700;
@@ -65,8 +64,16 @@
         font-size: 17px;
         padding: 10px 0;
       }
-      .buttons {
+      .whatthe {
         display: flex;
+        align-items: center;
+        width: 100%;
+        // vertical-align: middle;
+        .buttons {
+          display: flex;
+          align-items: center;
+          margin-right: 20px;
+        }
       }
       .addBtn_not_clicked {
         width: 205px;

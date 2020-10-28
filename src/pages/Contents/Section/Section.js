@@ -53,6 +53,7 @@ class Section extends Component {
                 {date} · {genre} · {country}
               </p>
               <div className="my_rating">평균 ★4.4 (43만명)</div>
+              <div className="whatthe">
               <div className="buttons">
                 <button
                   onClick={() => {
@@ -87,6 +88,7 @@ class Section extends Component {
             <span className="star">
              <RatingStar rating={3} />
             </span>
+            </div>
             </div>
           </div>
           <div className="Button">

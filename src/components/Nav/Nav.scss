@@ -20,10 +20,20 @@
   transition: all 0.2s;
   background: transparent;
   border-bottom: none;
+  .navbarMovie {
+    color: #ebebeb;
+  }
   input {
     border: 1px solid #ebebeb;
+    color: #ebebeb;
     background: none;
+    &::placeholder {
+      color: #ebebeb;
+    }
   }
+      .navbarRating {
+        color: #ebebeb;
+      }
 }
 
 .navbarBox {
