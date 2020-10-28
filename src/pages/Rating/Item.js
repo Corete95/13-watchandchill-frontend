@@ -9,23 +9,7 @@ import "./Rating.scss";
 import "../../../node_modules/font-awesome/css/font-awesome.min.css";
 
 class Item extends Component {
-  // movieInfoInq = () => {
-  //   const { CurrentMovie, ChangeMovieInfo, handleMovieInfo } = this.props;
-  //   const {
-  //     id,
-  //     title,
-  //     poster,
-  //     date,
-  //     country,
-  //     genre,
-  //     rating,
-  //     status
-  //   } = this.props;
-  //   CurrentMovie({ id, title, poster, date, genre, rating, status, country });
-  //   ChangeMovieInfo(true);
-  //   handleMovieInfo();
-  // };
-
+  
   isStatus = (status) => {
     const { date, country } = this.props;
     switch (status) {
