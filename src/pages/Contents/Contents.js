@@ -4,7 +4,6 @@ import "./Contents.scss";
 import Section from "./Section/Section";
 import Info from "./Info/Info";
 import ActorProfile from "./ActorProfile/ActorProfile";
-import CommentWrite from '../../components/MovieInfo/CommentWrite';
 // import Graph from "./Graph/Graph";
 // import Comment from "./Comment/Comment";
 // import Movies from "./Movies/Movies";

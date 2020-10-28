@@ -78,8 +78,9 @@ class Section extends Component {
                     ) : (
                       <FontAwesomeIcon icon={faPlus} className="plusIcon" />
                     )}
-                    <span>보고싶어요</span>
+                    보고싶어요
                   </button>
+
                   <InfoModal
                     {...this.props.movieInfo}
                     poster={poster_url}
@@ -90,20 +91,21 @@ class Section extends Component {
                       </button>
                     )}
                   />
+                  <span className="star">
+                    <RatingStar rating={3} />
+                  </span>
                 </div>
-                <span className="star">
-                  <RatingStar rating={3} />
-                </span>
               </div>
+              <div className="Button"></div>
             </div>
+            {isMovieInfo && <MovieInfo />}
           </div>
-          <div className="Button"></div>
         </div>
-        {isMovieInfo && <MovieInfo />}
       </div>
     );
   }
 }
+
 function mapStateToProps(state) {
   return {
     isMovieInfo: state.isMovieInfo

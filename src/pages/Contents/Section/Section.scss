@@ -82,14 +82,7 @@
         &:focus {
           outline: none;
         }
-        .myRating {
-          color: rgba(0, 0, 0, 0.5);
-          border-top: $border;
-          border-bottom: $border;
-          font-size: 17px;
-          margin: 12px 0;
-          padding: 10px 0;
-        }
+        
         .buttons {
           display: flex;
         }
