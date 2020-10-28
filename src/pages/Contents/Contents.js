@@ -2,13 +2,15 @@ import React, { Component, createRef } from "react";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "./Contents.scss";
 import Section from "./Section/Section";
+import Chart from "../../components/Chart/Chart";
 import Info from "./Info/Info";
 import ActorProfile from "./ActorProfile/ActorProfile";
 // import Graph from "./Graph/Graph";
 // import Comment from "./Comment/Comment";
 // import Movies from "./Movies/Movies";
 
-const API = "http://localhost:3000/data/contents.json";
+const API = "http://localhost:3000/Data/contents.json";
+const API2 = "http://localhost:3000/Data/Data.json";
 
 class Contents extends Component {
   constructor() {
@@ -19,7 +21,8 @@ class Contents extends Component {
       dropdownBtnClicked: false,
       dropdownBtnColorChanged: false,
       commentBtnClicked: false,
-      currentHandleScroll: 0
+      currentHandleScroll: 0,
+      allMovies: []
     };
   }
 
@@ -31,7 +34,7 @@ class Contents extends Component {
   };
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
-    fetch(API, { method: "GET" })
+    fetch(API)
       .then((response) => response.json())
       .then((result) => {
         this.setState(
@@ -42,6 +45,14 @@ class Contents extends Component {
             (this.liLength =
               parseInt(result.movieInformation.cast.length / 6) * 598)
         );
+      });
+
+      fetch(API2)
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({
+            allMovies: result.allMovies
+          });
       });
   }
   componentWillUnmount() {
@@ -116,6 +127,7 @@ class Contents extends Component {
               </div>
             )}
           </div>
+          <div className="Container">
           <article>
             {movieInfo && <Info movieInfo={movieInfo} />}
 
@@ -143,24 +155,29 @@ class Contents extends Component {
               )}
             </div>
             <div className="containerGraph">
-              <div className="titleGraph">별점 그래프</div>
+              <h2>별점 그래프</h2>
+                <Chart />
               <div className="descGraph">
-                <div>1</div>
-                <div>2</div>
               </div>
-            </div>
-            <div className="containerComment">
-              <div className="titleComment">코멘트</div>
-              <div className="descComment"></div>
             </div>
             <div className="containerMovie">
               <div className="titleMovie">비슷한 작품</div>
               <div className="descMovie">
-                <div>1</div>
-                <div>2</div>
+                {this.state.allMovies.slice(0, 15).map(({poster, title, genre}) => (
+                  <div className="movie">
+                  <img src={poster} alt={title}/>
+                  <span>{title.length > 8 ? title.slice(0,8) +'...' : title}</span>
+                  <p>{genre}</p>
+                </div>
+                ))}
+                
               </div>
             </div>
           </article>
+          <aside>
+            df
+          </aside>
+          </div>
         </body>
       </div>
     );

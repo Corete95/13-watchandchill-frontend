@@ -62,31 +62,43 @@ class Section extends Component {
               </div>
               <div className="likeBox">
                 <div className="buttons">
-                  <button
-                    onClick={() => {
-                      this.setState({ addBtnClicked: true });
-                      this.props.handleLike();
-                    }}
-                    className={
-                      this.state.addBtnClicked
-                        ? "addBtn_clicked"
-                        : "addBtn_not_clicked"
-                    }
+                  {!this.state.addBtnClicked 
+                  ? (<button onClick={() => {
+                    this.setState({ addBtnClicked: true });
+                    this.props.handleLike();
+                  }}
+                  className="addBtnNotClicked"
                   >
-                    {this.state.addBtnClicked ? (
-                      <img src={pinkFlag} className="pinkFlag" />
-                    ) : (
-                      <FontAwesomeIcon icon={faPlus} className="plusIcon" />
-                    )}
+                    <FontAwesomeIcon icon={faPlus} className="plusIcon" />
                     <span>보고싶어요</span>
-                  </button>
+                </button>)
+                  : (
+                    <InfoModal
+                    {...this.props.movieInfo}
+                    poster={poster_url}
+                    handleMovieInfo={handleMovieInfo}
+                    render={() => (
+                      <button onClick={() => {
+                        this.setState({ addBtnClicked: true });
+                        this.props.handleLike();
+                      }}
+                      className="addBtnClicked"
+                      >
+                        <img src={pinkFlag} className="pinkFlag" />
+                        <span>보고싶어요</span>
+                    </button>
+                    )}
+                  />)
+                  }
 
                   <InfoModal
                     {...this.props.movieInfo}
                     poster={poster_url}
                     handleMovieInfo={handleMovieInfo}
                     render={() => (
-                      <button className="dropdownBtn_not_clicked">
+                      <button className={this.state.addBtnClicked ? "dropdownBtnClicked"
+                      : "dropdownBtnNotClicked"
+                      }>
                         <CaretDownOutlined className="dropdownIcon" />
                       </button>
                     )}

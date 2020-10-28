@@ -7,12 +7,80 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .Container {
+      display: flex;
+    }
+
     article {
       display: flex;
       flex-direction: column;
       background-color: $whiteColor;
       margin: 30px 0;
-      h2 {
+
+      .containerGraph {
+        h2 {
+          font-size: 19px;
+        }
+
+        @include contentContainer;
+
+        .main_content_title_graph {
+          font-size: 19px;
+          font-weight: 700;
+        }
+      }
+
+      .containerCollection {
+        @include contentContainer;
+
+        .main_content_title_collection {
+          font-size: 19px;
+          font-weight: 700;
+        }
+      }
+
+      .containerMovie {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 25px;
+
+        .titleMovie {
+          font-size: 19px;
+          font-weight: 700;
+          margin-bottom: 30px;
+        }
+
+        .descMovie {
+          display: flex;
+          flex-wrap: wrap;
+
+          .movie {
+            display: flex;
+            flex-direction: column;
+            padding: 0 5px;
+
+            span {
+              font-size: 16px;
+              font-weight: 500;
+              margin: 6px 0 0
+            }
+
+            p {
+              font-size: 13px;
+              color: #ff2f6e;
+              margin: 4px 0 ;
+            }
+
+            img {
+              border-radius: 5px;
+              width: 135px;
+              height: 200px;
+            }
+          }
+        }
       }
     }
   }
@@ -27,16 +95,19 @@
     background-color: $whiteColor;
     border-radius: 6px;
     margin: 15px 0 -15px 0;
+
     button {
       width: 254px;
       height: 40px;
+      color: #000000;
       border: 1px solid #d2d2d2;
       border-radius: 6px;
       background-color: $whiteColor;
       font-size: 17px;
-      font-weight: 500;
+      font-weight: 700;
     }
   }
+
   .actors {
     width: 100%;
     position: relative;
@@ -47,6 +118,7 @@
       font-size: 19px;
       padding: 25px 0;
     }
+
     ul {
       position: relative;
       display: flex;
@@ -55,14 +127,16 @@
       width: 100%;
       height: 240px;
       transition: left 0.5s;
+
       li {
         padding: 10px 20px;
         width: 50%;
+
         img {
           margin: 0 10px;
         }
-        .desc {
-        }
+
+        .desc {}
       }
     }
   }
@@ -75,13 +149,16 @@
     box-shadow: 0 0 3px 1px #f8f8f8;
     background: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    > * {
+
+    >* {
       transition: color 0.4s;
+
       &:hover {
         color: blue;
       }
     }
   }
+
   .LeftBar {
     position: absolute;
     display: flex;
@@ -91,6 +168,7 @@
     left: 0px;
     height: 100%;
   }
+
   .RightBar {
     position: absolute;
     display: flex;
@@ -99,6 +177,7 @@
     top: 20px;
     right: 0px;
     height: 100%;
+
     div {
       cursor: pointer;
     }
@@ -107,6 +186,7 @@
 
 aside {
   margin-top: 30px;
+  margin-left: 30px;
   width: 319px;
   height: 454px;
   @include box;

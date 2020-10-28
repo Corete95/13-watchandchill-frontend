@@ -4,15 +4,18 @@
   width: 100%;
   height: 510px;
   border-bottom: $border;
+
   .headerBox {
     height: 266px;
     width: 100%;
+
     .background {
       position: relative;
       width: 100%;
       height: 300px;
       background: linear-gradient(to left, #333, #333 50%, #eee 75%, #333 75%);
     }
+
     img {
       position: absolute;
       left: 15%;
@@ -21,20 +24,24 @@
       width: 70%;
     }
   }
+
   .titleBox {
     display: flex;
     position: relative;
     width: 100%;
     height: 220px;
-    > div {
+
+    >div {
       display: flex;
       max-width: 960px;
       margin-left: 15%;
+
       .poster {
         background: white;
         border-radius: 2px;
         width: 170px;
         height: inherit;
+
         img {
           border: $border;
           width: inherit;
@@ -43,16 +50,19 @@
         }
       }
     }
+
     .infoBox {
       display: flex;
       padding-top: 40px;
       flex-direction: column;
       margin-left: 15px;
+
       h1 {
         font-size: 33px;
         font-weight: 700;
         padding: 20px 0 5px 0;
       }
+
       .info {
         border-top: $border;
         border-bottom: $border;
@@ -61,20 +71,26 @@
         padding: 10px 0;
         margin: 20px 0;
       }
+
       .likeBox {
         display: flex;
         align-items: center;
         width: 100%;
+
         .buttons {
           display: flex;
           align-items: center;
           margin-right: 20px;
-          button{
+          border-radius: 6px;
+          border: $border;
+
+          button {
             span {
               padding-left: 10px;
             }
           }
-          .addBtn_not_clicked {
+
+          .addBtnNotClicked {
             width: 205px;
             height: 40px;
             border: none;
@@ -84,14 +100,17 @@
             font-weight: 600;
             color: white;
             background-color: $themeColor;
+
             &:focus {
               outline: none;
             }
+
             &:hover {
               .plusIcon {
                 transform: rotateZ(90deg);
               }
             }
+
             .plusIcon {
               transition: 0.2s ease-in-out;
             }
@@ -99,86 +118,103 @@
             .pinkFlag {
               width: 15px;
             }
-            .addBtn_clicked {
-              width: 205px;
+
+            .dropdownIcon {
+              transition: 0.2s ease-in-out;
+            }
+
+
+            .dropdownBtn_not_clicked_color {
+              margin-top: 22px;
               height: 40px;
+              color: white;
+              background-color: $themeColor;
               border: none;
-              color: black;
-              background-color: $grayColor;
-              border-top-left-radius: 6px;
-              border-bottom-left-radius: 6px;
-              font-size: 17px;
-              font-weight: 600;
+              border-left: 1px solid rgb(231, 18, 82);
               &:focus {
                 outline: none;
-              }}
-
-              .dropdownBtn_not_clicked {
-                margin-top: 22px;
-                width: 50px;
-                height: 40px;
-                color: white;
-                background-color: $themeColor;
-                border: none;
-                border-top-right-radius: 6px;
-                border-bottom-right-radius: 6px;
-                border-left: 1px solid rgb(231, 18, 82);
-                &:focus {
-                  outline: none;
-                }
-                &:hover {
-                  .dropdownIcon {
-                    transform: translateY(2px);
-                  }
+              }
+              &:hover {
+                .dropdownIcon {
+                  transform: translateY(2px);
                 }
               }
+            }
+
+            .dropdownIcon {
+              transition: 0.2s ease-in-out;
+            }
+
+            .dropdownBtn_clicked_color {
+              margin-top: 22px;
+              height: 40px;
+              border: none;
+
+              &:focus {
+                outline: none;
+              }
+            }
+          }
+
+          .addBtnClicked {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 205px;
+            height: 40px;
+            border: none;
+            color: black;
+            background-color: $grayColor;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            font-size: 17px;
+            font-weight: 600;
+            img {
+              width: 30px;
+            }
+            &:focus {
+              outline: none;
+            }
+          }
+
+          .dropdownBtnNotClicked {
+            display: flex;
+            align-items: center;
+            width: 50px;
+            height: 40px;
+            color: white;
+            background-color: $themeColor;
+            border: none;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-left: 1px solid rgb(231, 18, 82);
+
+            &:focus {
+              outline: none;
+            }
+
+            &:hover {
               .dropdownIcon {
-                transition: 0.2s ease-in-out;
+                transform: translateY(2px);
               }
-
-              .dropdownBtn_clicked {
-                margin-top: 22px;
-                height: 40px;
-                border: none;
-                border-top-right-radius: 6px;
-                border-bottom-right-radius: 6px;
-                &:focus {
-                  outline: none;
-                }
-              }
-
-              .dropdownBtn_not_clicked_color {
-                margin-top: 22px;
-                height: 40px;
-                color: white;
-                background-color: $themeColor;
-                border: none;
-                border-left: 1px solid rgb(231, 18, 82);
-                &:focus {
-                  outline: none;
-                }
-                &:hover {
-                  .dropdownIcon {
-                    transform: translateY(2px);
-                  }
-                }
-              }
-              .dropdownIcon {
-                transition: 0.2s ease-in-out;
-              }
-
-              .dropdownBtn_clicked_color {
-                margin-top: 22px;
-                height: 40px;
-                border: none;
-                &:focus {
-                  outline: none;
-                }
-              }
+            }
+          }
+          .dropdownBtnClicked {
+            display: flex;
+            align-items: center;
+            width: 50px;
+            height: 40px;
+            color: #d9d9d9;
+            border: none;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            background-color:#f8f8f8;
+            &:focus {
+              outline: none;
             }
           }
         }
       }
     }
   }
-
+}
