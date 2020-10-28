@@ -1,5 +1,5 @@
 # Watch and Chill
-
+![logo2](https://user-images.githubusercontent.com/67800211/97400914-449b7f80-1933-11eb-9c25-1261c2fea04b.png)
 What is Watch and Chill ???
 
 *** README 수정중입니다.
