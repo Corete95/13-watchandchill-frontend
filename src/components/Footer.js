@@ -36,11 +36,11 @@ class Footer extends Component {
                 <li>대표 조혜미 ⎮ </li>
                 <li>서울특별시 서초구 강남대로 343 신덕빌딩 3층</li>
               </ul>
-              <div className="RegistrationNumber">
+              <div className="registrationNumber">
                 <span>사업자 등록 번호 211-88-66013</span>
               </div>
               <div className="companyLogo">
-                <span>왓챠로고이미지 </span>
+                <span>WATCHA&CHILL</span>
                 <span>2011 Watcha. Inc</span>
               </div>
             </div>
