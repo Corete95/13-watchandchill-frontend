@@ -42,53 +42,48 @@ class Nav extends Component {
       isLoginTure
     } = this;
     return (
-        <nav className="Nav">
-          <div className="navbarBox">
-            <div className="navbarLeft">
-              <Link to="/main">
-                <img
-                  className="navbarLogo"
-                  src="/logo2.png"
-                  alt="whatcha_log"
+      <nav className="Nav">
+        <div className="navbarBox">
+          <div className="navbarLeft">
+            <Link to="/main">
+              <img className="navbarLogo" src="/logo2.png" alt="whatcha_log" />
+            </Link>
+            <Link to="/contents" className="navbarMovie">
+              영화
+            </Link>
+          </div>
+          <div className="navbarRight">
+            <SearchOutlined className="searchIcon" alt="search_icon" />
+            <input
+              className="search"
+              type="search"
+              placeholder="작품 제목,배우,감독을 검색해보세요."
+            />
+            {this.state.isLogin ? (
+              <>
+                <Link to="/rating" className="navbarRating">
+                  평가하기
+                </Link>
+                <Link to="">
+                  <UserOutlined className="userProfile" alt="profile_icon" />
+                </Link>
+              </>
+            ) : (
+              <>
+                <div className="loginFrame">
+                  <button onClick={loginOpen}>로그인</button>
+                </div>
+                <div className="singUpFrame">
+                  <button onClick={signupOpen}>회원가입</button>
+                </div>
+                <Login
+                  isLogin={isLoginTure}
+                  open={loginModalOpen}
+                  close={loginClose}
                 />
-              </Link>
-              <Link to="/contents" className="navbarMovie">
-                영화
-              </Link>
-            </div>
-            <div className="navbarRight">
-              <SearchOutlined className="searchIcon" alt="search_icon" />
-              <input
-                className="search"
-                type="search"
-                placeholder="작품 제목,배우,감독을 검색해보세요."
-              />
-              {this.state.isLogin ? (
-                <>
-                  <Link to="/rating" className="navbarRating">
-                    평가하기
-                  </Link>
-                  <Link to="">
-                    <UserOutlined className="userProfile" alt="profile_icon" />
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <div className="loginFrame">
-                    <button onClick={loginOpen}>로그인</button>
-                  </div>
-                  <div className="singUpFrame">
-                    <button onClick={signupOpen}>회원가입</button>
-                  </div>
-                  <Login
-                    isLogin={isLoginTure}
-                    open={loginModalOpen}
-                    close={loginClose}
-                  />
-                  <Signup open={signupModalOpen} close={signupClose} />
-                
-              )}
-            </div>
+                <Signup open={signupModalOpen} close={signupClose} />
+              </>
+            )}
           </div>
         </div>
       </nav>
