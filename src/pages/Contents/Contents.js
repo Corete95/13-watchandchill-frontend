@@ -144,7 +144,6 @@ class Contents extends Component {
                 <div>2</div>
               </div>
             </div>
-            <button>더보기</button>
           </article>
           <aside>aside</aside>
         </body>
