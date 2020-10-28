@@ -80,3 +80,34 @@ input {
   color: #d5d4d8;
   padding-top: 10px;
 }
+
+.loginFrame {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    background: transparent;
+    color: rgb(116, 116, 123);
+  }
+}
+
+.singUpFrame {
+  display: flex;
+  align-items: center;
+  margin-left: 24px;
+  button {
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    background: transparent;
+    color: rgb(53, 53, 53);
+    font-size: 14px;
+    border: 1px solid rgba(116, 116, 123, 0.5);
+    padding: 5px 14px 6px;
+    outline: none;
+  }
+}

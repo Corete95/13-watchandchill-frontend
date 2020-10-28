@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Main.scss";
+import Login from "../../components/Nav/Login";
+import Signup from "../../components/Nav/Signup";
 import MovieList from "../../components/MovieList";
 
 // 백엔드와 맞춰보기 위해서 남겨놓은 주석입니다.
@@ -20,8 +22,8 @@ class Main extends Component {
   componentDidMount() {
     // console.log(this.props);
     fetch(`http://localhost:3000/Data/mock.json`)
-      .then(res => res.json())
-      .then(res => this.setState({ movies: { ...res } }));
+      .then((res) => res.json())
+      .then((res) => this.setState({ movies: { ...res } }));
   }
 
   render() {
@@ -31,7 +33,7 @@ class Main extends Component {
         <div className="listTitle"> 현재 상영작</div>
         <div className="movieImg">
           {this.state.movies.theater &&
-            this.state.movies.theater.slice(0, 5).map(movie => {
+            this.state.movies.theater.slice(0, 5).map((movie) => {
               return (
                 <MovieList
                   id={movie.id}
@@ -48,7 +50,7 @@ class Main extends Component {
         <div className="listTitle"> 왓챠 인기 영화</div>
         <div className="movieImg">
           {this.state.movies.watcha &&
-            this.state.movies.watcha.slice(0, 5).map(movie => {
+            this.state.movies.watcha.slice(0, 5).map((movie) => {
               return (
                 <MovieList
                   id={movie.id}
