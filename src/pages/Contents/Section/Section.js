@@ -34,10 +34,7 @@ class Section extends Component {
           </div>
           <div className="info">
             <h1>{movieInfo.title}</h1>
-            <p>
-              {movieInfo.date} · {movieInfo.genre} · {movieInfo.country}
-            </p>
-            <div className="my_rating">평균 ★4.4 (43만명)</div>
+            <div className="my_rating">{movieInfo.date} · {movieInfo.genre} · {movieInfo.country}</div>
             <div className="buttons">
             <button
               onClick={() => {

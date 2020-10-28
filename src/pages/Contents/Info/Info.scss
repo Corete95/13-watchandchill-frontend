@@ -26,22 +26,24 @@ article {
       .tagDesc {
         color: #787878;
       }
-      .tags {
+      .tagBox {
         display: flex;
         font-size: 14px;
-        .firstTag {
-          border: 1px solid #00aae6;
-          color: #00aae6;
-          border-radius: 4px;
-          margin: 0 2px 0 0;
-          padding: 10px;
-        }
-        .secondTag {
-          border: 1px solid #ff8644;
-          color: #ff8644;
-          border-radius: 4px;
-          margin: 0 0 0 2px;
-          padding: 10px;
+        .tag {
+          &:nth-child(2n) {
+            border: 1px solid #00aae6;
+            color: #00aae6;
+            border-radius: 4px;
+            margin: 0 0 0 2px;
+            padding: 10px;
+          }
+          &:nth-child(2n + 1) {
+            border: 1px solid #ff8644;
+            color: #ff8644;
+            border-radius: 4px;
+            margin: 0 2px 0 0;
+            padding: 10px;
+          }
         }
       }
     }
@@ -49,7 +51,6 @@ article {
   .containerInfo {
     @include contentContainer;
     .titleInfo {
-      margin: 20px 0;
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -63,61 +64,25 @@ article {
       }
     }
     .descInfo {
+      font-size: 15px;
+      color: #4a4a4a;
       .overallInfo {
+        margin-top: 30px;
         .originalName {
-          padding: 5px 0;
         }
         .year {
-          padding: 5px 0;
+          padding: 7px 0;
         }
         .runningTime {
-          padding: 5px 0;
         }
       }
       .summary {
         padding: 30px 0;
+        line-height: 23px;
       }
     }
   }
 
-  .containerGraph {
-    @include contentContainer;
-    .main_content_title_graph {
-      font-size: 19px;
-      font-weight: 700;
-    }
-  }
-  .containerComment {
-    @include contentContainer;
-    .main_content_title_comment {
-      font-size: 19px;
-      font-weight: 700;
-    }
-  }
-  .containerCollection {
-    @include contentContainer;
-    .main_content_title_collection {
-      font-size: 19px;
-      font-weight: 700;
-    }
-  }
-  .containerMovie {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 25px;
-    .titleMovie {
-      font-size: 19px;
-      font-weight: 700;
-    }
-  }
+  
 }
 
-// button {
-//   width: 600px;
-//   height: 33px;
-//   @include box;
-//   font-size: 15px;
-//   font-weight: 600;
-// }

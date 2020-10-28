@@ -22,7 +22,7 @@ class Contents extends Component {
       dropdownBtnClicked: false,
       dropdownBtnColorChanged: false,
       commentBtnClicked: false,
-      currentHandleScroll: 0,
+      currentHandleScroll: 0
     };
   }
 
@@ -37,9 +37,14 @@ class Contents extends Component {
     fetch(API, { method: "GET" })
       .then((response) => response.json())
       .then((result) => {
-        this.setState({
-          movieInfo: result.movieInformation,
-        }, () => this.liLength = parseInt(result.movieInformation.cast.length / 6) * 598)
+        this.setState(
+          {
+            movieInfo: result.movieInformation
+          },
+          () =>
+            (this.liLength =
+              parseInt(result.movieInformation.cast.length / 6) * 598)
+        );
       });
   }
   componentWillUnmount() {
@@ -52,7 +57,6 @@ class Contents extends Component {
     } else {
       document.querySelector(".Nav").classList.add("Transpa");
     }
-
   }
 
   btnRef = createRef();
@@ -60,11 +64,11 @@ class Contents extends Component {
   moveRight = () => {
     if (this.state.slicks > -this.liLength) {
       this.setState(
-        prevState => {
+        (prevState) => {
           return { slicks: prevState.slicks - 598 };
         },
         () => {
-          this.btnRef.current.style.left = this.state.slicks + "px"
+          this.btnRef.current.style.left = this.state.slicks + "px";
         }
       );
     }
@@ -73,11 +77,11 @@ class Contents extends Component {
   moveLeft = () => {
     if (this.state.slicks < 0) {
       this.setState(
-        prevState => {
+        (prevState) => {
           return { slicks: prevState.slicks + 598 };
         },
         () => {
-          this.btnRef.current.style.left = this.state.slicks + "px"
+          this.btnRef.current.style.left = this.state.slicks + "px";
         }
       );
     }
@@ -91,18 +95,15 @@ class Contents extends Component {
         {movieInfo && <Section movieInfo={movieInfo} />}
         <body>
           <article>
-            <div className="Tags">
-              
-            </div>
             {movieInfo && <Info movieInfo={movieInfo} />}
 
-            <h2>출연/제작</h2>
             <div className="actors">
-            <ul ref={this.btnRef}>
-            {movieInfo &&
-              movieInfo.cast.map((actor) => 
-              <ActorProfile actorInfo={actor} />
-              )}
+              <h2>출연/제작</h2>
+              <ul ref={this.btnRef}>
+                {movieInfo &&
+                  movieInfo.cast.map((actor) => (
+                    <ActorProfile actorInfo={actor} />
+                  ))}
               </ul>
               {slicks !== 0 && (
                 <div className="LeftBar">
@@ -118,7 +119,7 @@ class Contents extends Component {
                   </div>
                 </div>
               )}
-              </div>
+            </div>
             <div className="containerGraph">
               <div className="titleGraph">별점 그래프</div>
               <div className="descGraph">

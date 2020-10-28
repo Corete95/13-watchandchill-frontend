@@ -1,0 +1,32 @@
+.containerGraph {
+    @include contentContainer;
+    .main_content_title_graph {
+      font-size: 19px;
+      font-weight: 700;
+    }
+  }
+  .containerComment {
+    @include contentContainer;
+    .main_content_title_comment {
+      font-size: 19px;
+      font-weight: 700;
+    }
+  }
+  .containerCollection {
+    @include contentContainer;
+    .main_content_title_collection {
+      font-size: 19px;
+      font-weight: 700;
+    }
+  }
+  .containerMovie {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 25px;
+    .titleMovie {
+      font-size: 19px;
+      font-weight: 700;
+    }
+  }
