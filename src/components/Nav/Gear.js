@@ -2,12 +2,18 @@ import React, { Component } from "react";
 import "./Gear.scss";
 
 class Gear extends Component {
+  gearClose = e => {
+    console.log(e.target.className);
+    if (e.target.className === "gearOutLine") {
+      this.props.close();
+    }
+  };
   render() {
     return (
       <>
         {this.props.open ? (
           <div className="gearModal">
-            <div className="gearOutLine">
+            <div className="gearOutLine" onClick={this.gearClose}>
               <div className="gearBox">
                 <div className="boxHeader">
                   <div className="headerIcon">

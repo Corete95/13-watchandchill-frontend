@@ -22,6 +22,20 @@ class Profile extends Component {
         });
       });
   }
+  goToAnalysis = () => {
+    const test = this.props.location.search.name;
+    const token = window.localStorage.token;
+
+    fetch(`http:// ?/?/?/${test}`, {
+      headers: { AUTHORIZATION: token }
+    })
+    .then(response => response.json())
+    .then(response=>{
+      this.setState({
+        
+      })
+    })
+  };
 
   isGearOpen = () => {
     this.setState({ gearModalOpen: true });
@@ -56,7 +70,7 @@ class Profile extends Component {
                       <div className="text">프로필이 없습니다.</div>
                     </div>
                     <div className="taste_analysis">
-                      <a title="taste_analysis">
+                      <a title="taste_analysis" onClick={()=> this.props.history("")}>
                         <span className="icon"></span>
                         <span className="text">취향분석</span>
                       </a>
