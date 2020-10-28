@@ -34,11 +34,11 @@ class Section extends Component {
           </div>
           <div className="info">
             <h1>{movieInfo.title}</h1>
-            <div className="my_rating">{movieInfo.date} · {movieInfo.genre} · {movieInfo.country}</div>
+            <div className="myRating">{movieInfo.date} · {movieInfo.genre} · {movieInfo.country}</div>
             <div className="buttons">
             <button
               onClick={() => {
-                this.setState({ addBtnClicked: true });
+                this.props.handleLike();
               }}
               className={
                 this.state.addBtnClicked
@@ -50,7 +50,7 @@ class Section extends Component {
                 <img src={pinkFlag} className="pinkFlag" />
               ) : (
                 <FontAwesomeIcon icon={faPlus} className="plusIcon" />
-              )}보고싶어요
+              )}&nbsp;보고싶어요
             </button>
             <button
               onClick={() => {
@@ -65,23 +65,7 @@ class Section extends Component {
           </div>
           {/* <span className="rating">평가하기</span> */}
         </div>
-        <div className="Button">
-        {this.state.addBtnClicked && (
-          <div className="commentBox">
-            <span>김지안 님의 생각을 글로 적어보세요.</span>
-            <button
-              onClick={() => {
-                this.setState({
-                  commentBtnClicked: true
-                });
-              }}
-            >
-              코멘트 남기기
-            </button>
-            {this.state.commentBtnClicked && <div>comment modal</div>}
-          </div>
-        )}
-      </div>
+        
       </div>
           </div>
 

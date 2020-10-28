@@ -2,13 +2,10 @@ import React, { Component, createRef } from "react";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "./Contents.scss";
 import Section from "./Section/Section";
-// import CommentBox from "./CommentBox/CommentBox";
-// import Tag from "./Tag/Tag";
 import Info from "./Info/Info";
 import ActorProfile from "./ActorProfile/ActorProfile";
 // import Graph from "./Graph/Graph";
 // import Comment from "./Comment/Comment";
-// import Collection from "./Collection/Collection";
 // import Movies from "./Movies/Movies";
 
 const API = "http://localhost:3000/data/contents.json";
@@ -86,14 +83,39 @@ class Contents extends Component {
       );
     }
   };
+  handleLike = () => {
+    this.setState({
+      addBtnClicked: true
+    });
+  };
 
   render() {
     const { movieInfo, slicks } = this.state;
 
     return (
       <div className="Contents">
-        {movieInfo && <Section movieInfo={movieInfo} />}
+        {movieInfo && (
+          <Section movieInfo={movieInfo} handleLike={this.handleLike} />
+        )}
+
         <body>
+          <div className="Button">
+            {this.state.addBtnClicked && (
+              <div className="commentBox">
+                <span>김지안 님의 생각을 글로 적어보세요.</span>
+                <button
+                  onClick={() => {
+                    this.setState({
+                      commentBtnClicked: true
+                    });
+                  }}
+                >
+                  코멘트 남기기
+                </button>
+                {this.state.commentBtnClicked && <div>comment modal</div>}
+              </div>
+            )}
+          </div>
           <article>
             {movieInfo && <Info movieInfo={movieInfo} />}
 
@@ -131,13 +153,6 @@ class Contents extends Component {
               <div className="titleComment">코멘트</div>
               <div className="descComment"></div>
             </div>
-            <div className="containerCollection">
-              <div className="titleCollection">이 작품이 담긴 컬렉션</div>
-              <div className="descCollection">
-                <div>1</div>
-                <div>2</div>
-              </div>
-            </div>
             <div className="containerMovie">
               <div className="titleMovie">비슷한 작품</div>
               <div className="descMovie">
@@ -146,7 +161,6 @@ class Contents extends Component {
               </div>
             </div>
           </article>
-          <aside>aside</aside>
         </body>
       </div>
     );
