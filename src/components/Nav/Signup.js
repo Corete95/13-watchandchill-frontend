@@ -50,7 +50,7 @@ class Signup extends Component {
 
   valiDateEmail = (email) => {
     const emailRegp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    const isEmailValid = email.match(emailRegp) ? true : false;
+    const isEmailValid = !!email.match(emailRegp);
     this.setState({
       isEmailValid,
       email
@@ -64,7 +64,7 @@ class Signup extends Component {
 
   valiDatePassword = (passWord) => {
     const passwordRegp = /^[A-Za-z0-9]{6,12}$/;
-    const isPasswordValid = passWord.match(passwordRegp) ? true : false;
+    const isPasswordValid = !!passWord.match(passwordRegp);
     this.setState({
       isPasswordValid,
       passWord
@@ -106,11 +106,9 @@ class Signup extends Component {
       })
         .then((response) => response.json())
         .then((result) => {
-          if (result.MESSAGE === "SUCCESS") {
-            alert("회원가입을 축하드립니다!");
-          } else if (result.MESSAGE === "EMAIL_OVERLAP") {
+          if (result.MESSAGE === "SUCCESS") alert("회원가입을 축하드립니다!");
+          if (result.MESSAGE === "EMAIL_OVERLAP")
             alert("이미 가입된 계정입니다.");
-          }
         });
     }
   };
