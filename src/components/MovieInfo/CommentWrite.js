@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { actionCreators } from "../../store";
+import './CommentWrite.scss'
 
 class CommentWrite extends Component {
   componentDidMount() {

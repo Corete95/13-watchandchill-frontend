@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { CaretDownOutlined } from "@ant-design/icons";
 import { connect } from "react-redux";
-import { actionCreators } from "../../../store";
+import { actionCreators } from "../../store";
 
 class RatingBox extends Component {
   state = {

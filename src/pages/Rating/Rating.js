@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import RatingBox from "./Components/RatingBox";
+import RatingBox from "./RatingBox";
 import Items from "./Items";
 import Category from "./Components/Category";
 import MovieInfo from "../../../src/components/MovieInfo/MovieInfo";

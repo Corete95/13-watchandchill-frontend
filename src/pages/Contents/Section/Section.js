@@ -6,6 +6,7 @@ import { pinkFlag } from "../ActorProfile/data";
 import { connect } from "react-redux";
 import InfoModal from '../.././../components/MovieInfo/InfoModal'
 import MovieInfo from '../.././../components/MovieInfo/MovieInfo'
+import RatingStar from "../../../components/MovieInfo/RatingStar";
 import "./Section.scss";
 // import Button from "./Button/Button";
 // import Rating from "../../Rating/Rating";
@@ -83,8 +84,10 @@ class Section extends Component {
                   </button>)
                 } />               
               </div>
+            <span className="star">
+             <RatingStar rating={3} />
+            </span>
             </div>
-            {/* <span className="rating">평가하기</span> */}
           </div>
           <div className="Button">
 
