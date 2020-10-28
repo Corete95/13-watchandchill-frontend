@@ -42,16 +42,45 @@
           height: inherit;
         }
       }
+    }
+    .infoBox {
+      display: flex;
+      padding-top: 40px;
+      flex-direction: column;
+      margin-left: 15px;
+      h1 {
+        font-size: 33px;
+        font-weight: 700;
+        padding: 20px 0 5px 0;
+      }
       .info {
+        border-top: $border;
+        border-bottom: $border;
+        font-size: 17px;
+        color: rgba(0, 0, 0, 0.5);
+        padding: 10px 0;
+        margin: 20px 0;
+      }
+      .likeBox {
         display: flex;
-        padding-top: 40px;
-        flex-direction: column;
-        margin-left: 15px;
-        width: 400px;
-        h1 {
-          font-size: 33px;
-          font-weight: 700;
-          padding: 20px 0 5px 0;
+        align-items: center;
+        width: 100%;
+        .buttons {
+          display: flex;
+          align-items: center;
+          margin-right: 20px;
+        }
+      }
+      .addBtn_not_clicked {
+        width: 205px;
+        height: 40px;
+        border: none;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+        font-size: 17px;
+        font-weight: 600;
+        &:focus {
+          outline: none;
         }
         .myRating {
           color: rgba(0, 0, 0, 0.5);
@@ -72,11 +101,12 @@
           border-bottom-left-radius: 6px;
           font-size: 17px;
           font-weight: 600;
+          color: white;
+          background-color: $themeColor;
           &:focus {
             outline: none;
           }
-          color: white;
-          background-color: $themeColor;
+
           &:hover {
             .plusIcon {
               transform: rotateZ(90deg);
