@@ -78,7 +78,7 @@ class Section extends Component {
                     ) : (
                       <FontAwesomeIcon icon={faPlus} className="plusIcon" />
                     )}
-                    보고싶어요
+                    <span>보고싶어요</span>
                   </button>
 
                   <InfoModal
@@ -91,12 +91,11 @@ class Section extends Component {
                       </button>
                     )}
                   />
-                  <span className="star">
-                    <RatingStar rating={3} />
-                  </span>
                 </div>
+                <span className="star">
+                  <RatingStar rating={3} />
+                </span>
               </div>
-              <div className="Button"></div>
             </div>
             {isMovieInfo && <MovieInfo />}
           </div>
