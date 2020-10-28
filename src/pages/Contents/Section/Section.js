@@ -7,6 +7,8 @@ import { connect } from "react-redux";
 import InfoModal from '../.././../components/MovieInfo/InfoModal'
 import MovieInfo from '../.././../components/MovieInfo/MovieInfo'
 import RatingStar from "../../../components/MovieInfo/RatingStar";
+import CommentWriteWrap from "../../../components/MovieInfo/CommentWriteWrap";
+import CommentWrite from "../../../components/MovieInfo/CommentWrite";
 import "./Section.scss";
 // import Button from "./Button/Button";
 // import Rating from "../../Rating/Rating";
@@ -33,7 +35,7 @@ class Section extends Component {
   render() {
     const { id, country, coverpic_url, poster_url, date, genre, title } = this.props.movieInfo;
     const { handleMovieInfo } = this;
-    const { isMovieInfo } = this.props;
+    const { isMovieInfo, isCommentWrite } = this.props;
 
     return (
       <div className="Section">
@@ -52,6 +54,12 @@ class Section extends Component {
               <p>
                 {date} · {genre} · {country}
               </p>
+              <CommentWriteWrap 
+              {...this.props.movieInfo} 
+              handleMovieInfo={handleMovieInfo}
+              render={() => (
+                <div>코멘트클릭</div>
+              )} />
               <div className="my_rating">평균 ★4.4 (43만명)</div>
               <div className="whatthe">
               <div className="buttons">
@@ -96,13 +104,15 @@ class Section extends Component {
           </div>
         </div>
         {isMovieInfo && <MovieInfo />}
+        {isCommentWrite && ( <MovieInfo /> )}
       </div>
     );
   }
 }
 function mapStateToProps(state) {
   return {
-    isMovieInfo: state.isMovieInfo
+    isMovieInfo: state.isMovieInfo,
+    isCommentWrite: state.isCommentWrite,
   };
 }
 
