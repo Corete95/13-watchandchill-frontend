@@ -1,0 +1,161 @@
+@import "../../Styles/common.scss";
+
+.loginModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  .loginBox {
+    width: 375px;
+    height: 590px;
+    background-color: white;
+    position: relative;
+    box-sizing: border-box;
+    margin: 75px auto;
+    background: #fff;
+    border-radius: 6px;
+    .modalContents {
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      padding: 32px 20px 48px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      img {
+        text-align: center;
+        margin: 0px 0px 14px;
+      }
+      h2 {
+        text-align: center;
+        font-size: 17px;
+        margin: 24px 0px 20px;
+        line-height: 22px;
+        font-weight: 700;
+      }
+      .loginInput {
+        .loginId {
+          width: 92%;
+          height: 44px;
+          background-color: #f5f5f5;
+          padding: 0px 12px;
+          margin-bottom: 6px;
+          border-radius: 6px;
+          border-style: none;
+          outline: none;
+        }
+
+        .loginPw {
+          width: 92%;
+          height: 44px;
+          background-color: #f5f5f5;
+          padding: 0px 12px;
+          border-radius: 6px;
+          border-style: none;
+          outline: none;
+        }
+      }
+      .loginButton {
+        text-align: center;
+        padding: 16px 0px;
+        button {
+          width: 330px;
+          border-radius: 6px;
+          height: 44px;
+          border: none;
+          color: white;
+          cursor: pointer;
+          background-color: rgb(255, 47, 110);
+          border-radius: 6px;
+          outline: none;
+        }
+      }
+      .pwButton {
+        text-align: center;
+        margin: 12px 0px 14px;
+        font-size: 15px;
+        button {
+          background: none;
+          padding: 0px;
+          border: none;
+          margin: 0px;
+          cursor: pointer;
+          color: rgb(255, 47, 110);
+          outline: none;
+        }
+      }
+      .signUp {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgb(140, 140, 140);
+        text-align: center;
+        button {
+          letter-spacing: -0.5px;
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: rgb(255, 47, 110);
+          outline: none;
+        }
+      }
+      .or {
+        position: relative;
+        color: black;
+        text-align: center;
+        height: 1.5em;
+        border: 0px;
+        outline: 0px;
+        margin: 37px 0px;
+      }
+      .or::before {
+        content: "";
+        position: absolute;
+        top: 37%;
+        left: 0px;
+        width: 100%;
+        border-top: 1px solid rgb(216, 216, 216);
+      }
+      .or::after {
+        content: "OR";
+        display: inline-block;
+        position: relative;
+        top: -2px;
+        background-color: rgb(255, 255, 255);
+        color: rgb(160, 160, 160);
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: -0.3px;
+        line-height: 19px;
+        vertical-align: middle;
+        padding: 0px 14px;
+      }
+      .faceBookBtn {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        width: 100%;
+        height: 40px;
+        border-radius: 6px;
+        position: relative;
+        background: rgb(60, 90, 160);
+        outline: none;
+        font-size: 15px;
+        font-weight: 400;
+      }
+      .faceBookBtn::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 9px;
+        left: 15px;
+        background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxwYXRoIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTE5LjMzMiA4LjJoLTIuMDE2cy0xLjI4NC4wNzctMS4yODQgMS42NDR2Mi4wMDhoMy4zbC0uNTUgMy4xMDdoLTIuNzV2OC4wNGgtMy4xMTR2LTguMDRoLTIuNzV2LTMuMTA3aDIuNzVWOS4xMTNzLS4xMDQtMy44MzQgMy44NDgtMy44MzRjMS44NDggMCAyLjU2Ni4xODQgMi41NjYuMTg0VjguMnptMC03LjJINC42NjhBMy42NjggMy42NjggMCAwIDAgMSA0LjY2NnYxNC42NjZBMy42NyAzLjY3IDAgMCAwIDQuNjY4IDIzaDE0LjY2NEEzLjY2OCAzLjY2OCAwIDAgMCAyMyAxOS4zMzJWNC42NjZBMy42NjYgMy42NjYgMCAwIDAgMTkuMzMyIDF6Ii8+Cjwvc3ZnPgo=")
+          center center no-repeat;
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+      }
+    }
+  }
+}
