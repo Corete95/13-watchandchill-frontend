@@ -112,9 +112,11 @@ const reducer = createReducer(initialState, {
     state.category = action.payload
   },
   [ChangeMovieInfo] : (state, action) => {
+    console.log(action)
     state.isMovieInfo = action.payload
   },
   [ChangeCommentWrite] : (state, action) => {
+    console.log(action)
     state.isCommentWrite = action.payload
   },
   [CurrentMovie] : (state, action) => {

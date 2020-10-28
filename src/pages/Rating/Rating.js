@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import RatingBox from "./RatingBox";
+import RatingBox from "./Components/RatingBox";
 import Items from "./Items";
 import Category from "./Components/Category";
-import MovieInfo from "./Components/MovieInfo";
+import MovieInfo from "../../../src/components/MovieInfo/MovieInfo";
 import "./Rating.scss";
 
 class Rating extends Component {

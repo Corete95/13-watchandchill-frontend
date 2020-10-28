@@ -1,30 +1,31 @@
 import React, { Component } from "react";
 import { MoreOutlined } from "@ant-design/icons";
+import InfoModal from '../../components/MovieInfo/InfoModal';
 import { connect } from "react-redux";
 import RatingStar from "./Components/RatingStar";
-import { pinkFlag, blueEye } from "./Components/Datas";
+import { pinkFlag, blueEye } from "../../components/Datas";
 import { Link } from "react-router-dom";
 import { actionCreators } from "../../store";
 import "./Rating.scss";
 import "../../../node_modules/font-awesome/css/font-awesome.min.css";
 
 class Item extends Component {
-  movieInfoInq = () => {
-    const { CurrentMovie, ChangeMovieInfo, handleMovieInfo } = this.props;
-    const {
-      id,
-      title,
-      poster,
-      date,
-      country,
-      genre,
-      rating,
-      status
-    } = this.props;
-    CurrentMovie({ id, title, poster, date, genre, rating, status, country });
-    ChangeMovieInfo(true);
-    handleMovieInfo();
-  };
+  // movieInfoInq = () => {
+  //   const { CurrentMovie, ChangeMovieInfo, handleMovieInfo } = this.props;
+  //   const {
+  //     id,
+  //     title,
+  //     poster,
+  //     date,
+  //     country,
+  //     genre,
+  //     rating,
+  //     status
+  //   } = this.props;
+  //   CurrentMovie({ id, title, poster, date, genre, rating, status, country });
+  //   ChangeMovieInfo(true);
+  //   handleMovieInfo();
+  // };
 
   isStatus = status => {
     const { date, country } = this.props;
@@ -52,7 +53,7 @@ class Item extends Component {
   };
 
   render() {
-    const { title, poster, rating, status } = this.props;
+    const { id, title, poster, date, genre, rating, status, country } = this.props;
     return (
       <li className="Item">
         <div className="Poster">
@@ -63,9 +64,14 @@ class Item extends Component {
         <div className="Description">
           <h3>
             {title}
-            <div className="Threedot" onClick={() => this.movieInfoInq()}>
+            <InfoModal {...this.props} render={
+              () => (
+                <div>dd</div>
+              )
+            } />
+            {/* <div className="Threedot" onClick={() => this.movieInfoInq()}>
               <MoreOutlined />
-            </div>
+            </div> */}
           </h3>
           <div className="DateLeng">{this.isStatus(status)}</div>
           <div className="star">
@@ -77,16 +83,4 @@ class Item extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return { isMovieInfo: state.isMovieInfo };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    CurrentMovie: movie => dispatch(actionCreators.CurrentMovie(movie)),
-    ChangeMovieInfo: boolean =>
-      dispatch(actionCreators.ChangeMovieInfo(boolean))
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Item);
+export default Item;
