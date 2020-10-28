@@ -5,10 +5,19 @@ import { SearchOutlined } from "@ant-design/icons";
 import "./Nav.scss";
 
 class Nav extends Component {
+
+  componentDidUpdate() {
+    if(this.props.transparent) {
+
+    } else {
+
+    }
+  }
   render() {
+    const { transparent } = this.props;
     return (
       <>
-        <nav className="Nav">
+        <nav className={`Nav ${transparent ? '' :'Transpa'}`}>
           <div className="navbarBox">
             <div className="navbarLeft">
               <Link to="/main">

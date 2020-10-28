@@ -143,9 +143,9 @@ export class MovieInfo extends Component {
       ],
       WatchingTime: 178
     };
+    this.btnRef = createRef();
+    this.liLength = 0;
   }
-  liLength;
-  btnRef = createRef();
   
   moveRight = () => {
     if (this.state.slicks > -this.liLength) {
@@ -197,6 +197,7 @@ export class MovieInfo extends Component {
   goToSupervisors = (id) => {
     this.props.history.push(`/people/${id}`)
   }
+  
   componentDidMount() {
     this.liLength = parseInt(this.state.supervisors.length / 3) * 598
   }

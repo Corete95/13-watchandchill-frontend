@@ -44,15 +44,16 @@ class Contents extends Component {
   }
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
-    document.querySelector(".Nav").classList.remove("Transpa");
   }
-  componentDidUpdate() {
-    if (this.state.currentHandleScroll > 0) {
-      document.querySelector(".Nav").classList.remove("Transpa");
-    } else {
-      document.querySelector(".Nav").classList.add("Transpa");
-    }
 
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.currentHandleScroll !== this.state.currentHandleScroll) {
+      if (this.state.currentHandleScroll > 5) {
+        this.props.isTransparent(true)
+      } else {
+        this.props.isTransparent(false)
+      }
+    }
   }
 
   btnRef = createRef();
@@ -83,19 +84,6 @@ class Contents extends Component {
     }
   };
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
-    document.querySelector('.Nav').classList.remove('Transpa')
-  }
-
-  componentDidUpdate() {
-    if(this.state.currentHandleScroll > 0) {
-      document.querySelector('.Nav').classList.remove('Transpa')
-    } else {
-      document.querySelector('.Nav').classList.add('Transpa')
-    }
-  }
-  
   render() {
     const { movieInfo, slicks } = this.state;
 
