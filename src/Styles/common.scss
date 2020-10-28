@@ -11,18 +11,6 @@ $border: 1px solid
   background-color: $whiteColor;
   border-radius: 5px;
 }
-@mixin addBtn {
-  width: 205px;
-  height: 40px;
-  border: none;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  font-size: 17px;
-  font-weight: 600;
-  &:focus {
-    outline: none;
-  }
-}
 @mixin contentContainer {
   width: 100%;
   display: flex;

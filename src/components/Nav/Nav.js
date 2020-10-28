@@ -14,7 +14,7 @@ class Nav extends Component {
               <Link to="/main">
                 <img
                   className="navbarLogo"
-                  src="/watcha.png"
+                  src="/logo2.png"
                   alt="whatcha_log"
                 />
               </Link>

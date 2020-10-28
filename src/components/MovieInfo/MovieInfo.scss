@@ -1,0 +1,130 @@
+.MovieInfo {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.56);
+  justify-content: center;
+  align-items: center;
+
+  .MoveInfoWrap {
+    width: 375px;
+    background: white;
+    border-radius: 5px;
+    padding: 0 20px;
+
+    .MoveInfoHeader {
+      display: flex;
+      border-bottom: 1px solid rgb(240, 240, 240);
+
+      .InfoImage {
+        position: relative;
+        width: 48px;
+        height: 68px;
+        box-sizing: border-box;
+        overflow: hidden;
+        background: rgb(248, 248, 248);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0.08);
+        border-image: initial;
+        border-radius: 3px;
+        margin: 20px 14px 20px 0px;
+
+        span {
+          display: inline-block;
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          bottom: 0px;
+          left: 0px;
+          background-size: cover;
+          opacity: 1;
+          background-position: center center;
+          background-repeat: no-repeat;
+          transition: all 300ms ease 0s;
+        }
+      }
+
+      .InfoDesc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        div {
+          font-size: 18px;
+          font-weight: 600;
+          padding: 5px 0;
+        }
+
+        span {
+          color: gray;
+          font-size: 15px;
+        }
+      }
+    }
+
+    .MovieInfoIcon {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #f0f0f0;
+
+      div {
+        display: flex;
+        width: 50%;
+        line-height: 20px;
+        padding: 10px 0;
+        vertical-align: middle;
+        flex-direction: column;
+        cursor: pointer;
+
+        &:first-of-type {
+          border-right: 1px solid #f0f0f0;
+        }
+
+        span {
+          font-size: 15px;
+          text-align: center;
+        }
+      }
+    }
+
+    .MovieInfoBtn {
+      div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        letter-spacing: -0.5px;
+        height: 60px;
+        vertical-align: middle;
+        width: 100%;
+        cursor: pointer;
+        border-bottom: 1px solid rgb(240, 240, 240);
+
+        span {
+          font-size: 15px;
+        }
+
+        img {
+          width: 32px;
+          height: 32px;
+          margin: 12px 0px;
+        }
+      }
+    }
+
+    .CloseBtn {
+      cursor: pointer;
+      text-align: center;
+      padding: 17px 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ff2f62;
+    }
+  }
+}

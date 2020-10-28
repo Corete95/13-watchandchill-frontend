@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import CommentWrite from "./CommentWrite";
-import { actionCreators } from "../../../store";
+import { actionCreators } from "../../store";
 import {
   pinkFlag,
   normalFlag,
@@ -9,7 +9,8 @@ import {
   normalEye,
   talkIcon,
   banIcon
-} from "./Datas.js";
+} from "../Datas.js";
+import './MovieInfo.scss';
 
 class MovieInfo extends Component {
   handleModal = () => {
@@ -18,6 +19,7 @@ class MovieInfo extends Component {
   };
 
   handleClickOutside = ({ target }) => {
+    console.log(target)
     if (target.className === "MovieInfo" || target.className === "CloseBtn") {
       this.handleModal();
       this.props.CommentValueChange("");
