@@ -5,6 +5,7 @@ import { actionCreators } from "../../store";
 
 class RatingBox extends Component {
   state = {
+    ratingCount: 0,
     movieList: {}
   }
   //  ratingMessageList = [
@@ -28,22 +29,42 @@ class RatingBox extends Component {
   //     {101 : '어떤 작품을 좋아하는지 알면, 어떤 사람인지 알 수 있어요.'}
   //  ]
 
+  API = `http://10.58.7.122:8000/review/get?`
+
   componentDidMount() {
-    // const { movieList, RatingLength } = this.props;
-    // let list = movieList.filter(movie => {
-    //   return movie.rating > 0;
-    // });
-    // RatingLength(list.length);
+    const token = localStorage.getItem("token");
+    fetch(this.API, {
+      headers: {
+        AUTHORIZATION: token
+      }
+    })
+    .then((response) => response.json())
+    .then((result) => this.setState({
+      ratingCount: result.COUNT
+    }))
   }
 
-
+  // componentDidUpdate(prevProps, prevState) {
+  //   const token = localStorage.getItem("token");
+  //     console.log('왜안받니')
+  //     fetch(this.API, {
+  //       headers: {
+  //         AUTHORIZATION: token
+  //       }
+  //     })
+  //     .then((response) => response.json())
+  //     .then((result) => this.setState({
+  //       ratingCount: result.COUNT
+  //     }))
+  // }
 
   render() {
-    const { handleModal, ratingLength, currentCategory } = this.props;
+    const { ratingCount } = this.state;
+    const { handleModal, currentCategory } = this.props;
     return (
       <section className="RatingBox">
         <div>
-          <h2 className="PickCount">{ratingLength}</h2>
+          <h2 className="PickCount">{ratingCount}</h2>
           <p>제가 취향을 알 수 있게, 15개 이상의 작품을 평가해주세요.</p>
           <ul>
             <li className="FocusList">영화</li>
