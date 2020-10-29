@@ -2,6 +2,7 @@ import React, { Component, createRef } from "react";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 import "./Contents.scss";
 import Section from "./Section/Section";
+import { withRouter } from 'react-router-dom';
 // import CommentBox from "./CommentBox/CommentBox";
 // import Tag from "./Tag/Tag";
 import Info from "./Info/Info";
@@ -22,7 +23,7 @@ class Contents extends Component {
       dropdownBtnClicked: false,
       dropdownBtnColorChanged: false,
       commentBtnClicked: false,
-      currentHandleScroll: 0,
+      currentHandleScroll: 0
     };
   }
 
@@ -33,13 +34,20 @@ class Contents extends Component {
     });
   };
   componentDidMount() {
+    this.props.isTransparent(false);
     window.addEventListener("scroll", this.handleScroll);
+    console.log(this.props.history)
     fetch(API, { method: "GET" })
       .then((response) => response.json())
       .then((result) => {
-        this.setState({
-          movieInfo: result.movieInformation,
-        }, () => this.liLength = parseInt(result.movieInformation.cast.length / 6) * 598)
+        this.setState(
+          {
+            movieInfo: result.movieInformation
+          },
+          () =>
+            (this.liLength =
+              parseInt(result.movieInformation.cast.length / 6) * 598)
+        );
       });
   }
   componentWillUnmount() {
@@ -47,11 +55,11 @@ class Contents extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(prevState.currentHandleScroll !== this.state.currentHandleScroll) {
+    if (prevState.currentHandleScroll !== this.state.currentHandleScroll) {
       if (this.state.currentHandleScroll > 5) {
-        this.props.isTransparent(true)
+        this.props.isTransparent(true);
       } else {
-        this.props.isTransparent(false)
+        this.props.isTransparent(false);
       }
     }
   }
@@ -61,11 +69,11 @@ class Contents extends Component {
   moveRight = () => {
     if (this.state.slicks > -this.liLength) {
       this.setState(
-        prevState => {
+        (prevState) => {
           return { slicks: prevState.slicks - 598 };
         },
         () => {
-          this.btnRef.current.style.left = this.state.slicks + "px"
+          this.btnRef.current.style.left = this.state.slicks + "px";
         }
       );
     }
@@ -74,11 +82,11 @@ class Contents extends Component {
   moveLeft = () => {
     if (this.state.slicks < 0) {
       this.setState(
-        prevState => {
+        (prevState) => {
           return { slicks: prevState.slicks + 598 };
         },
         () => {
-          this.btnRef.current.style.left = this.state.slicks + "px"
+          this.btnRef.current.style.left = this.state.slicks + "px";
         }
       );
     }
@@ -92,18 +100,16 @@ class Contents extends Component {
         {movieInfo && <Section movieInfo={movieInfo} />}
         <body>
           <article>
-            <div className="Tags">
-              
-            </div>
+            <div className="Tags"></div>
             {movieInfo && <Info movieInfo={movieInfo} />}
 
             <h2>출연/제작</h2>
             <div className="actors">
-            <ul ref={this.btnRef}>
-            {movieInfo &&
-              movieInfo.cast.map((actor) => 
-              <ActorProfile actorInfo={actor} />
-              )}
+              <ul ref={this.btnRef}>
+                {movieInfo &&
+                  movieInfo.cast.map((actor) => (
+                    <ActorProfile actorInfo={actor} />
+                  ))}
               </ul>
               {slicks !== 0 && (
                 <div className="LeftBar">
@@ -119,7 +125,7 @@ class Contents extends Component {
                   </div>
                 </div>
               )}
-              </div>
+            </div>
             <div className="containerGraph">
               <div className="titleGraph">별점 그래프</div>
               <div className="descGraph">

@@ -29,12 +29,11 @@ class RatingBox extends Component {
   //  ]
 
   componentDidMount() {
-        // const { movieList, RatingLength } = this.props;
+    // const { movieList, RatingLength } = this.props;
     // let list = movieList.filter(movie => {
     //   return movie.rating > 0;
     // });
     // RatingLength(list.length);
-
   }
 
 

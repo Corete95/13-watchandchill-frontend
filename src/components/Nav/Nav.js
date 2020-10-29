@@ -7,14 +7,13 @@ import Signup from "../../components/Nav/Signup";
 import "./Nav.scss";
 
 class Nav extends Component {
-
   state = {
     isLogin: false,
     loginModalOpen: false,
     signupModalOpen: false
   };
 
-  isLoginTure = () => {
+  isLoginTrue = () => {
     this.setState({ isLogin: true });
   };
   loginOpen = () => {
@@ -41,11 +40,11 @@ class Nav extends Component {
       loginClose,
       signupOpen,
       signupClose,
-      isLoginTure
+      isLoginTrue
     } = this;
     return (
       <>
-        <nav className={`Nav ${transparent ? '' :'Transpa'}`}>
+        <nav className={`Nav ${transparent ? "" : "Transpa"}`}>
           <div className="navbarBox">
             <div className="navbarLeft">
               <Link to="/main">
@@ -84,7 +83,7 @@ class Nav extends Component {
                     <button onClick={signupOpen}>회원가입</button>
                   </div>
                   <Login
-                    isLogin={isLoginTure}
+                    isLogin={isLoginTrue}
                     open={loginModalOpen}
                     close={loginClose}
                   />

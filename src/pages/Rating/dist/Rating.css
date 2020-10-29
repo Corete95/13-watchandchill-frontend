@@ -1,0 +1,316 @@
+.Rating {
+  display: flex;
+  background: #f8f8f8;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.RatingWrap {
+  padding-top: 60px;
+  width: 100%;
+}
+
+.Category {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  justify-content: center;
+  padding: 20px 0;
+  z-index: 100;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: rgba(0, 0, 0, 0.56);
+}
+.Category div {
+  display: inline-block;
+  position: relative;
+  background: white;
+  vertical-align: middle;
+  text-align: left;
+  width: 375px;
+  height: auto;
+  min-height: 540px;
+  border-radius: 6px;
+  overflow: auto;
+}
+.Category div header {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  z-index: 50;
+  font-size: 17px;
+  font-weight: 700;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 0px 16px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.Category div header .CloseBtn {
+  z-index: 51;
+  cursor: pointer;
+  outline: none;
+  color: #ff2f6e;
+}
+.Category div header h3 {
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  z-index: 1;
+  text-align: center;
+}
+.Category div div ul {
+  margin: 0 20px;
+  margin-top: 44px;
+}
+.Category div div ul p {
+  margin-top: 35px;
+  font-size: 13px;
+  color: #76767d;
+}
+.Category div div ul li {
+  display: flex;
+  cursor: pointer;
+  overflow-x: hidden;
+  padding: 14px 0;
+  width: 100%;
+  border-bottom: 1px solid;
+  border-color: rgba(234, 233, 232, 0.8);
+  align-items: center;
+  font-size: 15px;
+}
+
+.RatingBox {
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  padding-top: 42px;
+  background: #f8f8f8;
+  overflow-y: hidden;
+}
+.RatingBox div {
+  display: flex;
+  max-width: 640px;
+  border-width: 1px solid #e3e3e3;
+  border-image: initial;
+  margin: 0px auto;
+  border: 1px solid #e3e3e3;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+}
+.RatingBox div .PickCount {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: -0.9px;
+  line-height: 30px;
+  padding-top: 13px;
+  margin: 0px;
+}
+.RatingBox div p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #787878;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  line-height: 20px;
+  height: 40px;
+}
+.RatingBox div ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+}
+.RatingBox div ul .FocusList {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff2f6e;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+  box-sizing: border-box;
+  min-width: 48px;
+  height: 44px;
+  cursor: pointer;
+  border-bottom: 3px solid #ff2f6e;
+  flex: 1 1 0%;
+  background: white;
+}
+.RatingBox div ul .NormalList {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #787878;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+  box-sizing: border-box;
+  min-width: 48px;
+  height: 44px;
+  cursor: pointer;
+  padding: 0px 0px 3px;
+  flex: 1 1 0%;
+  background: white;
+}
+.RatingBox div div {
+  width: 100%;
+  height: 48px;
+  background: #fbfbfb;
+  border: none;
+  border-top: 1px solid #e3e3e3;
+}
+.RatingBox div div .CategorySelector {
+  display: flex;
+  align-items: flex-start;
+  height: 48px;
+  margin-left: 1rem;
+  background: #fbfbfb;
+  border-top: 1px solid #e3e3e3;
+}
+.RatingBox div div .CategorySelector button {
+  cursor: pointer;
+  background: none;
+  outline: none;
+  border: none;
+  padding: 0px;
+  margin: 0px;
+}
+.RatingBox div div .CategorySelector .DownBar {
+  color: gray;
+  padding: 0 5px;
+}
+.RatingBox div div .CategorySelector span {
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+  margin: 3px 0px 0px 2px;
+}
+
+.Items {
+  background: white;
+  max-width: 640px;
+  margin: 213px auto 40px;
+  border: 1px solid #e3e3e3;
+}
+.Items .ItemWrap {
+  margin: 0 20px;
+}
+
+.Item {
+  display: flex;
+  align-items: center;
+  padding: 12px 0px;
+  border-bottom: 1px solid #ededed;
+}
+.Item .Poster img {
+  width: 76px;
+  height: 110px;
+  margin: 0px 16px 0px 0px;
+}
+.Item .Description {
+  flex: 1 1 0%;
+}
+.Item .Description h3 {
+  display: flex;
+  justify-content: space-between;
+  line-height: 22px;
+  color: black;
+  font-size: 17px;
+  letter-spacing: -0.5px;
+  font-weight: 400;
+  margin: 0px 0px 2px;
+}
+.Item .Description h3 .Threedot {
+  cursor: pointer;
+}
+.Item .Description .DateLeng {
+  margin: 0px 0px 14px;
+  color: #787878;
+  font-size: 14px;
+  letter-spacing: -0.3px;
+  line-height: 19px;
+}
+.Item .Description .DateLeng span {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0px 3px 0px 0px;
+}
+.Item .Description .DateLeng .Wished,
+.Item .Description .DateLeng .Watching {
+  display: flex;
+  align-items: center;
+}
+.Item .Description .DateLeng .Wished {
+  color: #ff2f6e;
+}
+.Item .Description .DateLeng .Watching {
+  color: #00a0ff;
+}
+
+@media screen and (max-width: 750px) {
+  .RatingWrap .RatingBox {
+    top: 0;
+    padding-top: 0;
+  }
+  .RatingWrap .RatingBox div {
+    max-width: 100%;
+  }
+  .RatingWrap .Items {
+    max-width: 100%;
+    margin: 115px auto 40px;
+  }
+  .RatingWrap .Item .Poster img {
+    width: 60px;
+    height: 90px;
+  }
+
+  .Category {
+    padding: 0;
+  }
+  .Category div {
+    width: 100%;
+    border-radius: 0;
+  }
+  .Category div div ul li {
+    font-size: 16px;
+  }
+
+  .MovieInfo .MoveInfoWrap {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0px;
+  }
+
+  .CommentWrite {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    border-radius: 0;
+  }
+  .CommentWrite .CommentWriteDesc {
+    height: inherit;
+  }
+}
