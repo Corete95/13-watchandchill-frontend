@@ -35,21 +35,11 @@ article {
         font-size: 14px;
 
         .tag {
-          &:nth-child(2n) {
-            border: 1px solid #00aae6;
-            color: #00aae6;
-            border-radius: 4px;
-            margin: 0 0 0 2px;
-            padding: 10px;
-          }
-
-          &:nth-child(2n + 1) {
-            border: 1px solid #ff8644;
-            color: #ff8644;
-            border-radius: 4px;
-            margin: 0 2px 0 0;
-            padding: 10px;
-          }
+          border: 1px solid #00aae6;
+          color: #00aae6;
+          border-radius: 4px;
+          margin: 0 0 0 2px;
+          padding: 10px;
         }
       }
     }
@@ -69,7 +59,7 @@ article {
       }
 
       .titleMore {
-        cursor:pointer;
+        cursor: pointer;
         font-size: 16px;
         color: #ff2f6e;
       }
@@ -86,14 +76,11 @@ article {
           padding: 7px 0;
         }
       }
-      
+
       .summary {
         padding: 30px 0;
         line-height: 23px;
       }
     }
   }
-
-  
 }
-

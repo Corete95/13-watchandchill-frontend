@@ -10,8 +10,8 @@ import {withRouter} from "react-router-dom";
 // import Comment from "./Comment/Comment";
 // import Movies from "./Movies/Movies";
 
-const API = "http://10.58.5.157:8000/info/movie/1";
-const API2 = "http://localhost:3000/Data/Data.json";
+const API = "http://10.58.5.157:8000/info/movie/";
+const API2 = "http://10.58.5.157:8000/info/movies/";
 
 class Contents extends Component {
   constructor() {
@@ -24,6 +24,7 @@ class Contents extends Component {
       commentBtnClicked: false,
       currentHandleScroll: 0,
       allMovies: []
+      
     };
   }
 
@@ -34,41 +35,39 @@ class Contents extends Component {
     });
   };
   componentDidMount() {
-    console.log(this.props.history)
+    // console.log(this.props.match.params)
 
     window.addEventListener("scroll", this.handleScroll);
-    fetch(API)
-      .then((response) => response.json())
-      .then((result)=> {
-      })
-      // .then((result) => {
-      //   this.setState(
-      //     {
-      //       movieInfo: result.movieInformation
-      //     },
-      //     () =>
-      //       (this.liLength =
-      //         parseInt(result.movieInformation.cast.length / 6) * 598)
-      //   );
-      // });
-
-    fetch(API2)
+    fetch(`${API}${this.props.match.params.id}`)
       .then((response) => response.json())
       .then((result) => {
-        this.setState({
-          allMovies: result.allMovies
-        });
+        this.setState(
+          {
+            movieInfo: result.movie_information
+          },
+          () =>
+            (this.liLength =
+              parseInt(result.movie_information.cast.length / 6) * 598)
+        );
+      });
+
+    fetch(`${API2}${this.props.match.params.id}/related`)
+      .then((response) => response.json())
+      .then((result) => {
+        this.setState({allMovies: result.relate_movies})
       });
   }
   componentWillUnmount() {
     window.removeEventListener("scroll", this.handleScroll);
-    document.querySelector(".Nav").classList.remove("Transpa");
   }
-  componentDidUpdate() {
-    if (this.state.currentHandleScroll > 0) {
-      document.querySelector(".Nav").classList.remove("Transpa");
-    } else {
-      document.querySelector(".Nav").classList.add("Transpa");
+
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.currentHandleScroll !== this.state.currentHandleScroll) {
+      if (this.state.currentHandleScroll > 5) {
+        this.props.isTransparent(true)
+      } else {
+        this.props.isTransparent(false)
+      }
     }
   }
 
@@ -168,9 +167,9 @@ class Contents extends Component {
               <div className="descMovie">
                 {this.state.allMovies
                   .slice(0, 15)
-                  .map(({ poster, title, genre,idx }) => (
+                  .map(({ movieposter_url, title, genre,idx }) => (
                     <div className="movie" key={idx}>
-                      <img src={poster} alt={title} />
+                      <img src={movieposter_url} alt={title} />
                       <span>
                         {title.length > 8 ? title.slice(0, 8) + "..." : title}
                       </span>

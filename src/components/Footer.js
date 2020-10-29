@@ -46,17 +46,17 @@ class Footer extends Component {
             </div>
             <div className="footerRight">
               <div className="snsBox">
-                {/* <button>
+                <button>
                   한국어<span className="in_button">▾</span>
-                </button> */}
+                </button>
 
-                <select>
+                {/* <select>
                   <option value="한국어" selected="selected">
                     한국어
                   </option>
                   <option value="English">English</option>
                   <option value="日本語">日本語</option>
-                </select>
+                </select> */}
                 <div className="icons">
                   <FacebookOutlined />
                   <TwitterOutlined />
