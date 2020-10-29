@@ -40,6 +40,7 @@ class Routes extends Component {
             exact
             path="/users/analysis"
             render={() => <Analysis hidden={isNavFooterHidden} />}
+            
           />
           <Route
             exact

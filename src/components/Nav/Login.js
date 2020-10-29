@@ -3,18 +3,20 @@ import "./Login.scss";
 import Password from "./Password";
 import FacebookLogin from "react-facebook-login";
 import Signup from "./Signup";
-
+import { Redirect } from "react-router-dom";
 const API = "http://10.58.5.88:8000/user/login";
 
 class Login extends Component {
   constructor(props) {
     super(props);
 
+    let loggedIn = false;
     this.state = {
       passWordModal: false,
       signupModalOpen: false,
       email: "",
-      passWord: ""
+      passWord: "",
+      loggedIn
     };
   }
 
@@ -70,6 +72,7 @@ class Login extends Component {
         if (result.MESSAGE === "SUCCESS") {
           localStorage.setItem("token", result.AUTHORIZATION);
           this.props.isLogin(true);
+          this.setState({ loggedIn: true });
           alert("로그인을 축하드립니다!");
         } else if (result.MESSAGE === "EMAIL_OVERLAP") {
           alert("로그인 불가");
@@ -78,6 +81,9 @@ class Login extends Component {
   };
 
   render() {
+    if (this.state.loggedIn) {
+      return <Redirect to="/" />;
+    }
     const responseFacebook = (response) => {};
     return (
       <>

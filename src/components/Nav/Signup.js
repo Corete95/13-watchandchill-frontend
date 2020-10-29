@@ -27,6 +27,7 @@ class Signup extends Component {
   signClose = (event) => {
     if (event.target.className === "signUpOutLine") {
       this.props.close();
+      this.setState({ isNameValid: "", isEmailValid: "", isPasswordValid: "" });
     }
   };
 

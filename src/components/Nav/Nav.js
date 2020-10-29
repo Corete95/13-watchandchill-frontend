@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
 import { SearchOutlined } from "@ant-design/icons";
 import Login from "../../components/Nav/Login";
@@ -7,12 +7,21 @@ import Signup from "../../components/Nav/Signup";
 import "./Nav.scss";
 
 class Nav extends Component {
-  state = {
-    isLogin: false,
-    loginModalOpen: false,
-    signupModalOpen: false
-  };
+  constructor(props) {
+    super(props);
+    const token = localStorage.getItem("token");
 
+    let loggedIn = true;
+    if (token === null) {
+      loggedIn = false;
+    }
+
+    this.state = {
+      isLogin: false,
+      loginModalOpen: false,
+      signupModalOpen: false
+    };
+  }
   isLoginTure = () => {
     this.setState({ isLogin: true });
   };
@@ -33,6 +42,10 @@ class Nav extends Component {
   };
 
   render() {
+    if (this.state.loggedIn === false) {
+      return <Redirect to="/" />;
+    }
+
     const { loginModalOpen, signupModalOpen } = this.state;
     const {
       loginOpen,
