@@ -47,12 +47,12 @@ class Contents extends Component {
         );
       });
 
-      fetch(API2)
+    fetch(API2)
       .then((response) => response.json())
       .then((result) => {
         this.setState({
-            allMovies: result.allMovies
-          });
+          allMovies: result.allMovies
+        });
       });
   }
   componentWillUnmount() {
@@ -109,25 +109,24 @@ class Contents extends Component {
           <Section movieInfo={movieInfo} handleLike={this.handleLike} />
         )}
 
-        <body>
-          <div className="Button">
-            {this.state.addBtnClicked && (
-              <div className="commentBox">
-                <span>김지안 님의 생각을 글로 적어보세요.</span>
-                <button
-                  onClick={() => {
-                    this.setState({
-                      commentBtnClicked: true
-                    });
-                  }}
-                >
-                  코멘트 남기기
-                </button>
-                {this.state.commentBtnClicked && <div>comment modal</div>}
-              </div>
-            )}
-          </div>
-          <div className="Container">
+        <div className="Button">
+          {this.state.addBtnClicked && (
+            <div className="commentBox">
+              <span>김지안 님의 생각을 글로 적어보세요.</span>
+              <button
+                onClick={() => {
+                  this.setState({
+                    commentBtnClicked: true
+                  });
+                }}
+              >
+                코멘트 남기기
+              </button>
+              {this.state.commentBtnClicked && <div>comment modal</div>}
+            </div>
+          )}
+        </div>
+        <div className="Container">
           <article>
             {movieInfo && <Info movieInfo={movieInfo} />}
 
@@ -135,8 +134,8 @@ class Contents extends Component {
               <h2>출연/제작</h2>
               <ul ref={this.btnRef}>
                 {movieInfo &&
-                  movieInfo.cast.map((actor) => (
-                    <ActorProfile actorInfo={actor} />
+                  movieInfo.cast.map((actor, idx) => (
+                    <ActorProfile actorInfo={actor} key={idx} />
                   ))}
               </ul>
               {slicks !== 0 && (
@@ -156,29 +155,28 @@ class Contents extends Component {
             </div>
             <div className="containerGraph">
               <h2>별점 그래프</h2>
-                <Chart />
-              <div className="descGraph">
-              </div>
+              <Chart />
+              <div className="descGraph"></div>
             </div>
             <div className="containerMovie">
               <div className="titleMovie">비슷한 작품</div>
               <div className="descMovie">
-                {this.state.allMovies.slice(0, 15).map(({poster, title, genre}) => (
-                  <div className="movie">
-                  <img src={poster} alt={title}/>
-                  <span>{title.length > 8 ? title.slice(0,8) +'...' : title}</span>
-                  <p>{genre}</p>
-                </div>
-                ))}
-                
+                {this.state.allMovies
+                  .slice(0, 15)
+                  .map(({ poster, title, genre,idx }) => (
+                    <div className="movie" key={idx}>
+                      <img src={poster} alt={title} />
+                      <span>
+                        {title.length > 8 ? title.slice(0, 8) + "..." : title}
+                      </span>
+                      <p>{genre}</p>
+                    </div>
+                  ))}
               </div>
             </div>
           </article>
-          <aside>
-            df
-          </aside>
-          </div>
-        </body>
+          <aside>df</aside>
+        </div>
       </div>
     );
   }

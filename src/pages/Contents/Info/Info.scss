@@ -10,24 +10,30 @@ article {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   .containerRating {
     @include contentContainer;
+
     .titleRating {
       font-size: 19px;
       font-weight: 700;
     }
+
     .descRating {
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin: 40px 0;
+
       .tagDesc {
         color: #787878;
       }
+
       .tagBox {
         display: flex;
         font-size: 14px;
+
         .tag {
           &:nth-child(2n) {
             border: 1px solid #00aae6;
@@ -36,6 +42,7 @@ article {
             margin: 0 0 0 2px;
             padding: 10px;
           }
+
           &:nth-child(2n + 1) {
             border: 1px solid #ff8644;
             color: #ff8644;
@@ -47,35 +54,39 @@ article {
       }
     }
   }
+
   .containerInfo {
     @include contentContainer;
+
     .titleInfo {
       width: 100%;
       display: flex;
       justify-content: space-between;
+
       .titleMain {
         font-size: 19px;
         font-weight: 700;
       }
+
       .titleMore {
         cursor:pointer;
         font-size: 16px;
         color: #ff2f6e;
       }
     }
+
     .descInfo {
       font-size: 15px;
       color: #4a4a4a;
+
       .overallInfo {
         margin-top: 30px;
-        .originalName {
-        }
+
         .year {
           padding: 7px 0;
         }
-        .runningTime {
-        }
       }
+      
       .summary {
         padding: 30px 0;
         line-height: 23px;
