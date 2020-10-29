@@ -45,10 +45,10 @@ class Nav extends Component {
       <nav className="Nav">
         <div className="navbarBox">
           <div className="navbarLeft">
-            <Link to="/main">
+            <Link to="/">
               <img className="navbarLogo" src="/logo2.png" alt="whatcha_log" />
             </Link>
-            <Link to="/contents" className="navbarMovie">
+            <Link to="/" className="navbarMovie">
               영화
             </Link>
           </div>
