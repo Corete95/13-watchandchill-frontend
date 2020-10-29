@@ -4,11 +4,11 @@
   text-decoration: none;
 }
 
-nav {
+.Nav {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9;
+  z-index: 6;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -16,12 +16,31 @@ nav {
   border-bottom: 1px solid #ebebeb;
   background-color: #ffffff;
 }
+.Transpa {
+  transition: all 0.2s;
+  background: transparent;
+  border-bottom: none;
+  input {
+    border: 1px solid #ebebeb;
+    background: none;
+  }
+}
+
+.Transpa {
+  transition: all .2s;
+  background: transparent;
+  border-bottom: none;
+  input {
+    border: 1px solid #ebebeb;
+    background: none;
+  }
+}
 
 .navbarBox {
   width: 1320px;
   display: flex;
   justify-content: space-between;
-  padding: 5px 0;
+  padding: 5px 15px;
 }
 
 .navbarLeft {
@@ -81,6 +100,19 @@ input {
   padding-top: 10px;
 }
 
+
+@mixin tablet {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+
+@include tablet {
+  .Nav {
+    display: none;
+  }
+}
 .loginFrame {
   display: flex;
   align-items: center;

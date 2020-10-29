@@ -10,6 +10,7 @@ class Analysis extends Component {
       nickname: "함준호"
     };
   }
+
   componentDidMount() {
     this.props.hidden(true);
   }

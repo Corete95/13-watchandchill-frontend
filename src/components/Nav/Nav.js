@@ -7,6 +7,7 @@ import Signup from "../../components/Nav/Signup";
 import "./Nav.scss";
 
 class Nav extends Component {
+
   state = {
     isLogin: false,
     loginModalOpen: false,
@@ -33,6 +34,7 @@ class Nav extends Component {
   };
 
   render() {
+    const { transparent } = this.props;
     const { loginModalOpen, signupModalOpen } = this.state;
     const {
       loginOpen,
@@ -43,13 +45,13 @@ class Nav extends Component {
     } = this;
     return (
       <>
-        <nav>
+        <nav className={`Nav ${transparent ? '' :'Transpa'}`}>
           <div className="navbarBox">
             <div className="navbarLeft">
               <Link to="/main">
                 <img
                   className="navbarLogo"
-                  src="/watcha.png"
+                  src="/logo2.png"
                   alt="whatcha_log"
                 />
               </Link>

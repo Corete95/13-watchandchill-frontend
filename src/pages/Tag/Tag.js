@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Tag.scss";
 import "./Main.scss";
 import Login from "../../components/Nav/Login";
 import Signup from "../../components/Nav/Signup";
@@ -8,7 +9,7 @@ import MovieList from "../../components/MovieList";
 // const API = "http://10.58.4.235:8000/movie/list";
 // const API = "http://localhost:3000/Data/mock.json";
 
-class Main extends Component {
+class Tag extends Component {
   constructor() {
     super();
     this.state = {
@@ -27,9 +28,8 @@ class Main extends Component {
   }
 
   render() {
-    // console.log("HH", this.state.movies);
     return (
-      <div className="Main">
+      <div className="Tag">
         <div className="listTitle"> 현재 상영작</div>
         <div className="movieImg">
           {this.state.movies.theater &&
@@ -77,4 +77,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Tag;

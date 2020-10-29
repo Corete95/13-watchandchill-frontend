@@ -1,5 +1,7 @@
 import React, { Component, createRef } from "react";
+import { withRouter } from 'react-router-dom'
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+
 export class MovieInfo extends Component {
   constructor() {
     super();
@@ -141,12 +143,12 @@ export class MovieInfo extends Component {
       ],
       WatchingTime: 178
     };
+    this.btnRef = createRef();
+    this.liLength = 0;
   }
-
-  btnRef = createRef();
   
   moveRight = () => {
-    if (this.state.slicks > -1195) {
+    if (this.state.slicks > -this.liLength) {
       this.setState(
         prevState => {
           return { slicks: prevState.slicks - 598 };
@@ -192,6 +194,14 @@ export class MovieInfo extends Component {
     );
   };
 
+  goToSupervisors = (id) => {
+    this.props.history.push(`/people/${id}`)
+  }
+  
+  componentDidMount() {
+    this.liLength = parseInt(this.state.supervisors.length / 3) * 598
+  }
+
   render() {
     const { supervisors, countrys, genres, WatchingTime, slicks } = this.state;
     return (
@@ -202,7 +212,7 @@ export class MovieInfo extends Component {
             <div className="SupervisorList">
               <ul ref={this.btnRef}>
                 {supervisors.map(({ id, img, name, films, vg }) => (
-                  <li key={id}>
+                  <li onClick={() => this.goToSupervisors(id)} key={id}>
                     <div>
                       <img src={img} alt={name} />
                     </div>
@@ -223,7 +233,7 @@ export class MovieInfo extends Component {
                   </div>
                 </div>
               )}
-              {slicks !== -1196 && (
+              {slicks !== -this.liLength && (
                 <div className="RightBar">
                   <div onClick={this.moveRight}>
                     <RightOutlined style={{ fontSize: "16px" }} />
@@ -254,4 +264,4 @@ export class MovieInfo extends Component {
   }
 }
 
-export default MovieInfo;
+export default withRouter(MovieInfo);
