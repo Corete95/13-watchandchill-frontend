@@ -19,16 +19,13 @@ class Main extends Component {
     };
   }
 
-  // `API`${this.props.match.params.id}
   componentDidMount() {
     fetch(API)
       .then((res) => res.json())
-      //   .then((res) => console.log(res));
       .then((res) => this.setState({ movies: res }));
   }
 
   render() {
-    // console.log(this.state);
     const settings = {
       dots: false,
       infinite: true,
