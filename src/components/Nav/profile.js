@@ -22,18 +22,6 @@ class Profile extends Component {
         });
       });
   }
-  goToAnalysis = () => {
-    const test = this.props.location.search.name;
-    const token = window.localStorage.token;
-
-    fetch(`http:// ?/?/?/${test}`, {
-      headers: { AUTHORIZATION: token }
-    })
-      .then(response => response.json())
-      .then(response => {
-        this.setState({});
-      });
-  };
 
   isGearOpen = () => {
     this.setState({ gearModalOpen: true });
