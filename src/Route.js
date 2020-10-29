@@ -14,7 +14,7 @@ class Routes extends Component {
   state = {
     navHidden: false,
     footerHidden: false,
-    transparent: false
+    transparent: true,
   };
 
   isFooterHidden = (props) => {

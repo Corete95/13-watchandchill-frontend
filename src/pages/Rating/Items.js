@@ -6,8 +6,6 @@ class Items extends Component {
   constructor() {
     super();
     this.state = {
-      allMovieList: [],
-      filterMovies: [],
       movieList: [],
       listLength: 20
     };
@@ -15,58 +13,62 @@ class Items extends Component {
 
   handleScroll = () => {
     const { category } = this.props;
-    const { movieList, allMovieList, listLength } = this.state;
+    const { movieList } = this.state;
     const { innerHeight } = window;
     const { scrollHeight } = document.body;
     const scrollTop =
       (document.documentElement && document.documentElement.scrollTop) ||
       document.body.scrollTop;
-    if (category.genre === "모든 장르") {
-      if (scrollHeight - innerHeight - scrollTop < 50 &&  movieList.length !== allMovieList.length) {
-        // document.documentElement.scrollTop -= 1000;
-        this.setState(prevState => {
-          return {
-            movieList: allMovieList.slice(0, listLength),
-            listLength: prevState.listLength + 20
-          };
-        });
-      }
-    }
+      // if (
+      //   scrollHeight - innerHeight - scrollTop < 50 &&
+      //   movieList.length !== allMovieList.length
+      // ) {
+      //   this.setState((prevState) => {
+      //     return {
+      //       listLength: prevState.listLength + 20
+      //     };
+      //   }, () => console.log(this.state.listLength));
+      // }
   };
+
+  API = `http://10.58.5.157:8000/review/get?genre=`;
+
+  DUMMY_API = "http://localhost:3000/Data/Data.json";
 
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
-    fetch("http://localhost:3000/Data/Data.json")
-      .then(response => response.json())
+    const token = localStorage.getItem("token");
+    fetch(`${this.API}${this.props.category.id}&offset=${this.state.listLength - 20}&limit=${this.state.listLength}`, {
+      headers: {
+        AUTHORIZATION: token
+      }
+    })
+      .then((response) => response.json())
       .then(result =>
-        this.setState(prevState => {
-          return {
-            allMovieList: result.allMovies,
-            filterMovies: result.allMovies,
-            movieList: result.allMovies.slice(0, 20),
-            listLength: prevState.listLength + 20
-          };
-        })
-      );
+      this.setState({        
+        listLength: 0,
+        movieList: result.MOVIES         
+      })
+    );
   }
   componentDidUpdate(prevProps) {
     const { category } = this.props;
-    const { allMovieList  } = this.state;
+    const token = localStorage.getItem("token");
+    
     if (prevProps.category.genre !== category.genre) {
-      if (category.genre === "모든 장르") {
-        this.setState({
-          movieList: allMovieList
-        });
-        return;
+    fetch(`${this.API}${this.props.category.id}&offset=0&limit=20`, {
+      headers: {
+        AUTHORIZATION: token
       }
+    })
+      .then((response) => response.json())
+      .then((result) => 
+      this.setState({        
+        listLength: 0,
+        movieList: result.MOVIES        
+    }));
+  }
 
-      const newList = allMovieList.filter(movie => {
-        return movie.genre.includes(category.genre);
-      });
-      this.setState({
-        movieList: newList
-      });
-    }
   }
 
   componentWillUnmount() {
@@ -74,14 +76,16 @@ class Items extends Component {
   }
 
   render() {
+    const { movieList } = this.state
     return (
       <section className="Items">
         <div>
           <div className="ItemWrap">
             <ul>
-              {this.state.movieList.map(movie => (
+              {movieList && movieList.map((movie) => (
                 <Item
                   key={movie.id}
+                  id={movie.id}
                   handleMovieInfo={this.props.handleMovieInfo}
                   {...movie}
                 />

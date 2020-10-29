@@ -5,14 +5,14 @@ export class RatignStar extends Component {
  
     
   render() {
-    const { nickname } = this.props;
+    const { allReviewCount, myname } = this.props;
     return (
       <div className="RatingStar">
         <div className="RatingStarInner">
           <div className="RatingLength">
-          <h2>{nickname} 님이 평가한 영화들</h2>
+          <h2>{myname} 님이 평가한 영화들</h2>
           <div>
-              <h2>104</h2>
+    <h2>{allReviewCount}</h2>
               <p>영화</p>
           </div>
           </div>

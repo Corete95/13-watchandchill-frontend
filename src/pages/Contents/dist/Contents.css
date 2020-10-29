@@ -1,0 +1,79 @@
+.Contents body {
+  width: 100vw;
+  background-color: #f8f8f8;
+  display: flex;
+  justify-content: center;
+}
+.Contents body article {
+  background-color: #ffffff;
+  margin: 30px 30px 30px 0;
+}
+.Contents .actors {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.Contents ul {
+  position: relative;
+  display: flex;
+  flex-flow: column wrap;
+  left: 0px;
+  width: 100%;
+  height: 240px;
+  transition: left 0.5s;
+}
+.Contents ul li {
+  padding: 10px 0;
+  width: 50%;
+  border-bottom: 1px solid #e3e3e3;
+}
+.Contents ul li img {
+  margin: 0 10px;
+}
+.Contents .LeftBar div,
+.Contents .RightBar div {
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 0 0 3px 1px #f8f8f8;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+.Contents .LeftBar div > *,
+.Contents .RightBar div > * {
+  transition: color 0.4s;
+}
+.Contents .LeftBar div > *:hover,
+.Contents .RightBar div > *:hover {
+  color: blue;
+}
+.Contents .LeftBar {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.Contents .RightBar {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
+.Contents .RightBar div {
+  cursor: pointer;
+}
+
+aside {
+  margin-top: 30px;
+  width: 319px;
+  height: 454px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  background-color: #ffffff;
+  border-radius: 5px;
+}

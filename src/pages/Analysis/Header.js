@@ -1,8 +1,29 @@
 import React, { Component } from 'react'
 
 export class Header extends Component {
+  state = {
+    myname : '',
+    allReviewCount : ''
+  }
+
+  API= 'http://10.58.5.157:8000/user/preference'
+  componentDidMount() {
+    const token = localStorage.getItem("token");
+    fetch(this.API, {
+      headers: {
+        AUTHORIZATION : token
+      }
+    })
+    .then((res) =>  res.json())
+    // .then((result) => console.log(result))
+    .then((result) => this.setState({
+      myname: result.name,
+      allReviewCount : result.all_review_count
+    }))
+  }
+
   render() {
-    const { nickname } = this.props;
+    const { myname } = this.props;
     return (
       <div className="Header">
               <div className="AnalysisHeaderInner">
@@ -14,7 +35,7 @@ export class Header extends Component {
                   <div className="UserWrap">
                     <div className="UserProfile"></div>
                   </div>
-                  <div className="Nickname">{nickname}</div>
+                  <div className="Nickname">{myname}</div>
                 </h1>
               </div>
             </div>

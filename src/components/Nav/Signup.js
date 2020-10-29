@@ -3,7 +3,7 @@ import "./Signup.scss";
 import FacebookLogin from "react-facebook-login";
 import Login from "../Nav/Login";
 
-const API = "http://10.58.5.88:8000/user";
+const API = "http://10.58.5.157:8000/user";
 
 class Signup extends Component {
   state = {
@@ -92,7 +92,7 @@ class Signup extends Component {
     }
   };
 
-  signupComplete = (e) => {
+  signupComplete = () => {
     const { name, email, passWord } = this.state;
 
     if (this.allValid) {
@@ -106,7 +106,8 @@ class Signup extends Component {
       })
         .then((response) => response.json())
         .then((result) => {
-          if (result.MESSAGE === "SUCCESS") alert("회원가입을 축하드립니다!");
+          console.log(result)
+          if (result.MESSAGE === "SUCCESS") {this.props.close(); alert("회원가입을 축하드립니다!");}
           if (result.MESSAGE === "EMAIL_OVERLAP")
             alert("이미 가입된 계정입니다.");
         });

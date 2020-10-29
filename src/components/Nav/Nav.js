@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link,withRouter } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
 import { SearchOutlined } from "@ant-design/icons";
 import Login from "../../components/Nav/Login";
@@ -11,7 +11,12 @@ class Nav extends Component {
     loginModalOpen: false,
     signupModalOpen: false
   };
-  isLoginTure = () => {
+  componentDidMount(){
+    if(localStorage.getItem("token")){
+      this.setState({isLogin:true})
+    }
+  }
+  isLoginTrue = () => {
     this.setState({ isLogin: true });
   };
   loginOpen = () => {
@@ -34,11 +39,11 @@ class Nav extends Component {
       loginClose,
       signupOpen,
       signupClose,
-      isLoginTure
+      isLoginTrue
     } = this;
     return (
       <>
-        <nav className={`Nav ${transparent ? '' :'Transpa'}`}>
+        <nav className={`Nav ${transparent ? "" : "Transpa"}`}>
           <div className="navbarBox">
             <div className="navbarLeft">
               <Link to="/">
@@ -77,7 +82,7 @@ class Nav extends Component {
                     <button onClick={signupOpen}>회원가입</button>
                   </div>
                   <Login
-                    isLogin={isLoginTure}
+                    isLogin={isLoginTrue}
                     open={loginModalOpen}
                     close={loginClose}
                   />
@@ -91,4 +96,4 @@ class Nav extends Component {
     );
   }
 }
-export default Nav;
+export default withRouter(Nav);

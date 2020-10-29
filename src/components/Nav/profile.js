@@ -1,25 +1,33 @@
 import React, { Component } from "react";
 import "./Profile.scss";
 import Gear from "./Gear";
+
+const API = "http://10.58.5.157:8000/user/profile";
 class Profile extends Component {
   constructor() {
     super();
     this.state = {
-      users: [],
+      ratingCount: 0,
+      users: "",
       gearModalOpen: false
     };
   }
   componentDidMount() {
-    fetch("http://localhost:3000/dummy/users.json", {
-      method: "GET"
-    })
-      .then(res => res.json())
-      .then(res => {
+    const token = localStorage.getItem("token");
+    fetch(API,{
+    headers: {
+      AUTHORIZATION: token
+    }
+  })
+      .then((res) => res.json())
+      .then((res) => {console.log(res);
         this.setState({
-          users: res.users
+          users: res.NAME,
+          ratingCount: res.COUNT
         });
       });
   }
+
   isGearOpen = () => {
     this.setState({ gearModalOpen: true });
   };
@@ -47,14 +55,13 @@ class Profile extends Component {
                       <div className="profile_circle">
                         <div className="circle"></div>
                       </div>
-                      <h1>{users.length && users[0].name}</h1>
+                      <h1>{users}</h1>
                       <div className="text">프로필이 없습니다.</div>
                     </div>
                     <div className="taste_analysis">
-                      <a
-                        target="_blank"
+                      <a                      
                         title="taste_analysis"
-                        onClick={() => this.props.history.push(`/rating`)}
+                        onClick={() => window.open("/users/analysis")}
                       >
                         <span className="icon"></span>
                         <span className="text">취향분석</span>
@@ -66,11 +73,11 @@ class Profile extends Component {
                       <ul>
                         <li>영화</li>
                         <li>
-                          ★<strong>{users.length && users[0].star}</strong>
+    ★                      <strong>{this.state.ratingCount}</strong>
                         </li>
                         <li className="imissyou">
                           보고싶어요
-                          <strong>{users.length && users[0].missyou}</strong>
+                          <strong></strong>
                         </li>
                       </ul>
                     </a>

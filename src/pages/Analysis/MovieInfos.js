@@ -141,7 +141,7 @@ export class MovieInfo extends Component {
           films: 28
         }
       ],
-      WatchingTime: 178
+      alllReviewCount: 0
     };
     this.btnRef = createRef();
     this.liLength = 0;
@@ -177,17 +177,17 @@ export class MovieInfo extends Component {
     return (
       <>
         <div>
-          {item.slice(0, 3).map(({ name, films }) => (
+          {item.slice(0, 3).map((el) => (
             <div>
-              <h3>{name}</h3>
-              <p>{films} 편</p>
+              <h3>{el[0]}</h3>
+              <p>{el[1]} 편</p>
             </div>
           ))}
         </div>
-        {item.slice(3).map(({ name, films }) => (
+        {item.slice(3).map((el) => (
           <div>
-            <span>{name}</span>
-            <p>{films} 편</p>
+            <span>{el[0]}</span>
+            <p>{el[1]} 편</p>
           </div>
         ))}
       </>
@@ -198,12 +198,12 @@ export class MovieInfo extends Component {
     this.props.history.push(`/people/${id}`)
   }
   
-  componentDidMount() {
-    this.liLength = parseInt(this.state.supervisors.length / 3) * 598
-  }
-
+componentDidMount() {
+  this.liLength = parseInt(this.state.supervisors.length / 3) * 598
+}
   render() {
-    const { supervisors, countrys, genres, WatchingTime, slicks } = this.state;
+    const { supervisors, slicks } = this.state;
+    const { countrys, genres } = this.props
     return (
       <div className="MovieInfos">
         <div className="MovieInfoInner">
@@ -254,7 +254,7 @@ export class MovieInfo extends Component {
           <div className="MovieWatchingTime">
             <h2>영화 감상 시간</h2>
             <div>
-              <span>{WatchingTime} 시간</span>
+              <span>1 시간</span>
               <p>조금 더 시간을 내셔서 영화 보심이 어떠세요?</p>
             </div>
           </div>

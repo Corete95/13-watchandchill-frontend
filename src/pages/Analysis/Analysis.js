@@ -7,23 +7,41 @@ class Analysis extends Component {
   constructor() {
     super();
     this.state = {
-      nickname: "함준호"
+      name: '',
+      allReviewCount: 0,
+      countrys: [],
+      genres: []
     };
+    this.API= 'http://10.58.5.157:8000/user/preference';
   }
 
   componentDidMount() {
     this.props.hidden(true);
+    const token = localStorage.getItem("token");
+    fetch(this.API, {
+      headers: {
+        AUTHORIZATION : token
+      }
+    })
+    .then((res) =>  res.json())
+    // .then((result) => console.log(result))
+    .then((result) => this.setState({
+      myname: result.name,
+      allReviewCount : result.all_review_count,
+      countrys : result.country_rank,
+      genres: result.genre_rank
+    }))
   }
 
   render() {
-    const { nickname } = this.state;
+    const { myname, allReviewCount, countrys, genres } = this.state;
     return (
-      <section>
+      <section className="section1">
         <div className="FullContainer">
           <div className="AnalysisWrap">
-            <Header nickname={nickname} />
-            <RatingStar nickname={nickname} />
-            <MovieInfos />
+            <Header myname={myname} />
+            <RatingStar myname={myname} allReviewCount={allReviewCount} />
+          <MovieInfos countrys={countrys} genres={genres} />
           </div>
         </div>
       </section>
