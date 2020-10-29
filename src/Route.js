@@ -13,7 +13,8 @@ import People from "./pages/People/People";
 class Routes extends Component {
   state = {
     navHidden: false,
-    footerHidden: false
+    footerHidden: false,
+    transparent: false
   };
 
   isFooterHidden = (props) => {
@@ -30,12 +31,18 @@ class Routes extends Component {
     });
   };
 
+  isTransparent = (props) => {
+    this.setState({
+      transparent: props
+    });
+  };
+
   render() {
-    const { navHidden, footerHidden } = this.state;
-    const { isNavFooterHidden, isFooterHidden } = this;
+    const { navHidden, footerHidden, transparent } = this.state;
+    const { isNavFooterHidden, isFooterHidden, isTransparent } = this;
     return (
       <Router>
-        {!navHidden && <Nav />}
+        {!navHidden && <Nav transparent={transparent} />}
         <Switch>
           <Route exact path="/" component={Main} />
           <Route
@@ -49,7 +56,17 @@ class Routes extends Component {
             render={() => <Rating hidden={isFooterHidden} />}
           />
           <Route exact path="/users" component={Users} />
-          <Route exact path="/contents" component={Contents} />
+          <Route
+            exact
+            path="/contents"
+            render={() => (
+              <Contents
+                transparent={transparent}
+                isTransparent={isTransparent}
+              />
+            )}
+          />
+
           <Route
             exact
             path="/people/:id"

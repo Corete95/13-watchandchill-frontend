@@ -13,7 +13,7 @@ article {
   align-items: center;
   .containerRating {
     @include contentContainer;
-    .main_content_title_rating {
+    .titleRating {
       font-size: 19px;
       font-weight: 700;
     }
@@ -48,7 +48,7 @@ article {
   }
   .containerInfo {
     @include contentContainer;
-    .main_content_title_info {
+    .titleInfo {
       margin: 20px 0;
       width: 100%;
       display: flex;
@@ -64,7 +64,7 @@ article {
     }
     .descInfo {
       .overallInfo {
-        .original_name {
+        .originalName {
           padding: 5px 0;
         }
         .year {

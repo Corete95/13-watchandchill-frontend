@@ -69,6 +69,15 @@ $navtext: #74747a;
     }
   }
 }
+.Transpa {
+  transition: all 0.2s;
+  background: transparent;
+  border-bottom: none;
+  input {
+    border: 1px solid #ebebeb;
+    background: none;
+  }
+}
 
 @mixin tablet {
   @media screen and (max-width: 750px) {
@@ -81,7 +90,6 @@ $navtext: #74747a;
     display: none;
   }
 }
-
 .loginFrame {
   display: flex;
   align-items: center;

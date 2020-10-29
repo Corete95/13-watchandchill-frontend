@@ -20,8 +20,8 @@ class Tag extends Component {
   componentDidMount() {
     // console.log(this.props);
     fetch(API)
-      .then(res => res.json())
-      .then(res => this.setState({ movies: { ...res } }));
+      .then((res) => res.json())
+      .then((res) => this.setState({ movies: { ...res } }));
   }
 
   render() {
@@ -30,7 +30,7 @@ class Tag extends Component {
         <div className="listTitle"> 현재 상영작</div>
         <div className="movieImg">
           {this.state.movies.theater &&
-            this.state.movies.theater.slice(0, 5).map(movie => {
+            this.state.movies.theater.slice(0, 5).map((movie) => {
               return (
                 <MovieList
                   id={movie.id}
@@ -47,7 +47,7 @@ class Tag extends Component {
         <div className="listTitle"> 왓챠 인기 영화</div>
         <div className="movieImg">
           {this.state.movies.watcha &&
-            this.state.movies.watcha.slice(0, 5).map(movie => {
+            this.state.movies.watcha.slice(0, 5).map((movie) => {
               return (
                 <MovieList
                   id={movie.id}

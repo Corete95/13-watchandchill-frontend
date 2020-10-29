@@ -33,6 +33,7 @@ class Nav extends Component {
   };
 
   render() {
+    const { transparent } = this.props;
     const { loginModalOpen, signupModalOpen } = this.state;
     const {
       loginOpen,
@@ -42,7 +43,7 @@ class Nav extends Component {
       isLoginTure
     } = this;
     return (
-      <nav className="Nav">
+      <nav className={`Nav ${transparent ? "" : "Transpa"}`}>
         <div className="navbarBox">
           <div className="navbarLeft">
             <Link to="/">
