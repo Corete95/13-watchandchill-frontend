@@ -5,34 +5,27 @@ import { SearchOutlined } from "@ant-design/icons";
 import Login from "../../components/Nav/Login";
 import Signup from "../../components/Nav/Signup";
 import "./Nav.scss";
-
 class Nav extends Component {
-
   state = {
     isLogin: false,
     loginModalOpen: false,
     signupModalOpen: false
   };
-
   isLoginTure = () => {
     this.setState({ isLogin: true });
   };
   loginOpen = () => {
     this.setState({ loginModalOpen: true });
   };
-
   loginClose = () => {
     this.setState({ loginModalOpen: false });
   };
-
   signupOpen = () => {
     this.setState({ signupModalOpen: true });
   };
-
   signupClose = () => {
     this.setState({ signupModalOpen: false });
   };
-
   render() {
     const { transparent } = this.props;
     const { loginModalOpen, signupModalOpen } = this.state;
@@ -68,11 +61,11 @@ class Nav extends Component {
               />
               {this.state.isLogin ? (
                 <>
-                  <Link to="/rating" className="navbar_rating">
+                  <Link to="/rating" className="navbarRating">
                     평가하기
                   </Link>
                   <Link to="/profile">
-                    <UserOutlined className="user_profile" alt="profile_icon" />
+                    <UserOutlined className="userProfile" alt="profile_icon" />
                   </Link>
                 </>
               ) : (
@@ -98,5 +91,4 @@ class Nav extends Component {
     );
   }
 }
-
 export default Nav;

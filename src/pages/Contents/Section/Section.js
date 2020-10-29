@@ -46,9 +46,7 @@ class Section extends Component {
     return (
       <div className="Section">
         <div className="headerBox">
-          <div className="background">
             <img src={coverpic_url} alt="영화 메인 이미지" />
-          </div>
         </div>
         <div className="titleBox">
           <div>
@@ -110,8 +108,8 @@ class Section extends Component {
               </div>
             </div>
             {isMovieInfo && <MovieInfo />}
-          </div>
         </div>
+      </div>
       </div>
     );
   }

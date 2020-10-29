@@ -1,119 +1,102 @@
 //  @import "../Styles/common.scss";
-
 * {
   list-style: none;
 }
-
 *:focus {
   outline: none;
 }
-
-footer {
+.Footer {
   width: 100%;
   bottom: 0px;
+  margin-top: 60px;
+  .userData {
+    width: 100%;
+    height: 62px;
+    background-color: #000000;
+    color: #cbcbcc;
+    font-size: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .ratingCount {
+      color: #ff0558;
+      font-weight: bold;
+    }
+  }
+  .footer {
+    width: 100%;
+    padding: 20px 0 38px;
+    background-color: #1c1e20;
+    display: flex;
+    justify-content: center;
+    color: #9b9b9d;
+  }
+  .footerBox {
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    .footerLeft {
+      width: 1203px;
+      .policyList {
+        display: flex;
+      }
+      .csList {
+        display: flex;
+        padding-top: 20px;
+      }
+      .companyNumber {
+        display: flex;
+        padding-top: 10px;
+      }
+      .companyInfo {
+        display: flex;
+        padding-top: 20px;
+      }
+      .registrationNumber {
+        display: flex;
+        padding-top: 10px;
+      }
+      .companyLogo {
+        display: flex;
+        padding-top: 10px;
+      }
+    }
+    .footerRight {
+      .snsBox {
+        width: 117px;
+        height: 163px;
+        select {
+          display: block;
+          width: 100%;
+          height: 30px;
+          padding: 2px 5px 4px 10px;
+          font-size: 15px;
+          font-weight: bold;
+          text-align: left;
+          background-color: #1c1e20;
+          color: #9b9b9d;
+          border: 1px solid #9b9b9d;
+          border-radius: 2px;
+          span {
+            width: 100%;
+            padding-left: 45px;
+          }
+        }
+      }
+    }
+    .icons {
+      margin-top: 100px;
+      font-size: 2em;
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
 }
-
-.userData {
-  width: 100%;
-  height: 62px;
-  background-color: #000000;
-  color: #cbcbcc;
-  font-size: 19px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ratingCount {
-  color: #ff0558;
-  font-weight: bold;
-}
-
-.footer {
-  width: 100%;
-  height: 163px;
-  padding: 20px 0 38px;
-  background-color: #1c1e20;
-  display: flex;
-  justify-content: center;
-  color: #9b9b9d;
-}
-
 .footer li {
   display: flex;
   margin-right: 5px;
 }
-
-.footerBox {
-  font-size: 13px;
-  display: flex;
-  justify-content: center;
-}
-
-.footerLeft {
-  width: 1203px;
-}
-
 .footerBox li {
   margint-left: 5px;
-}
-
-.policyList {
-  display: flex;
-}
-
-.csList {
-  display: flex;
-  padding-top: 20px;
-}
-
-.companyNumber {
-  display: flex;
-  padding-top: 10px;
-}
-
-.companyInfo {
-  display: flex;
-  padding-top: 20px;
-}
-
-.companyInfoList {
-  display: flex;
-  padding-top: 10px;
-}
-
-.companyLogo {
-  display: flex;
-  padding-top: 10px;
-}
-
-.snsBox {
-  width: 117px;
-  height: 163px;
-}
-
-select {
-  display: block;
-  width: 100%;
-  height: 30px;
-  padding: 2px 5px 4px 10px;
-  font-size: 15px;
-  font-weight: bold;
-  text-align: left;
-  background-color: #1c1e20;
-  color: #9b9b9d;
-  border: 1px solid #9b9b9d;
-  border-radius: 2px;
-  span {
-    width: 100%;
-    padding-left: 45px;
-  }
-}
-
-.icons {
-  margin-top: 100px;
-  font-size: 2em;
-  span {
-    margin-left: 10px;
-  }
 }
