@@ -47,7 +47,6 @@ class Routes extends Component {
             render={() => <Rating hidden={isFooterHidden} />}
           />
           <Route exact path="/users" component={Users} />
-          <Route exact path="/contents/" component={Contents} />
           <Route exact path="/contents/:id" component={Contents} />
         </Switch>
         {!footerHidden && <Footer />}

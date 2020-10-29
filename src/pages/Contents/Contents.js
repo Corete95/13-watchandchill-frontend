@@ -5,11 +5,12 @@ import Section from "./Section/Section";
 import Chart from "../../components/Chart/Chart";
 import Info from "./Info/Info";
 import ActorProfile from "./ActorProfile/ActorProfile";
+import {withRouter} from "react-router-dom";
 // import Graph from "./Graph/Graph";
 // import Comment from "./Comment/Comment";
 // import Movies from "./Movies/Movies";
 
-const API = "http://localhost:3000/Data/contents.json";
+const API = "http://10.58.5.157:8000/info/movie/1";
 const API2 = "http://localhost:3000/Data/Data.json";
 
 class Contents extends Component {
@@ -33,19 +34,23 @@ class Contents extends Component {
     });
   };
   componentDidMount() {
+    console.log(this.props.history)
+
     window.addEventListener("scroll", this.handleScroll);
     fetch(API)
       .then((response) => response.json())
-      .then((result) => {
-        this.setState(
-          {
-            movieInfo: result.movieInformation
-          },
-          () =>
-            (this.liLength =
-              parseInt(result.movieInformation.cast.length / 6) * 598)
-        );
-      });
+      .then((result)=> {
+      })
+      // .then((result) => {
+      //   this.setState(
+      //     {
+      //       movieInfo: result.movieInformation
+      //     },
+      //     () =>
+      //       (this.liLength =
+      //         parseInt(result.movieInformation.cast.length / 6) * 598)
+      //   );
+      // });
 
     fetch(API2)
       .then((response) => response.json())
@@ -182,4 +187,4 @@ class Contents extends Component {
   }
 }
 
-export default Contents;
+export default withRouter(Contents);
