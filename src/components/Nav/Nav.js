@@ -1,38 +1,36 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link,withRouter } from "react-router-dom";
 import { UserOutlined } from "@ant-design/icons";
 import { SearchOutlined } from "@ant-design/icons";
 import Login from "../../components/Nav/Login";
 import Signup from "../../components/Nav/Signup";
 import "./Nav.scss";
-
 class Nav extends Component {
-
   state = {
     isLogin: false,
     loginModalOpen: false,
     signupModalOpen: false
   };
-
-  isLoginTure = () => {
+  componentDidMount(){
+    if(localStorage.getItem("token")){
+      this.setState({isLogin:true})
+    }
+  }
+  isLoginTrue = () => {
     this.setState({ isLogin: true });
   };
   loginOpen = () => {
     this.setState({ loginModalOpen: true });
   };
-
   loginClose = () => {
     this.setState({ loginModalOpen: false });
   };
-
   signupOpen = () => {
     this.setState({ signupModalOpen: true });
   };
-
   signupClose = () => {
     this.setState({ signupModalOpen: false });
   };
-
   render() {
     const { transparent } = this.props;
     const { loginModalOpen, signupModalOpen } = this.state;
@@ -41,21 +39,21 @@ class Nav extends Component {
       loginClose,
       signupOpen,
       signupClose,
-      isLoginTure
+      isLoginTrue
     } = this;
     return (
       <>
-        <nav className={`Nav ${transparent ? '' :'Transpa'}`}>
+        <nav className={`Nav ${transparent ? "" : "Transpa"}`}>
           <div className="navbarBox">
             <div className="navbarLeft">
-              <Link to="/main">
+              <Link to="/">
                 <img
                   className="navbarLogo"
                   src="/logo2.png"
                   alt="whatcha_log"
                 />
               </Link>
-              <Link to="/contents" className="navbarMovie">
+              <Link to="/" className="navbarMovie">
                 영화
               </Link>
             </div>
@@ -68,11 +66,11 @@ class Nav extends Component {
               />
               {this.state.isLogin ? (
                 <>
-                  <Link to="/rating" className="navbar_rating">
+                  <Link to="/rating" className="navbarRating">
                     평가하기
                   </Link>
-                  <Link to="">
-                    <UserOutlined className="user_profile" alt="profile_icon" />
+                  <Link to="/profile">
+                    <UserOutlined className="userProfile" alt="profile_icon" />
                   </Link>
                 </>
               ) : (
@@ -84,7 +82,7 @@ class Nav extends Component {
                     <button onClick={signupOpen}>회원가입</button>
                   </div>
                   <Login
-                    isLogin={isLoginTure}
+                    isLogin={isLoginTrue}
                     open={loginModalOpen}
                     close={loginClose}
                   />
@@ -98,5 +96,4 @@ class Nav extends Component {
     );
   }
 }
-
-export default Nav;
+export default withRouter(Nav);

@@ -11,7 +11,7 @@ class Info extends Component {
           <div className="descRating">
             <div className="tagDesc">선호하는 태그</div>
             <div className="tagBox">
-              <div className="tag">#{movieInfo.tag}</div>
+              <div className="tag">#{movieInfo.tag[0]}</div>
             </div>
           </div>
         </div>

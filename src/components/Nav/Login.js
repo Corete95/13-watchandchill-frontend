@@ -4,7 +4,7 @@ import Password from "./Password";
 import FacebookLogin from "react-facebook-login";
 import Signup from "./Signup";
 
-const API = "http://10.58.5.88:8000/user/login";
+const API = "http://10.58.5.157:8000/user/login";
 
 class Login extends Component {
   constructor(props) {
@@ -68,6 +68,7 @@ class Login extends Component {
       .then((response) => response.json())
       .then((result) => {
         if (result.MESSAGE === "SUCCESS") {
+          console.log(result)
           localStorage.setItem("token", result.AUTHORIZATION);
           this.props.isLogin(true);
           alert("로그인을 축하드립니다!");
@@ -105,7 +106,7 @@ class Login extends Component {
                     />
                   </div>
                   <div className="loginButton">
-                    <button onClick={this.mainMove}>로그인</button>
+                    <button onClick={this.goToMain}>로그인</button>
                   </div>
                   <div className="pwButton">
                     <button onClick={this.passWordOpen}>

@@ -1,0 +1,82 @@
+@import "../../Styles/common.scss";
+.gearModal {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.56);
+  overflow: hidden scroll;
+  .gearOutLine {
+    text-align: center;
+    text-align: center;
+    padding: 20px 0px;
+    overflow: auto;
+    .gearBox {
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      text-align: left;
+      width: 375px;
+      height: auto;
+      min-height: 540px;
+      border-radius: 6px;
+      overflow: auto;
+      background-color: white;
+      .boxHeader {
+        border-bottom: 1px solid rgb(227, 227, 227);
+        width: 100%;
+        padding: 0px 16px;
+        .headerIcon {
+          button {
+            background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9IiNGRjJGNkUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgMTIgMTIpIj4KICAgICAgICA8cmVjdCB3aWR0aD0iMiIgaGVpZ2h0PSIxOCIgeD0iMTEiIHk9IjMiIHJ4PSIxIi8+CiAgICAgICAgPHJlY3Qgd2lkdGg9IjE4IiBoZWlnaHQ9IjIiIHg9IjMiIHk9IjExIiByeD0iMSIvPgogICAgPC9nPgo8L3N2Zz4K");
+            width: 24px;
+            height: 24px;
+            margin: 10px 0px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+        }
+        .headerText {
+          margin: 0px 4px 10px;
+          span {
+            font-size: 22px;
+            font-weight: 700;
+          }
+        }
+      }
+      .boxCenter {
+        margin: 0 20px;
+        .centerTop {
+          margin-top: 30px;
+        }
+        li {
+          border-bottom: 1px solid rgb(234, 233, 232);
+          font-size: 17px;
+          margin: 13px 0px;
+          height: 38px;
+          font-weight: 400;
+          cursor: pointer;
+        }
+        section {
+          margin: 32px 0px;
+          div {
+            color: rgb(140, 140, 140);
+            font-size: 14px;
+            font-weight: 400;
+            padding: 5px 0px;
+            ul {
+            }
+          }
+        }
+        .boxBottom {
+          list-style: none;
+        }
+      }
+    }
+  }
+}
