@@ -14,13 +14,14 @@ class Profile extends Component {
   }
   componentDidMount() {
     const token = localStorage.getItem("token");
-    fetch(API,{
-    headers: {
-      AUTHORIZATION: token
-    }
-  })
+    fetch(API, {
+      headers: {
+        AUTHORIZATION: token
+      }
+    })
       .then((res) => res.json())
-      .then((res) => {console.log(res);
+      .then((res) => {
+        console.log(res);
         this.setState({
           users: res.NAME,
           ratingCount: res.COUNT
@@ -59,7 +60,7 @@ class Profile extends Component {
                       <div className="text">프로필이 없습니다.</div>
                     </div>
                     <div className="taste_analysis">
-                      <a                      
+                      <a
                         title="taste_analysis"
                         onClick={() => window.open("/users/analysis")}
                       >
@@ -73,7 +74,7 @@ class Profile extends Component {
                       <ul>
                         <li>영화</li>
                         <li>
-    ★                      <strong>{this.state.ratingCount}</strong>
+                          ★ <strong>{this.state.ratingCount}</strong>
                         </li>
                         <li className="imissyou">
                           보고싶어요
