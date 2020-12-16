@@ -21,7 +21,6 @@ class Tag extends Component {
 
   // `API`${this.props.match.params.id}
   componentDidMount() {
-    // console.log(this.props);
     fetch(`http://localhost:3000/Data/mock.json`)
       .then((res) => res.json())
       .then((res) => this.setState({ movies: { ...res } }));

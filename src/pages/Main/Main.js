@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import "./Main.scss";
-// import Login from "../../components/Nav/Login";
-// import Signup from "../../components/Nav/Signup";
 import MovieList from "../../components/MovieList";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 // 백엔드와 맞춰보기 위해서 남겨놓은 주석입니다.
 const API = "http://10.58.5.157:8000/info/front";
-// const API = "http://localhost:3000/Data/mock.json";
+
 class Main extends Component {
   constructor() {
     super();
